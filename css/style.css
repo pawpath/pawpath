@@ -24,8 +24,8 @@ body {
 }
 
 .header a.logo {
-  font-size: 25px;
-  font-weight: bold;
+    width: 199.792px;
+    height: 115.47px;
 }
 
 .header a:hover {
