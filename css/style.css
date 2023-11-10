@@ -1,60 +1,53 @@
-
-body { 
+header {
   display: flex;
-  margin: 0;
-  font-family: Arial, Helvetica, sans-serif;
-  background-color: #FEDAB838;
-}
-
-.header {
-  width: 100%;
-  height: 130px;
-  overflow: hidden;
-  background-color: #FEDAB838;
-  padding: 10px 10px;
-  position: sticky;
-  z-index: 999;
-  top: 0;
+  align-items: center;
+  padding: 10px;
+  background:rgba(254, 218, 184, 0.22);
+  margin-bottom: 0;
 }
 .logo {
-    width: 199.792px;
-    height: 115.47px;
-    margin-left: 70px;
-    float: left;
+  min-width: 100px;
+  margin-right:5px;/* Logo bütün genişliği kaplasın */
 }
-.tanitim{
-    width: 1920px;
-    height: 1080px;
-    background:url(../img/background-first.png)
+.logo img {
+  max-width: 100%;
+  height: auto;
+  width: 199px;
+  height:115px;
+  margin: 10px 20px;
 }
-/* Menu */
+/* Menu */  
 .menu{
-  float: left;
-  margin-top: 50px;
-  margin-left: 50px;
+  margin-left: 70px;
 } 
+.menu-uye{
+  display: flex;
+  align-items: center;
+  margin-left: 20px;
+}
 .menu ul{
   list-style: none;
-  margin: 0;
   padding: 0;
 }
 .menu li{
-  margin-left: 50px;
   float: left;
   position: relative;
   width: 120px;
+  top: 100%;
+  margin: 0 25px;
 }
 .menu ul li ul{
   display: none;
+  position: absolute;
+  width: 200px;
 }
 .menu ul li:hover ul{
-  position: sticky;
   display: block;
 }
 .menu ul li a{
   text-decoration: none;
   display: block;
-  color: black;
+  color: black; 
   font-weight: bold;
   font-family: sans-serif;
   text-align: center;
@@ -72,47 +65,53 @@ body {
    color: #EF9826;
   transition: .5s;
 }
-ul li a .active{
-  background-color: #EF9826;
-  text-decoration: none;
+.uye {
+  text-align: right;
+  margin-left: auto;
+  margin-right: 50px; 
 }
-/* UYE KISMI*/
-.uye{
-  margin-top: 50px;
-  float: right;
-  
-}
-.uye ul{
-  list-style: none;
+
+.uye span {
   margin: 0;
-  padding: 0;
 }
-.uye li{
-  float: left;
-  position: relative;
-  width: 120px;
-}
-.uye ul li:hover ul{
-  display: block;
-}
-.uye ul li a{
+
+.uye a {
   text-decoration: none;
-  display: block;
   color: black;
   font-weight: bold;
   font-family: sans-serif;
-  text-align: center;
   padding: 5px;
-  border-right: 1px solid #333
 }
-.menu li a:hover{
+
+.uye a:hover {
+  color: #EF9826;
   transition: .5s;
 }
-.uye ul li a:hover{
-   color: #EF9826;
-  transition: .5s;
+.uye span::after {
+  content: "|"; /* Çizgi olarak kullanılan bir karakter */
+  margin: 0 5px;
+  color: #333;
 }
-ul li a .active{
-  background-color: #EF9826;
-  text-decoration: none;
+/*tanıtım*/
+.tanıtım{
+  height: 100vh;/* İçerik maksimum genişliği, isteğe bağlı olarak ayarlayabilirsiniz */
+  margin: 0; /* İçeriği sayfanın ortasına yerleştirir */
+  padding:20px; 
+  background-repeat: no-repeat; /* Arka plan resminin tekrarlanmasını engeller */
+  background-size: cover; /* Arka plan resminin tam ekranı kaplamasını sağlar */
+  background-position: center;
+  background: url(../img/background-first.png);
+  background-color:rgba(254, 218, 184, 0.22) ;
 }
+.tanıtımimg{
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center top;
+  margin-top: -200px;
+  width: 700px;
+  height: 685px;
+  background-image: url(../img/tanıtımimg.png);
+}
+
+
+
