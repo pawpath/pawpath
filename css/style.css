@@ -1,3 +1,12 @@
+@font-face {
+
+  font-family: "Coco-Sharp-Regular-trial";
+
+  src: url("../fonts/Coco-Sharp-Regular-trial.ttf");
+
+
+
+}
 header {
   display: flex;
   align-items: center;
@@ -93,7 +102,7 @@ header {
   color: #333;
 }
 /*tanıtım*/
-.tanıtım{
+.tanitim{
   height: 100vh;/* İçerik maksimum genişliği, isteğe bağlı olarak ayarlayabilirsiniz */
   margin: 0; /* İçeriği sayfanın ortasına yerleştirir */
   padding:20px; 
@@ -102,15 +111,78 @@ header {
   background-position: center;
   background: url(../img/background-first.png);
   background-color:rgba(254, 218, 184, 0.22) ;
+  display: flex;
 }
-.tanıtımimg{
+.tanitimimg{
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center top;
   margin-top: -200px;
-  width: 700px;
-  height: 685px;
+  width: 50%;
+  height: 650px;
   background-image: url(../img/tanıtımimg.png);
+}
+.tanitimicerik{
+  width: 50%;
+  position: relative;
+  margin-left: 20px;
+  margin-top: 20px;
+}
+.ilk{
+  color: #F08080;
+  font-family: Martel Sans;
+  font-size: 26px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;  
+  
+}
+.iki{
+  color: #000;
+  font-family: Dongle;
+  font-size: 80px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 0;
+}
+.uc{
+  color: #EF9826;
+font-family: Dongle;
+font-size: 80px;
+font-style: normal;
+font-weight: 700;
+line-height: 72.8%;
+}
+.paragraf{
+  color: #000;
+  font-family: "Coco-Sharp-Regular-trial";
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 300;
+  line-height: 102.3%; /* 26.598px */
+}
+.oval-buton {
+  position: absolute;
+  bottom: 280px;
+  margin-left: 150px;
+  width: 256.545px;
+  height: 50px;
+  transform: translateX(-50%); /* Sayfanın ortasına yerleştirmek için */
+  background-color: #F08080;
+  border-radius: 25px; /* Oval görünüm için */
+  padding: 10px 10px;
+  text-align: center;
+}
+
+.oval-buton a {
+  
+  text-decoration: none;
+  color: #FFF;
+  font-family: Dongle;
+  font-size: 45px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
 }
 
 
