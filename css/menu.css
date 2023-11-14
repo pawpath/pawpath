@@ -12,6 +12,7 @@ header {
     align-items: center;
     padding: 20px;
     background-color: rgba(254, 218, 184, 0.22);
+    height: 150px;
   }
   
   .logo img{
