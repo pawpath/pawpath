@@ -1,189 +1,111 @@
 @font-face {
 
   font-family: "Coco-Sharp-Regular-trial";
-
   src: url("../fonts/Coco-Sharp-Regular-trial.ttf");
 
+  font-family: "Dongle-Bold";
+  src: url("../fonts/Dongle-Bold.ttf");
+}
 
-
-}
-header {
-  display: flex;
-  align-items: center;
-  padding: 10px;
-  background:rgba(254, 218, 184, 0.22);
-  margin-bottom: 0;
-}
-.logo {
-  min-width: 100px;
-  margin-right:5px;/* Logo bütün genişliği kaplasın */
-}
-.logo img {
-  max-width: 100%;
-  height: auto;
-  width: 199px;
-  height:115px;
-  margin: 10px 20px;
-}
-/* Menu */  
-.menu{
-  margin-left: 70px;
-} 
-.menu-uye{
-  display: flex;
-  align-items: center;
-  margin-left: 20px;
-}
-.menu ul{
-  list-style: none;
+body {
+  font-family: 'Arial', sans-serif;
+  margin: 0;
   padding: 0;
 }
-.menu li{
-  float: left;
-  position: relative;
-  width: 120px;
-  top: 100%;
-  margin: 0 25px;
-}
-.menu ul li ul{
-  display: none;
-  position: absolute;
-  width: 200px;
-}
-.menu ul li:hover ul{
-  display: block;
-}
-.menu ul li a{
-  text-decoration: none;
-  display: block;
-  color: black; 
-  font-weight: bold;
-  font-family: sans-serif;
-  text-align: center;
-  padding: 5px;
-}
-.menu ul li ul li a{
-  text-align:start;
-  padding: 5px;
-  font-size: .8em;
-}
-.menu li a:hover{
-  transition: .5s;
-}
-.menu ul li a:hover{
-   color: #EF9826;
-  transition: .5s;
-}
-.uye {
-  text-align: right;
-  margin-left: auto;
-  margin-right: 50px; 
-}
 
-.uye span {
-  margin: 0;
-}
-
-.uye a {
-  text-decoration: none;
-  color: black;
-  font-weight: bold;
-  font-family: sans-serif;
-  padding: 5px;
-}
-
-.uye a:hover {
-  color: #EF9826;
-  transition: .5s;
-}
-.uye span::after {
-  content: "|"; /* Çizgi olarak kullanılan bir karakter */
-  margin: 0 5px;
-  color: #333;
-}
-/*tanıtım*/
-.tanitim{
-  height: 100vh;/* İçerik maksimum genişliği, isteğe bağlı olarak ayarlayabilirsiniz */
-  margin: 0; /* İçeriği sayfanın ortasına yerleştirir */
-  padding:20px; 
-  background-repeat: no-repeat; /* Arka plan resminin tekrarlanmasını engeller */
-  background-size: cover; /* Arka plan resminin tam ekranı kaplamasını sağlar */
-  background-position: center;
-  background: url(../img/background-first.png);
-  background-color:rgba(254, 218, 184, 0.22) ;
+header {
   display: flex;
+  justify-content: "";
+  align-items: center;
+  padding: 20px;
+  background-color: rgba(254, 218, 184, 0.22);
 }
-.tanitimimg{
-  background-repeat: no-repeat;
-  background-size: cover;
-  background-position: center top;
-  margin-top: -200px;
-  width: 50%;
-  height: 650px;
-  background-image: url(../img/tanıtımimg.png);
+
+.logo img{
+  width: 150px;
+  margin-left: 100px;
+  margin-top: 10px;
+  margin-bottom: 20px;
 }
-.tanitimicerik{
-  width: 50%;
-  position: relative;
+
+.navbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
   margin-left: 20px;
-  margin-top: 20px;
-}
-.ilk{
-  color: #F08080;
-  font-family: Martel Sans;
-  font-size: 26px;
-  font-style: normal;
-  font-weight: 700;
-  line-height: normal;  
-  
-}
-.iki{
-  color: #000;
-  font-family: Dongle;
-  font-size: 80px;
-  font-style: normal;
-  font-weight: 700;
-  line-height: 0;
-}
-.uc{
-  color: #EF9826;
-font-family: Dongle;
-font-size: 80px;
-font-style: normal;
-font-weight: 700;
-line-height: 72.8%;
-}
-.paragraf{
-  color: #000;
-  font-family: "Coco-Sharp-Regular-trial";
-  font-size: 16px;
-  font-style: normal;
-  font-weight: 300;
-  line-height: 102.3%; /* 26.598px */
-}
-.oval-buton {
-  position: absolute;
-  bottom: 280px;
-  margin-left: 150px;
-  width: 256.545px;
-  height: 50px;
-  transform: translateX(-50%); /* Sayfanın ortasına yerleştirmek için */
-  background-color: #F08080;
-  border-radius: 25px; /* Oval görünüm için */
-  padding: 10px 10px;
-  text-align: center;
 }
 
-.oval-buton a {
-  
+.navbar ul {
+  list-style: none;
+  display: flex;
+  margin-top: 30px;
+  align-items: center;
+  margin-left: 50px;
+}
+
+.navbar li {
+  padding: 40px;
+  margin-right: 20px;
+  align-items: center;
+  font-family: "Dongle-Bold";
+  font-size: 30px;
+}
+
+.navbar a {
   text-decoration: none;
-  color: #FFF;
-  font-family: Dongle;
-  font-size: 45px;
-  font-style: normal;
-  font-weight: 700;
-  line-height: normal;
+  color: #EF9826;
+  font-weight: bold;
+  align-items: center;
+}
+.navbar a:hover{
+  color: aqua;
+  transition: 0,5s;
 }
 
+.user-actions{
+  margin-left: auto;
+  margin-right: 100px;
+}
 
+.user-actions a {
+  margin-left: 20px;
+  text-decoration: none;
+  color: #000000;
+  font-family: "Dongle-Bold";
+  font-size: 30px;
+}
 
+.intro-section {
+  background: url('../img/background-first.png') repeat; /* Arkaplan deseni ekle */
+  color: #333; /* Metin rengi */
+  background-color: rgba(254, 218, 184, 0.22);
+ /* İstediğiniz kadar iç ve dış boşluk ekleyin */
+}
+
+.intro-content {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+.intro-image img {
+  width: 80%;
+  height: auto;
+  border-radius: 8px; /* İstediğiniz bir kenar yuvarlaklığı ekleyin */
+  margin-left: 50px;
+  margin-top: -125px;
+  margin-bottom: 50px;
+}
+
+.intro-text {
+  margin-right: 50px;
+  width: 200%;
+}
+
+.intro-text h2 {
+  font-size: 24px;
+}
+
+.intro-text p {
+  font-size: 16px;
+}
