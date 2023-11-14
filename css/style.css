@@ -28,7 +28,7 @@ body {
 .intro-image{
   flex: 1;
   display: block;
-  margin-bottom: 100px;
+  margin-bottom: 50px;
   margin-left: 75px;
   margin-top: -50px;
   margin-right: -75px;
@@ -43,7 +43,7 @@ body {
   display: block;
   margin-left: 200px;
   margin-right: 75px;
-  margin-top: 25px;
+  margin-top: 60px;
 }
 
 .intro-text h1{
