@@ -1,0 +1,57 @@
+@font-face {
+
+    font-family: "Coco-Sharp-Regular";
+    src: url("../fonts/Coco-Sharp-Regular-trial.ttf");
+  
+    font-family: "Dongle-Bold";
+    src: url("../fonts/Dongle-Bold.ttf");
+  }
+body {
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+    padding: 0;
+  }
+.ustresim{
+        width: 100%;
+        height: auto;   
+}
+.ustresim img {
+    width: 100%;
+    height: auto;
+    display: block; /* Inline element olmasını engelleyerek altındaki boşluğu kaldırır */
+}
+.container1{
+    margin-top:75px;
+    width: 100%;
+    display: flex;
+}
+/*icerik*/
+.icerik{
+    flex: 55%;
+    padding: 20px;
+    height: 1330px;
+    display: block;
+    margin-left: 25px;
+}
+.icerik span {
+    font-size: 60px;
+    color: #6C6C6C;
+    font-family: "Dongle-Bold";
+    line-height: 45px;
+
+}
+.icerik h3{
+    color: #8EBC38;
+}
+/* img */
+.icerikimg{
+    flex: 45%;
+    height: 1330px;
+    display: block;
+}
+.icerikimg img {
+    width: 748px;
+    height: 860px;
+    display: block;
+    margin-top: -25px;
+}

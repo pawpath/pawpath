@@ -1,3 +1,11 @@
+@font-face {
+
+  font-family: "Coco-Sharp-Regular";
+  src: url("../fonts/Coco-Sharp-Regular-trial.ttf");
+
+  font-family: "Dongle-Bold";
+  src: url("../fonts/Dongle-Bold.ttf");
+}
 header {
     display: flex;
     justify-content: "";
