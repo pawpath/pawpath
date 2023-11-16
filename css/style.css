@@ -85,3 +85,220 @@ body {
   transition: 0.5s;
   background-color: #EF9826;
 }
+
+
+
+
+@font-face {
+  font-family: "Coco-Sharp-Regular";
+  src: url("../fonts/Coco-Sharp-Regular-trial.ttf");
+
+  font-family: "Dongle-Bold";
+  src: url("../fonts/Dongle-Bold.ttf");
+}
+
+body {
+  font-family: "Arial", sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
+.intro-section {
+  display: flex;
+  background: url("../img/background-first.png") repeat; /* Arkaplan deseni ekle */
+  color: #333; /* Metin rengi */
+  background-color: rgba(254, 218, 184, 0.22);
+  /* İstediğiniz kadar iç ve dış boşluk ekleyin */
+  height: auto;
+  width: 100%;
+  height: auto;
+  align-items: center;
+}
+
+.intro-image {
+  flex: 1;
+  display: block;
+  margin-bottom: 50px;
+  margin-left: 75px;
+  margin-top: -50px;
+  margin-right: -75px;
+}
+
+.intro-image img {
+  width: 110%;
+  display: block;
+}
+.intro-text {
+  flex: 1;
+  display: block;
+  margin-left: 200px;
+  margin-right: 75px;
+  margin-top: 60px;
+}
+
+.intro-text h1 {
+  font-size: 90px;
+  font-family: "Dongle-Bold";
+  line-height: 70px;
+}
+.intro-text h2 {
+  font-size: 30px;
+  font-family: "Coco-Sharp-Regular";
+  color: #f08080;
+}
+
+.intro-text p {
+  font-size: 20px;
+  font-family: "Coco-Sharp-Regular";
+}
+
+.colored-words {
+  color: #ef9826;
+}
+
+.yonlendirme-butonu {
+  display: inline-block;
+  text-decoration: none;
+  background-color: #f08080;
+  color: #fff;
+  border-radius: 50px;
+  padding: 10px;
+  font-family: "Dongle-Bold";
+  font-size: 30px;
+  padding-left: 75px;
+  padding-right: 75px;
+  margin-top: 15px;
+}
+
+.yonlendirme-butonu:hover {
+  color: #fff;
+  transition: 0.5s;
+  background-color: #ef9826;
+}
+/* turkce class noooooooookk */
+
+footer {
+  background-color: #89afc1;
+}
+
+.footer-main .left a img {
+  /* burada footerda ki logo ya ulaşmak 
+  için iç içe yapı kullandım bu sayede ne 
+  clası koycam ne koysam diye düşünmekten 
+  hem kaçıcam hemde daha temiz bir kod yapısı 
+  çıkmış olacak */
+  max-width: 180px;
+  object-fit: cover;
+  /* sadece genişlik veriyorum ki 
+  yükseklik verip fotoğrafı bozmuyorum eğer herhangibir
+   yükseklik verirsem fotoğraf
+  çektirme olacak ve bozulacak 
+  object fit kullanarakta yaptığım yapıyı destekliyorum  */
+}
+.footer-main {
+  display: grid;
+  grid-template-columns: 1fr;
+}
+.container {
+  width: 100%;
+  margin: 0px 15px;
+}
+@media (min-width: 640px) {
+  /* sm */
+  .container {
+    max-width: 640px;
+    margin: 0 auto;
+  }
+}
+@media (min-width: 768px) {
+  /* md */
+  .container {
+    max-width: 768px;
+    margin: 0 auto;
+  }
+  .footer-main {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+@media (min-width: 1024px) {
+  /* lg */
+  .container {
+    max-width: 1024px;
+    margin: 0 auto;
+  }
+  .footer-main {
+    grid-template-columns: 1fr 1fr 1fr;
+  }
+}
+@media (min-width: 1280px) {
+  /* xl */
+  .container {
+    max-width: 1280px;
+    margin: 0 auto;
+  }
+}
+@media (min-width: 1536px) {
+  /* 2xl */
+  .container {
+    max-width: 1536px;
+    margin: 0 auto;
+  }
+}
+.footer-main .left p {
+  max-width: 300px;
+}
+
+.footer-main .center h6 {
+  color: #585858;
+  font-size: 32px;
+  font-weight: 400;
+  margin: 0px 0px;
+}
+.footer-main .right h6 {
+  max-width: 70%;
+  color: #585858;
+  font-size: 32px;
+  font-weight: 400;
+  margin: 0px 0px;
+}
+
+.footer-main .center ul {
+  list-style: none;
+  padding-left: 0px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+.footer-main .center ul li a {
+  text-decoration: none;
+  color: #767474;
+  font-weight: 600px;
+  font-size: 24px;
+}
+.footer-main .right form {
+  display: flex;
+  flex-direction: column;
+  align-items: start;
+}
+.footer-main .right form input {
+  padding-left: 14px;
+  padding-top: 24px;
+  border-radius: 14px;
+  width: 60%;
+  padding-bottom: 24px;
+  border: none;
+}
+.footer-main .right form input:focus {
+  outline: none;
+}
+.footer-main .right form button {
+  padding-left: 26px;
+  padding-right: 26px;
+  padding-top: 16px;
+  padding-bottom: 16px;
+  border: none;
+  color: white;
+  background-color: #194e78;
+  border-radius: 15px;
+  margin-top: 24px;
+}
