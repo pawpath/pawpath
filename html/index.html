@@ -1,84 +1,57 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
-  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Dongle:wght@700&family=Poppins&display=swap" rel="stylesheet">
+<head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pawpath</title>
     <link rel="stylesheet" href="../css/style.css">
-    <link rel="stylesheet" href="../css/menu.css">
-        <title>Pawpath</title>
-  </head>
-  <body>
-    <header>
-      <div class="logo"><img src="../img/logo.png"></div>
-      <nav class="navbar">
-          <ul>
-              <li><a href="#">Anasayfa</a></li>
-              <li><a href="#">Hizmetler</a></li>
-              <li><a href="#">Blog</a></li>
-              <li><a href="#">Hakkımızda</a></li>
-          </ul>
-      </nav>
-      <div class="user-actions">
-          <a href="#">Giriş Yap</a>
-          <a href="#">Kayıt Ol</a>
-      </div>
-    </header>
+    <script src="https://kit.fontawesome.com/b1573057bf.js" crossorigin="anonymous"></script>
+</head>
+<body>
+    <div class="container">
+        <div class="col-head">
+            <div class="col-logo"><img src="../img/logo.png"></div>
+            <div class="col-menu">
+                <ul>
+                    <li><a href="#">Anasayfa</a></li>
+                    <li><a href="#">Hizmetlerimiz</a></li>
+                    <li><a href="#">Blog</a></li>
+                    <li><a href="#">Hakkımızda</a></li>
+                </ul>
+            </div>
+            <div class="col-user-act">
+                <ul>
+                    <li><a href="#">Giriş Yap</a></li>
+                    <li><a href="#">Kayıt Ol</a></li>
+                </ul>
 
-    <section class="intro-section">
-          <div class="intro-image">
-              <!-- İstediğiniz resmi buraya ekleyin -->
-              <img src="../img/tanıtımimg.png" alt="Intro Image">
-          </div>
-          <div class="intro-text">
-              <h2>Evcil Dostlarınızın İyi Bakımı:</h2>
-              <h1>Onların <span class="colored-words">Sağlığı, Mutluluğu</span> ve <span class="colored-words">Sizin İçin</span> En İyi Kaynak!</h1>
-              <p>Siz de evcil dostlarınızın sağlığını ve mutluluğunu önemsiyorsanız,<br> doğru adrestesiniz! Aşı takip, günlük bakım, eğitim, sağlık önerileri ve<br> daha fazlasını keşfedin. Evcil hayvanlarınızın hayat kalitesini artırmak<br> ve sağlıklarını korumak için bizimle adım atın!</p>
-              <div>
-                <a href="hedef_sayfa.html" class="yonlendirme-butonu">Detaylar</a>
-              </div>
-          </div>
-    </section>
+                <input type="checkbox" id="check">
+                <label for="check">
+                    <i class="fas fa-bars" id="btn"></i>
+                    <i class="fas fa-times" id="cancel"></i>
+                </label>
 
-
-
-
-    <footer style="background-image: url('../img/footer-bg.png'); background-repeat: no-repeat; object-fit: cover; padding-top: 120px; padding-bottom: 155px">
-      <div class="container footer-main">
-        <div class="left">
-          <a href="../html/index.html">
-            <img src="../img/logo-footer.png" alt="" />
-          </a>
-          <p>Siz de evcil dostlarınızın sağlığını ve mutluluğunu önemsiyorsanız, doğru adrestesiniz! Evcil hayvanlarınızın hayat kalitesini artırmak ve sağlıklarını korumak için bizimle adım atın!</p>
+                <div class="sidebar">
+                    <header>PawPath</header>
+                    
+                        <li><a href="#">Anasayfa</a></li>
+                        <li><a href="#">Hizmetlerimiz</a></li>
+                        <li><a href="#">Blog</a></li>
+                        <li><a href="#">Hakkımızda</a></li>
+                    
+                </div>
+            </div>
         </div>
-        <div class="center">
-          <h6>Servislerimiz</h6>
-          <ul>
-            <li><a href="../html/index.html">Anasayfa</a></li>
-            <li><a href="#">Hizmetlerimiz</a></li>
-            <li><a href="#">Blog</a></li>
-            <li><a href="../html/hakkimizda.html">Hakkımızda</a></li>
-          </ul>
-        </div>
-        <div class="right">
-          <h6>Geri Dönüşleriniz Bizim İçin Önemli!</h6>
-          <form>
-            <input type="text" placeholder="Mesajınızı Buraya Bırakabilirsiniz" />
-            <button type="submit">Gönder</button>
-          </form>
-        </div>
-        <!-- şimdi burayı önce 3 e böldüm sonra bunları mobilde alt alta dizdim oda grid 1 fr anlamına geliyor -->
-      </div>
 
-      <div class="copyright-container"></div>
-    </footer>
-
-  </body>
+        <div class="columns col-intro col-intro-bg">
+            <div class="col col-1"><img src="../img/tanıtımimg.png"></div>
+            <div class="col col-2">
+                <h2>Evcil Dostlarınızın İyi Bakımı:</h2>
+                <h1>Onların <span class="accent-color">Sağlığı, Mutluluğu</span> ve <span class="accent-color">Sizin İçin</span> En İyi Kaynak!</h1>
+                <p>Siz de evcil dostlarınızın sağlığını ve mutluluğunu önemsiyorsanız, doğru adrestesiniz! Aşı takip, günlük bakım, eğitim, sağlık önerileri ve daha fazlasını keşfedin. Evcil hayvanlarınızın hayat kalitesini artırmak ve sağlıklarını korumak için bizimle adım atın!</p>
+                <a href="#" class="button btn-mid">Detaylar</a>
+            </div>
+        </div>
+    </div>
+</body>
 </html>
