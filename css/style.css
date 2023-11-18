@@ -35,12 +35,12 @@ h2{
   font-size: 1.5rem;
 }
 
-.col-2 h2{
+.col-intro-2 h2{
   color: #f08080;
   font-family: "Coco-Sharp-Regular";
 }
 
-.col-2 p{
+.col-intro-2 p{
   margin-top: 0;
   font-family: "Coco-Sharp-Regular";
 }
@@ -121,6 +121,7 @@ h2{
 }
 
 .col-menu a{
+  color: #000000;
   text-decoration: none;
 }
 
@@ -131,6 +132,7 @@ h2{
 }
 
 .col-user-act a{
+  color: #000000;
   text-decoration: none;
 }
 
@@ -165,18 +167,290 @@ h2{
   background-color: #fedab850;
 }
 
-.col-1{
+.col-intro-1{
   width: 49%;
 }
 
-.col-1 img{
+.col-intro-1 img{
   width: 100%;
   margin: 0;
 }
 
-.col-2{
+.col-intro-2{
   width: 49%;
 }
+
+/* Services Layout */
+
+.col-services{
+  padding-top: 4em;
+  justify-content: center;
+  flex-direction: column;
+  text-align: center;
+  align-items: center;
+}
+
+.col-services h2{
+  color: #F4978E;
+  font-family: "Dongle-Bold";
+}
+
+.col-services h1{
+  color: #F08080;
+  margin-top: -0.4em;
+}
+
+.col-services-1{
+  padding-top: 3em;
+}
+
+.col-serv-vaccine {
+  background-color: #fff;
+  width: 30%;
+  height: 15em;
+  font-family: "Dongle-Bold";
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  position: relative;
+  border-radius: 30px;
+  border-top-width: .5em;
+  border-right-width: .5em;
+  border-bottom-width: 0;
+  border-left-width: 0;
+  border-style: solid;
+  border-color: #F4978E;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.236)
+}
+
+.col-serv-vac-mid p {
+  color: #F4978E;
+  font-size: 2.5em;
+  margin: 0;
+}
+
+.col-serv-vac-sub {
+  position: absolute;
+  bottom: .5em;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.col-serv-vac-sub a {
+  text-decoration: none;
+  margin: 0;
+  font-size: 1.5em;
+  color: #F4978E;
+}
+
+
+.col-serv-disease {
+  background-color: #fff;
+  width: 30%;
+  height: 15em;
+  font-family: "Dongle-Bold";
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  position: relative;;
+  border-radius: 30px;
+  border-top-width: .5em;
+  border-right-width: 0;
+  border-bottom-width: 0;
+  border-left-width: 0;
+  border-style: solid;
+  border-color: #8EBC38;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.236)
+}
+
+.col-serv-dis-mid p {
+  color: #8EBC38;
+  font-size: 2.5em;
+  margin: 0;
+}
+
+.col-serv-dis-sub {
+  position: absolute;
+  bottom: .5em;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.col-serv-dis-sub a {
+  text-decoration: none;
+  margin: 0;
+  font-size: 1.5em;
+  color: #8EBC38;
+}
+
+.col-serv-faqs {
+  background-color: #fff;
+  width: 30%;
+  height: 15em;
+  font-family: "Dongle-Bold";
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  position: relative;;
+  border-radius: 30px;
+  border-top-width: .5em;
+  border-right-width: 0;
+  border-bottom-width: 0;
+  border-left-width: .5em;
+  border-style: solid;
+  border-color: #168AAD;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.236)
+}
+
+.col-serv-faq-mid p {
+  color: #168AAD;
+  font-size: 2.5em;
+  margin: 0;
+}
+
+.col-serv-faq-sub {
+  position: absolute;
+  bottom: .5em;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.col-serv-faq-sub a {
+  text-decoration: none;
+  margin: 0;
+  font-size: 1.5em;
+  color: #168AAD;
+}
+
+.col-services-2{
+  padding-top: 5em;
+  padding-bottom: 5em;
+}
+
+.col-serv-mypets {
+  background-color: #fff;
+  width: 30%;
+  height: 15em;
+  font-family: "Dongle-Bold";
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  position: relative;
+  border-radius: 30px;
+  border-top-width: .5em;
+  border-right-width: .5em;
+  border-bottom-width: 0;
+  border-left-width: 0;
+  border-style: solid;
+  border-color: #34A0A4;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.236)
+}
+
+.col-serv-pet-mid p {
+  color: #34A0A4;
+  font-size: 2.5em;
+  margin: 0;
+}
+
+.col-serv-pet-sub {
+  position: absolute;
+  bottom: .5em;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.col-serv-pet-sub a {
+  text-decoration: none;
+  margin: 0;
+  font-size: 1.5em;
+  color: #34A0A4;
+}
+
+
+.col-serv-petshop {
+  background-color: #fff;
+  width: 30%;
+  height: 15em;
+  font-family: "Dongle-Bold";
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  position: relative;;
+  border-radius: 30px;
+  border-top-width: .5em;
+  border-right-width: 0;
+  border-bottom-width: 0;
+  border-left-width: 0;
+  border-style: solid;
+  border-color: #AFD36B;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.236)
+}
+
+.col-serv-petshop-mid p {
+  color: #AFD36B;
+  font-size: 2.5em;
+  margin: 0;
+}
+
+.col-serv-petshop-sub {
+  position: absolute;
+  bottom: .5em;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.col-serv-petshop-sub a {
+  text-decoration: none;
+  margin: 0;
+  font-size: 1.5em;
+  color: #AFD36B;
+}
+
+.col-serv-vets {
+  background-color: #fff;
+  width: 30%;
+  height: 15em;
+  font-family: "Dongle-Bold";
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  position: relative;;
+  border-radius: 30px;
+  border-top-width: .5em;
+  border-right-width: 0;
+  border-bottom-width: 0;
+  border-left-width: .5em;
+  border-style: solid;
+  border-color: #FBC4AB;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.236)
+}
+
+.col-serv-vet-mid p {
+  color: #FBC4AB;
+  font-size: 2.5em;
+  margin: 0;
+}
+
+.col-serv-vet-sub {
+  position: absolute;
+  bottom: .5em;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.col-serv-vet-sub a {
+  text-decoration: none;
+  margin: 0;
+  font-size: 1.5em;
+  color: #FBC4AB;
+}
+
 @media(max-width: 1680px){
   html{
       /* Sitenin oto font size'ını belirlemek için */
@@ -290,8 +564,8 @@ h2{
 
   /* Intro Layout */
 
-  .col-1,
-  .col-2{
+  .col-intro-1,
+  .col-intro-2{
       width: 100%
   }
   .col-intro{
@@ -329,8 +603,8 @@ h2{
 
   /* Intro Layout */
 
-  .col-1,
-  .col-2{
+  .col-intro-1,
+  .col-intro-2{
       width: 100%
   }
   .col-intro{
