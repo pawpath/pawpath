@@ -178,10 +178,6 @@ h2{
   width: 49%;
 }
 
-/* hakkimizda layout */ 
-.col-aboutus-top img{
-  width: 100%;
-}
 @media(max-width: 1680px){
   html{
       /* Sitenin oto font size'ını belirlemek için */
