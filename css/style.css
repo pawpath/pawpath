@@ -177,7 +177,6 @@ h2{
 .col-2{
   width: 49%;
 }
-
 @media(max-width: 1680px){
   html{
       /* Sitenin oto font size'ını belirlemek için */
