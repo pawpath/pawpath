@@ -135,13 +135,15 @@
     padding: 1em;
 }
 .col-footer{
-    background: url(../img/tanıtımimg.png);
-    background-color: #1a779f42;
     display: flex;
     justify-content: space-between;
     align-items: center;
     padding: .4em 8em;
     margin: 0;
+}
+.col-footer-bg{
+    background: url(../img/footerimg.png);
+    background-color: #1a779f42;
 }
 .col-left{
     text-align: center  ;
