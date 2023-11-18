@@ -15,8 +15,8 @@ html{
 }
 
 body{
-  font-size: 1.125rem;
   color: #000000;
+  font-size: 1.125rem;
   margin: 0;
 }
 
@@ -121,6 +121,7 @@ h2{
 }
 
 .col-menu a{
+  color: #000000;
   text-decoration: none;
 }
 
@@ -131,6 +132,7 @@ h2{
 }
 
 .col-user-act a{
+  color: #000000;
   text-decoration: none;
 }
 
@@ -177,6 +179,8 @@ h2{
 .col-2{
   width: 49%;
 }
+
+/*adkalkdd */
 
 @media(max-width: 1680px){
   html{
