@@ -1,0 +1,104 @@
+@font-face {
+
+    font-family: "Coco-Sharp-Regular";
+    src: url("../fonts/Coco-Sharp-Regular-trial.ttf");
+  
+    font-family: "Dongle-Bold";
+    src: url("../fonts/Dongle-Bold.ttf");
+  }
+.col-register{
+    padding-top: 3.5em;
+    flex-direction: column;
+    padding-bottom: 3.5em;
+}
+.col-bg{
+    padding-top: 5em;
+    text-align: center;
+    background: url(../img/profil_arkaplan.png);
+    background-color: #F4978E;
+    width: 100%;
+    border-radius: 2em;
+    padding-bottom: 5em;
+}
+.col-bg h1{
+    font-family: "Dongle-Bold";
+    color: white;
+    text-align: center;
+    font-size: 4em;
+}
+.col-bg table input {
+    text-align: center;
+    font-size: 1rem;
+    width: 100%;
+    background-color: white;
+    height: 2.6rem;
+    border-radius: 1rem;
+    border:none;
+}
+.col-bg table {
+    width: 40%;
+}
+.col-bg td{
+    padding: .5rem;
+}
+.col-bg input[type="radio"]{
+    height: 1rem;
+    width: 10%;
+}
+#radiobg td{
+    border:none;
+    background-color: white;
+    border-radius: 1rem;
+    font-size: 1rem;
+    text-align: left;
+}
+.col-bg input[type="submit"]{
+    width: 70%;
+    color: #F4978E;
+    font-family: "Dongle-Bold";
+    font-size: 3rem;
+    height: 4rem;
+    cursor: pointer;
+}
+.col-bg h6,a{
+    margin-top: 0;
+    color: white;
+    font-family: "Dongle-Bold";
+    font-size: 1.5rem;
+    margin-bottom:0;
+    text-decoration: none;
+    height: 1.3rem;
+}
+
+
+/* haritalar */ 
+.col-maps{
+    padding-top: 3.5em;
+    flex-direction: column;
+    padding-bottom: 3.5em;
+}
+.col-maps1{
+    margin-top: 5rem;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+}
+.col-maps h1{
+    text-align: center;
+    font-family: "Dongle-Bold";
+    font-size: 5rem;
+    color: #8EBC38;
+}
+.col-vet{
+    width: 100%;
+}
+.col-pet{
+    margin-left: 5rem;
+    width: 100%;
+}
+.col-pet h6,.col-vet h6{
+    font-size: 1rem;
+    height: 0;
+}
+
+
