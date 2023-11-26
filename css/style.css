@@ -2,12 +2,14 @@
 
 @font-face {
 
-  font-family: "Coco-Sharp-Regular";
-  src: url("../fonts/Coco-Sharp-Regular-trial.ttf");
+  font-family: "Dongle-Regular";
+  src: url("../fonts/Dongle-Regular.ttf");
+  
 
   font-family: "Dongle-Bold";
   src: url("../fonts/Dongle-Bold.ttf");
 }
+@font-face { font-family: "Coco-Sharp-Regular"; src: url("../fonts/Coco-Sharp-Regular-trial.ttf"); }
 
 html{
   /* Sitenin oto font size'ını belirlemek için */
@@ -98,7 +100,6 @@ h2{
 }
 .col-menu{
   width: 60%;
-  font-size: 1.5rem;
 }
 .col-menu ul li{
   list-style-type: none;
@@ -109,11 +110,12 @@ h2{
 .col-menu a{
   color: #000000;
   text-decoration: none;
+  font-size: 2rem;
 }
 .col-user-act{
   width: auto;
   max-width: 25%;
-  font-size: 1.5rem;
+  font-size: 2rem;
 }
 .col-user-act a{
   color: #000000;
@@ -157,8 +159,10 @@ h2{
   width: 49%;
 }
 
-/* hakkımızda layout */ 
-
+/* hakkmızda */
+.col-abus{
+  padding-top: 3em;
+}
 .col-aboutus-top img{
   width: 100%;
 }
@@ -176,17 +180,19 @@ h2{
 /* icerik-acılır kutular*/
 .col-abus1 nav {
   width : 100%; 
-
-  margin : 40px auto; 
+  margin : .25em auto;
 }
 
 .col-abus1 p {
   font-family: "Dongle-Bold";
   width: auto;
-  padding: 20px;
-  font-size: 2rem;
+  margin: .75em auto;
+  padding: .5em;
+  font-size: 2.25rem;
   background : #EEFFCF;
-  box-shadow: 5px 5px 0px #AED36A;
+  border-color: #AED36A;
+  border-width: 0 .20em .20em 0;
+  border-style: solid;
   border-radius: 25px; 
   color : #6C6C6C;
   cursor : pointer;
@@ -208,62 +214,77 @@ h2{
 
 .slide li {
           font-family: "Coco-Sharp-Regular";
-          font-size: 1.2rem;
+          font-size: 1.25rem;
           list-style-type: none;
+          padding-right: 2em;
 }
-#touch {position: absolute; opacity: 0; height: 0px;}    
+#touch {position: absolute; opacity: 0; height: 0px;}
 
-#touch:checked + .slide {height: 100px;}
-#touch1 {position: absolute; opacity: 0; height: 0px;}    
+#touch:checked + .slide {height: 5em;}
+#touch1 {position: absolute; opacity: 0; height: 0px;}
 
-#touch1:checked + .slide {height: 100px;}
-#touch2 {position: absolute; opacity: 0; height: 0px;}    
+#touch1:checked + .slide {height: 5em;}
+#touch2 {position: absolute; opacity: 0; height: 0px;}
 
-#touch2:checked + .slide {height: 100px;}
+#touch2:checked + .slide {height: 5em;}
 .col-abus1{
-  margin-right:-100px;
-  padding: 20px;
+  padding: 0;
   height: auto;
   max-height: 1000px;
-  
+
 }
 .col-abus1 span {
-  font-size: 60px;
+  font-size: 3.5rem;
   color: #6C6C6C;
   font-family: "Dongle-Bold";
-  line-height: 45px;
+  line-height: 3rem;
 
 }
 .col-abus1 h3{
   color: #8EBC38;
+  font-family: "Coco-Sharp-Regular";
+  font-size: 1.5rem;
+  margin: 0.25em 0;
 }
-
 /* Bize ulaşın layout */
-
+.col-abus-contact{
+  padding-top: 5em;
+  flex-direction: column;
+}
 #ilk{
-  font-size: 100px;
+  font-size: 5rem;
   font-family: "Dongle-Bold";
   color: #8EBC38;
   text-align: center;
 }
 #iki{
-  font-family: "Dongle-Bold";
+  font-family: "Coco-Sharp-Regular";
   color: #6C6C6C;
   text-align: center;
-  font-size: 45px;
+  font-size: 1.25rem;
 }
-.col-abus-contact{
-  padding-top: 3.5em;
-  flex-direction: column;
+.col-abus-contact table{
+  width: 75%;
+}
+.col-abus-contact td{
+  padding: .5em;
+}
+.col-abus-cont-name, .col-abus-cont-surn{
+  width: 50%;
 }
 #mail,#ad,#soyad,#msg{
   font-size: 1rem;
-  height: 4em;
-  width:100%;
+  height: 5em;
+  width: 100%;
   background-color:#EEFFCF;
-  box-shadow: 0px 5px 0px #AED36A;
-  border-radius: 5px; 
-  border:none;
+  border-radius: 25px; 
+  border-color: #AED36A;
+  border-width: 0 0 .5em 0;
+  border-style: solid;
+  font-family: "Coco-Sharp-Regular";
+}
+.col-abus-contact input#ad{
+  padding: 0 2em;
 }
 #msg{
   height: 10rem;
@@ -281,12 +302,6 @@ h2{
   border-radius: 5px; 
   height:2em;
   width: 25%;
-}
-.col-abus-contact table{
-  width: 50%;
-}
-.col-abus-contact td{
-  padding: 1em;
 }
 
 /* Services Layout */
@@ -328,7 +343,7 @@ h2{
   justify-content: center;
   position: relative;
   border-radius: 30px;
-  border-width: .5em .5em 0 0;
+  border-width: .25em .25em 0 0;
   border-style: solid;
   border-color: #F4978E;
   box-shadow: 0 0 20px rgba(0, 0, 0, 0.236)
@@ -337,6 +352,8 @@ h2{
   color: #F4978E;
   font-size: 2.5em;
   margin: 0;
+  padding: 0 .5em;
+  line-height: 2.5rem;
 }
 .col-serv-vac-sub {
   position: absolute;
@@ -366,7 +383,7 @@ h2{
   justify-content: center;
   position: relative;;
   border-radius: 30px;
-  border-width: .5em 0 0 0;
+  border-width: .25em 0 0 0;
   border-style: solid;
   border-color: #8EBC38;
   box-shadow: 0 0 20px rgba(0, 0, 0, 0.236)
@@ -375,6 +392,8 @@ h2{
   color: #8EBC38;
   font-size: 2.5em;
   margin: 0;
+  padding: 0 .5em;
+  line-height: 2.5rem;
 }
 .col-serv-dis-sub {
   position: absolute;
@@ -404,7 +423,7 @@ h2{
   justify-content: center;
   position: relative;;
   border-radius: 30px;
-  border-width: .5em 0 0 .5em;
+  border-width: .25em 0 0 .25em;
   border-style: solid;
   border-color: #168AAD;
   box-shadow: 0 0 20px rgba(0, 0, 0, 0.236)
@@ -413,6 +432,8 @@ h2{
   color: #168AAD;
   font-size: 2.5em;
   margin: 0;
+  padding: 0 .5em;
+  line-height: 2.5rem;
 }
 .col-serv-faq-sub {
   position: absolute;
@@ -449,7 +470,7 @@ h2{
   justify-content: center;
   position: relative;
   border-radius: 30px;
-  border-width: 0 .5em .5em 0;
+  border-width: 0 .25em .25em 0;
   border-style: solid;
   border-color: #34A0A4;
   box-shadow: 0 0 20px rgba(0, 0, 0, 0.236)
@@ -458,6 +479,8 @@ h2{
   color: #34A0A4;
   font-size: 2.5em;
   margin: 0;
+  padding: 0 .5em;
+  line-height: 2.5rem;
 }
 .col-serv-pet-sub {
   position: absolute;
@@ -487,7 +510,7 @@ h2{
   justify-content: center;
   position: relative;;
   border-radius: 30px;
-  border-width: 0 0 .5em 0;
+  border-width: 0 0 .25em 0;
   border-style: solid;
   border-color: #AFD36B;
   box-shadow: 0 0 20px rgba(0, 0, 0, 0.236)
@@ -496,6 +519,8 @@ h2{
   color: #AFD36B;
   font-size: 2.5em;
   margin: 0;
+  padding: 0 .5em;
+  line-height: 2.5rem;
 }
 .col-serv-petshop-sub {
   position: absolute;
@@ -525,7 +550,7 @@ h2{
   justify-content: center;
   position: relative;;
   border-radius: 30px;
-  border-width: 0 0 .5em .5em;
+  border-width: 0 0 .25em .25em;
   border-style: solid;
   border-color: #FBC4AB;
   box-shadow: 0 0 20px rgba(0, 0, 0, 0.236)
@@ -534,6 +559,8 @@ h2{
   color: #FBC4AB;
   font-size: 2.5em;
   margin: 0;
+  padding: 0 .5em;
+  line-height: 2.5rem;
 }
 .col-serv-vet-sub {
   position: absolute;
@@ -559,7 +586,7 @@ h2{
   flex-direction: column;
   padding-bottom: 3.5em;
 }
-.col-bg{
+.col-reg-bg{
   padding-top: 5em;
   text-align: center;
   background: url(../img/profil_arkaplan.png);
@@ -568,13 +595,13 @@ h2{
   border-radius: 2em;
   padding-bottom: 5em;
 }
-.col-bg h1{
+.col-reg-bg h1{
   font-family: "Dongle-Bold";
   color: white;
   text-align: center;
   font-size: 4em;
 }
-.col-bg table input {
+.col-reg-bg table input {
   text-align: center;
   font-size: 1rem;
   width: 100%;
@@ -583,13 +610,13 @@ h2{
   border-radius: 1rem;
   border:none;
 }
-.col-bg table {
+.col-reg-bg table {
   width: 40%;
 }
-.col-bg td{
+.col-reg-bg td{
   padding: .5rem;
 }
-.col-bg input[type="radio"]{
+.col-reg-bg input[type="radio"]{
   height: 1rem;
   width: 10%;
 }
@@ -600,7 +627,7 @@ h2{
   font-size: 1rem;
   text-align: left;
 }
-.col-bg input[type="submit"]{
+.col-reg-bg input[type="submit"]{
   width: 70%;
   color: #F4978E;
   font-family: "Dongle-Bold";
@@ -608,7 +635,7 @@ h2{
   height: 4rem;
   cursor: pointer;
 }
-.col-bg h6,a{
+.col-reg-bg h6, .col-reg-bg a{
   margin-top: 0;
   color: white;
   font-family: "Dongle-Bold";
@@ -636,14 +663,14 @@ h2{
   font-size: 5rem;
   color: #8EBC38;
 }
-.col-vet{
+.col-vet-map{
   width: 100%;
 }
-.col-pet{
+.col-pet-map{
   margin-left: 5rem;
   width: 100%;
 }
-.col-pet h6,.col-vet h6{
+.col-pet-map h6,.col-vet-map h6{
   font-size: 1rem;
   height: 0;
 }
@@ -795,7 +822,6 @@ h2{
       justify-content: space-between;
       align-items: center;
       padding: .5em 3em;
-      
       margin: 0;
   }
 
@@ -816,6 +842,41 @@ h2{
 
   /* Introduction Layout */
 
+  .col-intro{
+      padding-top: 5em;
+  }
+}
+
+@media(max-width: 1400px){
+  html{
+      /* Sitenin oto font size'ını belirlemek için */
+      font-size: 16px;
+  }
+
+  /* Layout */
+  .columns{
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: .5em 3em;
+      margin: 0;
+  }
+
+  /* Header Layout */
+  .col-menu ul li{
+      list-style-type: none;
+      padding: .5em 1em;
+      margin: 0;
+      display: inline-block;
+  }
+  .col-user-act ul li{
+      list-style-type: none;
+      display: inline-block;
+      padding: .5em 3em .5em 0;
+      margin-left: -3em;
+  }
+
+  /* Introduction Layout */
   .col-intro{
       padding-top: 5em;
   }
@@ -856,6 +917,11 @@ h2{
 
   .col-intro{
       padding-top: 5em;
+  }
+  .col-services h1{
+    color: #F08080;
+    margin-top: -0.4em;
+    font-size: 4rem;
   }
 }
 
@@ -901,6 +967,67 @@ h2{
   }
   .col-intro{
       padding-top: 5em;
+  }
+
+  /* Hakkımızda */
+  .col-abus{
+    flex-direction: column;
+    padding: 0;
+    align-items: center;
+  }
+  .col-abus1{
+    width: 90%;
+    margin: 0;
+  }
+  .col-abus1 nav ul{
+    margin: 0;
+    padding: 0;
+  }
+  .col-abus1-nav label{
+    text-align: center;
+  }
+  .col-abus1 nav li{
+    text-align: center;
+    margin: 0 2em;
+  }
+  .col-abus2{
+    width: 70%
+  }
+
+  /* Services */
+  .col-services-1{
+    padding-top: 3em;
+    flex-direction: column;
+  }
+  .col-serv-vaccine{
+    width: 70%;
+    height: 150px;
+    margin-bottom: 2em;
+  }
+  .col-serv-mypets{
+    width: 70%;
+    height: 150px;
+    margin-bottom: 2em;
+  }
+  .col-serv-disease{
+    width: 70%;
+    height: 150px;
+    margin-bottom: 2em;
+  }
+  .col-serv-faqs{
+    width: 70%;
+    height: 150px;
+    margin-bottom: 2em;
+  }
+  .col-serv-vets{
+    width: 70%;
+    height: 150px;
+    margin-bottom: 2em;
+  }
+  .col-serv-petshop{
+    width: 70%;
+    height: 150px;
+    margin-bottom: 2em;
   }
 }
 
