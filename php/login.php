@@ -3,29 +3,44 @@ session_start();
 
 // Veritabanı bağlantısı
 $conn = new mysqli("localhost", "root", "", "pawpath");
+
 if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['login'])) {
     $identifier = $_POST['identifier'];
     $password = $_POST['password'];
+    
     $stmt = $conn->prepare("SELECT * FROM users WHERE username = ? OR mail = ?");
     $stmt->bind_param("ss", $identifier, $identifier);
     $stmt->execute();
+    
     $result = $stmt->get_result();
+
     if ($result->num_rows > 0) {
-        $row = $result->fetch_assoc();
+        $user = $result->fetch_assoc();
 
         // Şifre kontrolü
-        if (password_verify($password, $row['password'])) {
-            $_SESSION['username'] = $row['username'];
-            $logmessage = "Giriş başarıyla tamamlandı!";
-            // İsteğe bağlı olarak, kullanıcıyı başka bir sayfaya yönlendirebilirsiniz.
-            // header('Location: dashboard.php');
+        if (password_verify($password, $user['password'])) {
+            $_SESSION['username'] = $user['username'];
+            $_SESSION['role'] = $user['role']; // Kullanıcının rol bilgisini sakla
+
+            if ($user['role'] === 'admin') {
+                // Admin rolüne sahipse admin paneline yönlendir
+                header("Location: ../php/admin/index.php");
+                exit();
+            } else {
+                // Diğer kullanıcılarsa normal sayfaya yönlendir
+                header("Location: ../html/index.html");
+                exit();
+            }
         } else {
-            $logmessage ="Kullanıcı adı, e-posta veya şifre hatalı!";
+            $logmessage = "Kullanıcı adı, e-posta veya şifre hatalı!";
         }
     } else {
         $logmessage = "Kullanıcı adı, e-posta veya şifre hatalı!";
     }
+
+    $stmt->close();
 }
+$conn->close();
 ?>
 <!DOCTYPE html>
 <html lang="en">
