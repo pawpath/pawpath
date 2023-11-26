@@ -1,5 +1,4 @@
 /* Fontlar */
-
 @font-face {
 
   font-family: "Dongle-Regular";
@@ -22,7 +21,6 @@ body{
 }
 
 /* typography */
-
 h1{
   font-size: 6rem;
   text-align: left;
@@ -47,7 +45,6 @@ h2{
 }
 
 /* Butonlar */
-
 .button{
   display: inline-block;
   padding: .25em 3em;
@@ -68,7 +65,6 @@ h2{
 }
 
 /* Layout */
-
 .container{
   width: 100%;
   margin: 0 auto;
@@ -82,7 +78,6 @@ h2{
 } 
 
 /* Header Layout */
-
 .col-head{
   background: #fedab850;
   height: 6em;
@@ -139,7 +134,6 @@ h2{
 }
 
 /* Introduction Layout */
-
 .col-intro{
   padding-top: 5em;
 }
@@ -182,7 +176,6 @@ h2{
   width : 100%; 
   margin : .25em auto;
 }
-
 .col-abus1 p {
   font-family: "Dongle-Bold";
   width: auto;
@@ -199,7 +192,6 @@ h2{
   display: flex;
   line-height: 2.25rem;
 }
-
 .col-abus1 p::after {
   float: right;
   right: 50%;
@@ -208,7 +200,6 @@ h2{
   background: #d8f89c;
   transition: .5s;
 }
-
 .slide {
   clear:both;
   width:100%;
@@ -216,21 +207,17 @@ h2{
   overflow: hidden;
   transition: height .4s ease;
 }
-
 .slide li {
-          font-family: "Coco-Sharp-Regular";
-          font-size: 1.25rem;
-          list-style-type: none;
-          padding-right: 2em;
+  font-family: "Coco-Sharp-Regular";
+  font-size: 1.25rem;
+  list-style-type: none;
+  padding-right: 2em;
 }
 #touch {position: absolute; opacity: 0; height: 0px;}
-
 #touch:checked + .slide {height: 5em;}
 #touch1 {position: absolute; opacity: 0; height: 0px;}
-
 #touch1:checked + .slide {height: 5em;}
 #touch2 {position: absolute; opacity: 0; height: 0px;}
-
 #touch2:checked + .slide {height: 5em;}
 .col-abus1{
   padding: 0;
@@ -243,7 +230,6 @@ h2{
   color: #6C6C6C;
   font-family: "Dongle-Bold";
   line-height: 3rem;
-
 }
 .col-abus1 h3{
   color: #8EBC38;
@@ -314,7 +300,6 @@ h2{
 }
 
 /* Services Layout */
-
 .col-services{
   padding-top: 4em;
   justify-content: center;
@@ -322,9 +307,7 @@ h2{
   text-align: center;
   align-items: center;
 }
-
 /* typography */
-
 .col-services h2{
   color: #F4978E;
   font-family: "Dongle-Bold";
@@ -335,9 +318,7 @@ h2{
   margin-top: -0.4em;
   font-size: 5rem;
 }
-
 /* İlk üç kare */
-
 .col-services-1{
   padding-top: 3em;
 }
@@ -380,7 +361,6 @@ h2{
   color: #f54c3d;
   transition: 0.5s;
 }
-
 .col-serv-disease {
   background-color: #fff;
   width: 30%;
@@ -420,7 +400,6 @@ h2{
   color: #669c03;
   transition: 0.5s;
 }
-
 .col-serv-faqs {
   background-color: #fff;
   width: 30%;
@@ -460,14 +439,11 @@ h2{
   color: #034d63;
   transition: 0.5s;
 }
-
 /* ikinci üç kare */
-
 .col-services-2{
   padding-top: 5em;
   padding-bottom: 5em;
 }
-
 .col-serv-mypets {
   background-color: #fff;
   width: 30%;
@@ -507,7 +483,6 @@ h2{
   color: #03787c;
   transition: 0.5s;
 }
-
 .col-serv-petshop {
   background-color: #fff;
   width: 30%;
@@ -547,7 +522,6 @@ h2{
   color: #71aa05;
   transition: 0.5s;
 }
-
 .col-serv-vets {
   background-color: #fff;
   width: 30%;
@@ -589,7 +563,6 @@ h2{
 }
 
 /* Register & Login */
-
 .col-register{
   padding-top: 3.5em;
   flex-direction: column;
@@ -685,7 +658,6 @@ h2{
 }
 
 /* Footer */
-
 .col-footer{
   margin: 0;
   display: flex;
@@ -737,7 +709,6 @@ h2{
 }
 
 /* Servislerimiz */
-
 .col-center{
     margin-bottom: -3em;
     margin-left: 5em;
@@ -764,7 +735,6 @@ h2{
 }
 
 /* Geri dönüş */
-
 .col-right{
     margin-left: 5em;
     width: 33%;
@@ -800,7 +770,6 @@ h2{
 }
 
 /* Çizgi & copyright */
-
 .col-footer-hr hr{
     width: 100%;
     background-color: #194E78;
@@ -817,15 +786,13 @@ h2{
 }
 
 /* Responsive Layout */
-
 @media(max-width: 1680px){
   html{
       /* Sitenin oto font size'ını belirlemek için */
-      font-size: 20px;
+      font-size: 18px;
   }
 
   /* Layout */
-
   .columns{
       display: flex;
       justify-content: space-between;
@@ -835,10 +802,9 @@ h2{
   }
 
   /* Header Layout */
-
   .col-menu ul li{
       list-style-type: none;
-      padding: .5em .5em;
+      padding: .5em 2em;
       margin: 0;
       display: inline-block;
   }
@@ -846,13 +812,16 @@ h2{
       list-style-type: none;
       display: inline-block;
       padding: .5em 2em .5em 0;
-      margin-left: -1.5em;
+      margin-left: -2em;
   }
 
   /* Introduction Layout */
-
   .col-intro{
       padding-top: 5em;
+  }
+
+  .col-abus{
+    padding-top: 5em;
   }
 }
 
@@ -881,13 +850,17 @@ h2{
   .col-user-act ul li{
       list-style-type: none;
       display: inline-block;
-      padding: .5em 3em .5em 0;
-      margin-left: -3em;
+      padding: .5em 2em .5em 0;
+      margin-left: -2em;
   }
 
   /* Introduction Layout */
   .col-intro{
       padding-top: 5em;
+  }
+
+  .col-abus{
+    padding-top: 5em;
   }
 }
 
@@ -898,7 +871,6 @@ h2{
   }
 
   /* Layout */
-
   .columns{
       display: flex;
       justify-content: space-between;
@@ -908,47 +880,6 @@ h2{
   }
 
   /* Header Layout */
-
-  .col-menu ul li{
-      list-style-type: none;
-      padding: .5em 1em;
-      margin: 0;
-      display: inline-block;
-  }
-  .col-user-act ul li{
-      list-style-type: none;
-      display: inline-block;
-      padding: .5em 3em .5em 0;
-      margin-left: -3em;
-  }
-
-  /* Introduction Layout */
-
-  .col-intro{
-      padding-top: 5em;
-  }
-  .col-services h1{
-    color: #F08080;
-    margin-top: -0.4em;
-    font-size: 4rem;
-  }
-}
-
-@media(max-width: 768px){
-  html{
-      /* Sitenin oto font size'ını belirlemek için */
-      font-size: 10px;
-  }
-
-  /* Layout */
-
-  .columns{
-      align-items: center;
-      flex-direction: column;
-  }
-
-  /* Header Layout */
-
   .col-menu ul li{
       list-style-type: none;
       padding: .5em .5em;
@@ -958,18 +889,70 @@ h2{
   .col-user-act ul li{
       list-style-type: none;
       display: inline-block;
-      padding: .5em 1.5em .5em 0;
-      margin-left: -1.40em;
+      padding: .5em 2em .5em 0;
+      margin-left: -2em;
+  }
+
+  /* Introduction Layout */
+  .col-intro{
+      padding-top: 5em;
+  }
+  .col-services h1{
+    color: #F08080;
+    margin-top: -0.4em;
+    font-size: 4rem;
+  }
+  .col-abus{
+    padding-top: 5em;
+  }
+  #touch {position: absolute; opacity: 0; height: 0px;}
+  #touch:checked + .slide {height: 7em;}
+  #touch1 {position: absolute; opacity: 0; height: 0px;}
+  #touch1:checked + .slide {height: 7em;}
+  #touch2 {position: absolute; opacity: 0; height: 0px;}
+  #touch2:checked + .slide {height: 8em;}
+
+}
+
+@media(max-width: 768px){
+  html{
+      /* Sitenin oto font size'ını belirlemek için */
+      font-size: 9px;
+  }
+
+  /* Layout */
+  .columns{
+      align-items: center;
+      flex-direction: column;
+  }
+
+  /* Header Layout */
+  .col-logo img{
+    width: 100%;
+    padding: .5em 0 .5em 2em;
+  }
+  .col-menu ul li{
+      list-style-type: none;
+      padding: .5em 1em .5em 0;
+      margin-left: 0;
+      display: inline-block;
+  }
+  .col-user-act{
+    max-width: 40%;
+  }
+  .col-user-act ul li{
+      list-style-type: none;
+      display: inline-block;
+      padding: .5em 1em .5em 0;
+      margin-left: -1em;
   }
 
   /* Typography */
-
   .columns, h1, h2{
       text-align: center;
   }
 
   /* Intro Layout */
-
   .col-intro-1,
   .col-intro-2{
       width: 100%
@@ -981,7 +964,7 @@ h2{
   /* Hakkımızda */
   .col-abus{
     flex-direction: column;
-    padding: 0;
+    padding-top: 5em;
     align-items: center;
   }
   .col-abus1{
@@ -992,15 +975,19 @@ h2{
     margin: 0;
     padding: 0;
   }
-  .col-abus1-nav label{
-    text-align: center;
+  .col-abus1 p{
+    text-align: left;
   }
   .col-abus1 nav li{
     text-align: center;
-    margin: 0 2em;
+    margin: 0;
   }
   .col-abus2{
     width: 70%
+  }
+  .slide li{
+    margin: 0;
+    padding: 0 2em;
   }
 
   /* Services */
@@ -1043,16 +1030,14 @@ h2{
 @media(max-width: 500px){
   html{
       /* Sitenin oto font size'ını belirlemek için */
-      font-size: 10px;
+      font-size: 8px;
   }
 
   /* Layout */
-
   .columns{
       align-items: center;
       flex-direction: column;
   }
-
   /* Typography */
 
   .columns, h1, h2{
@@ -1060,7 +1045,6 @@ h2{
   }
 
   /* Header Layout */
-
   .col-menu ul li{
       display: none;
   }
@@ -1069,7 +1053,6 @@ h2{
   }
 
   /* Intro Layout */
-
   .col-intro-1,
   .col-intro-2{
       width: 100%
@@ -1079,38 +1062,33 @@ h2{
   }
 
   /* Slider Menu Layout */
-
   *{
       list-style: none;
       text-decoration: none;
   }
-
   .sidebar {
       top: 0;
       display: block;
       position: fixed;
-      right: -20em;
-      width: 15em;
+      right: -100em;
+      width: 12.5em;
       height: 100%;
       background-color: rgba(255, 255, 255, 0.50);
       transition: all .5s ease;
   }
   .sidebar header {
-      font-size: 2.25rem;
+      font-size: 3rem;
       color: white;
       text-align: center;
-      line-height: 3em;
+      line-height: 2.3em;
       background-color: #EF9826;
       user-select: none;
   }
   .sidebar li a {
-      text-align: right;
-      height: 100%;
-      width: 100%;
-      line-height: 4rem;
-      font-size: 2rem;
+      font-size: 3rem;
       color: rgb(0, 0, 0);
       margin-bottom: 2em;
+      padding-left: 1em;
   }
   .sidebar li a:hover {
       color: #EF9826;
@@ -1118,7 +1096,6 @@ h2{
   }
 
   /* Icon */
-
   label #btn, label #cancel {
       color: #EF9826;
       position: absolute;
@@ -1134,23 +1111,154 @@ h2{
   label #cancel {
       display: none;
       z-index: 1111;
-      right: 19em;
-      top: .75em;
+      right: 1.25em;
+      top: .8em;
       font-size: 2.5rem;
-      padding: 4px 9px;
       color: rgb(255, 255, 255);
-      transition: all .5s ease;
+      transition: all 1s ease;
   }
   #check:checked ~ .sidebar {
       right: 0;
   }
   #check:checked ~ label #btn {
-      right: 250px;
+      right: 1.25;
       opacity: 0;
       pointer-events: none;
   }
   #check:checked ~ label #cancel {
-      right: 7em;
+      right: 1.25;
       display: block;
   }
+
+  /* Footer */
+    .col-footer{
+      margin: 0;
+      display: flex;
+      flex-direction: column;
+      width: 100%;
+    }
+    .col-footer1{
+        display: flex;
+        justify-content: space-between;
+        align-items:center;
+        padding: .4em 0;
+        margin: 0;
+    }
+    .col-footer2{
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        margin: 0;
+        padding: 0;
+        width: 100%;
+    }
+    .col-footer-hr{
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 0 3em;
+        margin: 0;
+    }
+    .col-footer-bg{
+        background: url(../img/footer_background.png);
+        background-color: #1a779f42;
+    }
+
+    /* Sol logo tarafı */
+    .col-left{
+        text-align: center ;
+        margin-top: 6em;
+        width: 33%;
+        margin-left: 2em;
+
+    }
+    .col-left img{
+        width: 80%;
+    }
+    .col-left p{
+        font-family: "Coco-Sharp-Regular";
+        text-align: left;
+        color: #194E78;
+    }
+
+    /* Servislerimiz */
+    .col-center{
+        margin-left: 0;
+        width: 33%;
+        flex-direction: column;
+    }
+    .col-center h2{
+        font-family: "Dongle-Bold";
+        color:#545454;
+        font-size: 2rem;
+        text-align: left;
+    }
+    .col-center a{
+        color: #6C6C6C;
+    }
+    .col-center ul li{
+        list-style-type: none;
+        margin-top: 1em;
+        text-align: left;
+    }
+    .col-center ul{
+        margin-left: 0;
+        text-align: left;
+    }
+    .col-center a{
+        text-decoration: none;
+    }
+
+    /* Geri dönüş */
+    .col-right{
+        margin-left: 0;
+        width: 33%;
+        margin-right: 2em;
+    }
+    .col-right h6{
+        margin-bottom: .8em;
+        font-family: "Dongle-Bold";
+        color:#545454;
+        font-size: 2rem;
+        line-height: .8em;
+    }
+    #footertext{
+        width: 100%;
+        height: 7rem;
+        background-color: #E4E4E4;
+        border: none;
+        border-radius: 1em;
+    }
+    #footerbtn{
+        float: right;
+        margin-top: .5em;
+        cursor: pointer ;
+        margin-right: 0;
+        font-size: 1rem;
+        font-family: "Dongle-Bold";
+        border:none;
+        border-radius: 5px; 
+        height:2em;
+        width: 1em;
+        background-color: #194E78;
+        color: white;
+    }
+
+    /* Çizgi & copyright */
+    .col-footer-hr hr{
+        background-color: #194E78;
+        height: .07em;
+    }
+    .col-copy{
+        display: flex;
+        padding:0 2em 0 2em;
+        align-items: center;
+        text-align: center;
+    }
+    .col-copy h4{
+        margin-right: 1em;
+        color: #194E78;
+        font-family: "Dongle-Bold";
+        text-align: center;
+    }
 }
