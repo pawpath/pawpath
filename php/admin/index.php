@@ -7,7 +7,6 @@
 body {
   font-family: "Lato", sans-serif;
 }
-
 /* Fixed sidenav, full height */
 .sidenav {
   height: 100%;
