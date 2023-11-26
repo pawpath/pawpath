@@ -197,11 +197,16 @@ h2{
   color : #6C6C6C;
   cursor : pointer;
   display: flex;
+  line-height: 2.25rem;
 }
 
 .col-abus1 p::after {
   float: right;
   right: 50%;
+}
+.col-abus1 p:hover{
+  background: #d8f89c;
+  transition: .5s;
 }
 
 .slide {
@@ -246,6 +251,7 @@ h2{
   font-size: 1.5rem;
   margin: 0.25em 0;
 }
+
 /* Bize ulaşın layout */
 .col-abus-contact{
   padding-top: 5em;
@@ -269,10 +275,7 @@ h2{
 .col-abus-contact td{
   padding: .5em;
 }
-.col-abus-cont-name, .col-abus-cont-surn{
-  width: 50%;
-}
-#mail,#ad,#soyad,#msg{
+#msg, .col-abus-contact input[type="text"]{
   font-size: 1rem;
   height: 5em;
   width: 100%;
@@ -282,18 +285,19 @@ h2{
   border-width: 0 0 .5em 0;
   border-style: solid;
   font-family: "Coco-Sharp-Regular";
+  text-indent: 2em;
 }
-.col-abus-contact input#ad{
-  padding: 0 2em;
+.col-abus-contact textarea{
+  padding-top: 1.5em;
+  resize: none;
 }
 #msg{
   height: 10rem;
-
 }
-#gonder{
+.col-abus-contact input[type="submit"]{
   cursor: pointer ;
   margin-left: auto;
-  margin-right: 0;
+  right: 0;
   font-size: 1.5rem;
   background-color: #AED36A;
   color: white;
@@ -302,6 +306,11 @@ h2{
   border-radius: 5px; 
   height:2em;
   width: 25%;
+  float: right;
+}
+.col-abus-contact input[type="submit"]:hover{
+  background: #77b700;
+  transition: 0.5s;
 }
 
 /* Services Layout */
