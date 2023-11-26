@@ -1,11 +1,8 @@
 <?php
-
-
 session_start();
-
 // Veritabanı bağlantısı
 $conn = new mysqli("localhost", "root", "", "pawpath");
-
+$conn->set_charset("utf8");
 if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['kaydet'])) {
     $name = $_POST['name'];
     $surname = $_POST['surname'];
