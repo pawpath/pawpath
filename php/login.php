@@ -1,36 +1,29 @@
 <?php
-
-
 session_start();
 
 // Veritabanı bağlantısı
 $conn = new mysqli("localhost", "root", "", "pawpath");
-
-if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['kaydet'])) {
-    $name = $_POST['name'];
-    $surname = $_POST['surname'];
-    $username = $_POST['username'];
-    $mail = $_POST['mail'];
+if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['login'])) {
+    $identifier = $_POST['identifier'];
     $password = $_POST['password'];
-    $sec = $_POST['select'];
-
-    //kontrol
     $stmt = $conn->prepare("SELECT * FROM users WHERE username = ? OR mail = ?");
-    $stmt->bind_param("ss", $username, $mail);
+    $stmt->bind_param("ss", $identifier, $identifier);
     $stmt->execute();
     $result = $stmt->get_result();
-
     if ($result->num_rows > 0) {
-        $regmessage = "Bu kullanıcı adı veya e-posta zaten kullanılmaktadır. Lütfen farklı bir kullanıcı adı veya e-posta seçin.";
+        $row = $result->fetch_assoc();
+
+        // Şifre kontrolü
+        if (password_verify($password, $row['password'])) {
+            $_SESSION['username'] = $row['username'];
+            $logmessage = "Giriş başarıyla tamamlandı!";
+            // İsteğe bağlı olarak, kullanıcıyı başka bir sayfaya yönlendirebilirsiniz.
+            // header('Location: dashboard.php');
+        } else {
+            $logmessage ="Kullanıcı adı, e-posta veya şifre hatalı!";
+        }
     } else {
-    $hashedPassword = password_hash($password, PASSWORD_DEFAULT);
-
-    // Veritabanına kullanıcıyı ekleme
-    $stmt = $conn->prepare("INSERT INTO users (username, mail,name,surname,sec,password) VALUES (?, ?, ?, ?, ?, ?)");
-    $stmt->bind_param("ssssss", $username, $mail,$name,$surname,$sec,$hashedPassword);
-    $stmt->execute();
-
-    $regmessage ="Kayıt başarıyla tamamlandı!";
+        $logmessage = "Kullanıcı adı, e-posta veya şifre hatalı!";
     }
 }
 ?>
@@ -73,7 +66,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['kaydet'])) {
                 <div class="sidebar">
                     <header>PawPath</header>
                     
-                        <li><a href="../html/index.html">Anasayfa</a></li>
+                        <li><a href="../html/login.html">Anasayfa</a></li>
                         <li><a href="#">Hizmetlerimiz</a></li>
                         <li><a href="#">Blog</a></li>
                         <li><a href="../html/hakkimizda.html">Hakkımızda</a></li>
@@ -83,41 +76,25 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['kaydet'])) {
         </div>
         <div class="columns col-register">
             <div class="col-reg-bg">
-                <h1>Kayıt Ol</h1>
-                    <?php if (isset($regmessage)): ?>
-                        <p><?php echo $regmessage; ?></p>
+                <h1>Giriş Yap</h1>
+                <?php if (isset($logmessage)): ?>
+                        <p><?php echo $logmessage; ?></p>
                     <?php endif; ?>
                 <table border="0" align="center">
-                <form action="../php/register.php" method="POST">
+                <form action="../php/login.php" method="POST">
                         <tr>
-                            <td colspan="2"><input type="text" name="name"  placeholder="Ad"></td>
-                        </tr>
-                        <tr>
-                            <td colspan="2"><input type="text" name="surname"  placeholder="Soyad"></td>
-                        </tr>
-                        <tr>
-                            <td colspan="2"><input type="text" name="username" placeholder="Kullanıcı Adı"></td>
-                        </tr>
-                        <tr>
-                            <td colspan="2"><input type="text" name="mail" placeholder="Mail Adresi"></td>
+                            <td colspan="2"><input type="text" name="identifier"  placeholder="Kullanıcı Adı veya Mail"></td>
                         </tr>
                         <tr>
                             <td colspan="2"><input type="password" name="password" placeholder="Şifre"></td>
                         </tr>
                         <tr>
-                            <td colspan="2"><input type="password" name="re-password" placeholder="Şifrenizi Doğrulayın"></td>
-                        </tr>
-                        <tr id="radiobg">
-                            <td ><input type="radio"  name="select" >Evcil Hayvan Sahibiyim</td>         
-                            <td><input type="radio"  name="select">Veterinerim</td>
-                        </tr>
-                        <tr>
-                            <td colspan="2"><input type="submit" name="kaydet" value="Kayıt Ol" ></td>
+                            <td colspan="2"><input type="submit" name="login" value="Giriş Yap" ></td>
                         </tr>
                 </form>
             </table>
-            <h6>Zaten hesabınız var mı ?</h6>
-            <h6><a href="../php/login.php">Giriş Yap</a></h6>
+            <h6>Kayıtlı hesabınız yok mu ?</h6>
+            <h6><a href="../php/register.php">Kayıt Ol</a></h6>
         </div>
         </div>
         <div class="col-footer col-footer-bg">
