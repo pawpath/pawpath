@@ -1,3 +1,6 @@
+<?php
+  include = '../php/register.php';
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -9,6 +12,9 @@
     <script src="https://kit.fontawesome.com/b1573057bf.js" crossorigin="anonymous"></script>
 </head>
 <body>
+    <?php
+    include = '../php/register.php'
+    ?>
     <div class="container">
 
         <!--Header-->
@@ -49,7 +55,7 @@
             <div class="col-reg-bg">
                 <h1>Kayıt Ol</h1>
                 <table border="0" align="center">
-                <form action="#" method="POST">
+                <form action="../php/register.php" method="POST">
                         <tr>
                             <td colspan="2"><input type="text" name="name"  placeholder="Ad"></td>
                         </tr>
