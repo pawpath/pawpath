@@ -62,7 +62,7 @@
                 <img src="../img/haritalarimg.png">
             </div>
             <div class="columns col-maps">
-                <h1>Size en yakın veteriner ve<br>pethop'ları bulun!</h1>
+                <h1>Size en yakın veteriner ve<br>petshop'ları bulun!</h1>
                 <div class="columns col-maps1">
                 <div class="col-vet-map">
                     <h6>Veterinerler: </h6>
