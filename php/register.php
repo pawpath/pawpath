@@ -52,7 +52,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['kaydet'])) {
                 <ul>
                     <li><a href="../php/index.php">Anasayfa</a></li>
                     <li><a href="#">Hizmetlerimiz</a></li>
-                    <li><a href="#">Blog</a></li>
+                    <li><a href="../php/blog.php">Blog</a></li>
                     <li><a href="../php/hakkimizda.php">Hakkımızda</a></li>
                 </ul>
             </div>
@@ -73,7 +73,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['kaydet'])) {
                     
                         <li><a href="../php/index.php">Anasayfa</a></li>
                         <li><a href="#">Hizmetlerimiz</a></li>
-                        <li><a href="#">Blog</a></li>
+                        <li><a href="../php/blog.php">Blog</a></li>
                         <li><a href="../php/hakkimizda.php">Hakkımızda</a></li>
                     
                 </div>
@@ -129,7 +129,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['kaydet'])) {
                     <ul>
                         <li><a href="../php/index.php">Anasayfa</a></li>
                         <li><a href="#">Hizmetlerimiz</a></li>
-                        <li><a href="#">Blog</a></li>
+                        <li><a href="../php/blog.php">Blog</a></li>
                         <li><a href="../php/hakkimizda.php">Hakkımızda</a></li>
                     </ul>
                 </div>

@@ -17,7 +17,7 @@
                 <ul>
                     <li><a href="../php/index.php">Anasayfa</a></li>
                     <li><a href="#">Hizmetlerimiz</a></li>
-                    <li><a href="#">Blog</a></li>
+                    <li><a href="../php/blog.php">Blog</a></li>
                     <li><a href="../php/hakkimizda.php">Hakkımızda</a></li>
                 </ul>
             </div>
@@ -51,7 +51,7 @@
                     
                         <li><a href="../php/index.php">Anasayfa</a></li>
                         <li><a href="#">Hizmetlerimiz</a></li>
-                        <li><a href="#">Blog</a></li>
+                        <li><a href="../php/blog.php">Blog</a></li>
                         <li><a href="../php/hakkimizda.php">Hakkımızda</a></li>
                     
                 </div>
@@ -152,7 +152,7 @@
                     <ul>
                         <li><a href="../php/index.php">Anasayfa</a></li>
                         <li><a href="#">Hizmetlerimiz</a></li>
-                        <li><a href="#">Blog</a></li>
+                        <li><a href="../php/blog.php">Blog</a></li>
                         <li><a href="../php/hakkimizda.php">Hakkımızda</a></li>
                     </ul>
                 </div>
