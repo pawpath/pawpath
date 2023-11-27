@@ -9,7 +9,6 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['kaydet'])) {
     $username = $_POST['username'];
     $mail = $_POST['mail'];
     $password = $_POST['password'];
-    $sec = $_POST['select'];
 
     //kontrol
     $stmt = $conn->prepare("SELECT * FROM users WHERE username = ? OR mail = ?");
@@ -23,8 +22,8 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['kaydet'])) {
     $hashedPassword = password_hash($password, PASSWORD_DEFAULT);
 
     // Veritabanına kullanıcıyı ekleme
-    $stmt = $conn->prepare("INSERT INTO users (username, mail,name,surname,sec,password) VALUES (?, ?, ?, ?, ?, ?)");
-    $stmt->bind_param("ssssss", $username, $mail,$name,$surname,$sec,$hashedPassword);
+    $stmt = $conn->prepare("INSERT INTO users (username, mail,name,surname,password) VALUES (?, ?, ?, ?, ?)");
+    $stmt->bind_param("sssss", $username, $mail,$name,$surname,$hashedPassword);
     $stmt->execute();
 
     $regmessage ="Kayıt başarıyla tamamlandı!";
@@ -49,10 +48,10 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['kaydet'])) {
             <div class="col-logo"><img src="../img/logo.png"></div>
             <div class="col-menu">
                 <ul>
-                    <li><a href="../html/index.html">Anasayfa</a></li>
+                    <li><a href="../php/index.php">Anasayfa</a></li>
                     <li><a href="#">Hizmetlerimiz</a></li>
                     <li><a href="#">Blog</a></li>
-                    <li><a href="../html/hakkimizda.html">Hakkımızda</a></li>
+                    <li><a href="../php/hakkimizda.php">Hakkımızda</a></li>
                 </ul>
             </div>
             <div class="col-user-act">
@@ -70,10 +69,10 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['kaydet'])) {
                 <div class="sidebar">
                     <header>PawPath</header>
                     
-                        <li><a href="../html/index.html">Anasayfa</a></li>
+                        <li><a href="../php/index.php">Anasayfa</a></li>
                         <li><a href="#">Hizmetlerimiz</a></li>
                         <li><a href="#">Blog</a></li>
-                        <li><a href="../html/hakkimizda.html">Hakkımızda</a></li>
+                        <li><a href="../php/hakkimizda.php">Hakkımızda</a></li>
                     
                 </div>
             </div>
@@ -126,10 +125,10 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['kaydet'])) {
                 <div class="col-center">
                     <h2>Servislerimiz</h2>
                     <ul>
-                        <li><a href="../html/index.html">Anasayfa</a></li>
+                        <li><a href="../php/index.php">Anasayfa</a></li>
                         <li><a href="#">Hizmetlerimiz</a></li>
                         <li><a href="#">Blog</a></li>
-                        <li><a href="../html/hakkimizda.html">Hakkımızda</a></li>
+                        <li><a href="../php/hakkimizda.php">Hakkımızda</a></li>
                     </ul>
                 </div>
                 <div class="col-right">

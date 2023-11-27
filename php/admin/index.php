@@ -1,115 +1,89 @@
+<?php
+ session_start();
+ if (!isset($_SESSION['role']) || $_SESSION['role'] !== 'admin') {
+  header("Location: ../../php/logout.php"); // Admin değilse başka bir sayfaya yönlendir
+  exit();
+}
+?>
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-<style>
-body {
-  font-family: "Lato", sans-serif;
-}
-/* Fixed sidenav, full height */
-.sidenav {
-  height: 100%;
-  width: 200px;
-  position: fixed;
-  z-index: 1;
-  top: 0;
-  left: 0;
-  background-color: #111;
-  overflow-x: hidden;
-  padding-top: 20px;
-}
-
-/* Style the sidenav links and the dropdown button */
-.sidenav a, .dropdown-btn {
-  padding: 6px 8px 6px 16px;
-  text-decoration: none;
-  font-size: 20px;
-  color: #818181;
-  display: block;
-  border: none;
-  background: none;
-  width: 100%;
-  text-align: left;
-  cursor: pointer;
-  outline: none;
-}
-
-/* On mouse-over */
-.sidenav a:hover, .dropdown-btn:hover {
-  color: #f1f1f1;
-}
-
-/* Main content */
-.main {
-  margin-left: 200px; /* Same as the width of the sidenav */
-  font-size: 20px; /* Increased text to enable scrolling */
-  padding: 0px 10px;
-}
-
-/* Add an active class to the active dropdown button */
-.active {
-  background-color: green;
-  color: white;
-}
-
-/* Dropdown container (hidden by default). Optional: add a lighter background color and some left padding to change the design of the dropdown content */
-.dropdown-container {
-  display: none;
-  background-color: #262626;
-  padding-left: 8px;
-}
-
-/* Optional: Style the caret down icon */
-.fa-caret-down {
-  float: right;
-  padding-right: 8px;
-}
-
-/* Some media queries for responsiveness */
-@media screen and (max-height: 450px) {
-  .sidenav {padding-top: 15px;}
-  .sidenav a {font-size: 18px;}
-}
-
-</style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pawpath</title>
+    <link rel="stylesheet" href="../../css/style.css">
+    <link rel="stylesheet" href="../../css/tasima.css">
+    <script src="https://kit.fontawesome.com/b1573057bf.js" crossorigin="anonymous"></script>
 </head>
 <body>
+    <div class="container">
 
-<div class="sidenav">
-  <a href="../admin/index.php">Anasayfa</a>
-  <a href="../admin/addblog.php">Blog</a>
-  <a href="../admin/messages.php">Mesajlar</a>
-  <button class="dropdown-btn">Üye işlemleri 
-    <i class="fa fa-caret-down"></i>
-  </button>
-  <div class="dropdown-container">
-    <a href="../admin/deleteuser.php">Sil</a>
-    <a href="../admin/adduser.php">Ekle</a>
-    <a href="../admin/updateuser.php">Güncelle</a>
-  </div>
-  <form action="../admin/logout.php" method="POST">
-    <a href="#" onclick="document.forms[0].submit();">Çıkış yap</a>
-</form>
-</div>
+        <!--Header-->
+        <div class="col-head">
+            <div class="col-logo"><img src="../../img/logo.png"></div>
+            <div class="col-menu">
+                <ul>
+                    <li><a href="index.php">Anasayfa</a></li>
+                    <li><a href="#">Üye işlemleri</a></li>
+                    <li><a href="addblog.php">Blog işlemleri</a></li>
+                    <li><a href="#">Mesajlar</a></li>
+                </ul>
+            </div>
+            <div class="col-user-act">
+                <ul>
+                    <li><a href="../../php/logout.php">Çıkış Yap</a></li>
+                </ul>
 
-<script>
-/* Loop through all dropdown buttons to toggle between hiding and showing its dropdown content - This allows the user to have multiple dropdowns without any conflict */
-var dropdown = document.getElementsByClassName("dropdown-btn");
-var i;
+                <input type="checkbox" id="check">
+                <label for="check">
+                    <i class="fas fa-bars" id="btn"></i>
+                    <i class="fas fa-times" id="cancel"></i>
+                </label>
 
-for (i = 0; i < dropdown.length; i++) {
-  dropdown[i].addEventListener("click", function() {
-    this.classList.toggle("active");
-    var dropdownContent = this.nextElementSibling;
-    if (dropdownContent.style.display === "block") {
-      dropdownContent.style.display = "none";
-    } else {
-      dropdownContent.style.display = "block";
-    }
-  });
-}
-</script>
-
+                <div class="sidebar">
+                    <header>PawPath</header>
+                    
+                        <li><a href="index.php">Anasayfa</a></li>
+                        <li><a href="#">Üye işlemleri</a></li>
+                        <li><a href="#">Blog İşlemleri</a></li>
+                        <li><a href="#">Mesajlar</a></li>
+                    
+                </div>
+            </div>
+        </div>
+          
+        <div class="col-footer col-footer-bg">
+            <div class="col-footer1">
+                <div class="col-left">
+                    <img src="../../img/logo.png"><br>
+                    <p>Siz de evcil dostlarınızın sağlığını ve mutluluğunu önemsiyorsanız, doğru adrestesiniz! Evcil hayvanlarınızın hayat kalitesini artırmak ve sağlıklarını korumak için bizimle adım atın!</p>
+                </div>
+                <div class="col-center">
+                    <h2>Servislerimiz</h2>
+                    <ul>
+                        <li><a href="index.php">Anasayfa</a></li>
+                        <li><a href="#">Üye İşlemleri</a></li>
+                        <li><a href="#">Blog İşlemleri</a></li>
+                        <li><a href="#">Mesajlar</a></li>
+                    </ul>
+                </div>
+                <div class="col-right">
+                    <h6>Geri Dönüşleriniz Bizim İçin Önemli!</h6>
+                    <form>
+                        <input type="text" id="footertext" placeholder="Mesajınızı Buraya Bırakabilirsiniz" />
+                        <button type="submit" id="footerbtn">Gönder</button>
+                    </form>
+                </div>
+            </div>
+            <div class="col-footer-hr"><hr></div>
+            <div class="col-footer2">
+                <div class="col-copy">
+                    <h4>Gizlilik Politikası</h4>
+                    <h4>Hizmet Şartları</h4>
+                    <h4>Tasarım ve Altyapı BGY</h4>
+                </div>
+            </div>
+        </div>
+    </div>
 </body>
-</html> 
+</html>

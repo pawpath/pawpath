@@ -7,6 +7,6 @@ session_unset(); // Oturum değişkenlerini temizle
 session_destroy(); // Oturumu sonlandır
 
 // Başlangıç sayfasına yönlendirme
-header("Location: ../../html/index.html");
+header("Location: ../php/index.php");
 exit();
 ?>

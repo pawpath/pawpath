@@ -7,41 +7,6 @@
         <link rel="stylesheet" href="../css/style.css">
         <link rel="styleseet" href="../css/tasima.css">
         <script src="https://kit.fontawesome.com/b1573057bf.js" crossorigin="anonymous"></script>
-       <style>
-  .blog-container {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    gap: 20px;
-}
-
-.blog-post {
-    border: 1px solid #ddd;
-    padding: 20px;
-}
-
-.blog-post img {
-    max-width: 100%;
-    height: auto;
-}
-
-.pagination {
-    text-align:center;
-    margin-top: 20px;
-}
-
-.pagination a {
-    text-decoration: none;
-    padding: 5px 10px;
-    margin: 0 5px;
-    border: 1px solid #ddd;
-    color: #333;
-}
-
-.pagination a:hover {
-    background-color: #ddd;
-}
-
-        </style>
     </head>
     <body>
         <div class="container">
@@ -50,10 +15,10 @@
                 <div class="col-logo"><img src="../img/logo.png"></div>
                 <div class="col-menu">
                     <ul>
-                        <li><a href="../html/index.html">Anasayfa</a></li>
+                        <li><a href="../php/index.php">Anasayfa</a></li>
                         <li><a href="#">Hizmetlerimiz</a></li>
                         <li><a href="#">Blog</a></li>
-                        <li><a href="../html/hakkimizda.html">Hakkımızda</a></li>
+                        <li><a href="../php/hakkimizda.php">Hakkımızda</a></li>
                     </ul>
                 </div>
 
@@ -71,10 +36,10 @@
 
                     <div class="sidebar">
                         <header>PawPath</header>
-                        <li><a href="../html/index.html">Anasayfa</a></li>
+                        <li><a href="../php/index.php">Anasayfa</a></li>
                         <li><a href="#">Hizmetlerimiz</a></li>
                         <li><a href="#">Blog</a></li>
-                        <li><a href="../html/hakkimizda.html">Hakkımızda</a></li>                  
+                        <li><a href="../php/hakkimizda.php">Hakkımızda</a></li>                  
                     </div>
                 </div>
             </div>
@@ -84,8 +49,7 @@
                 <img src="../img/blogimg.png">
             </div>
             <div class="columns col-blog">
-                <!-- Blog yazılarını gösterme -->
-                <?php include 'blogshow.php'; ?>
+           
             </div>
     
 
@@ -100,10 +64,10 @@
                     <div class="col-center">
                         <h2>Servislerimiz</h2>
                         <ul>
-                            <li><a href="../html/index.html">Anasayfa</a></li>
+                            <li><a href="../php/index.php">Anasayfa</a></li>
                             <li><a href="#">Hizmetlerimiz</a></li>
                             <li><a href="#">Blog</a></li>
-                            <li><a href="../html/hakkimizda.html">Hakkımızda</a></li>
+                            <li><a href="../php/hakkimizda.php">Hakkımızda</a></li>
                         </ul>
                     </div>
                     <div class="col-right">
@@ -127,3 +91,46 @@
         </div>
     </body>
 </html>
+
+
+
+
+<?php
+    // Veritabanı bağlantısı
+    $conn = new mysqli("localhost", "root", "", "pawpath");
+
+    if ($conn->connect_error) {
+        die("Veritabanına bağlanırken hata: " . $conn->connect_error);
+    }
+
+    // Sayfalama işlemleri
+$postsPerPage = 4; // Her sayfada kaç blog gösterilecek
+$page = isset($_GET['page']) ? $_GET['page'] : 1; // Hangi sayfa gösteriliyor
+$startFrom = ($page - 1) * $postsPerPage; // Bu sayfa hangi sıradan başlayacak
+
+// Blog yazılarını çekme
+$sql = "SELECT * FROM blog ORDER BY created_at DESC LIMIT $startFrom, $postsPerPage";
+$result = $conn->query($sql);
+
+if ($result->num_rows > 0) {
+    while ($row = $result->fetch_assoc()) {
+        $title = $row['title'];
+        $content = $row['content'];
+        $image = $row['image'];
+    }
+} else {
+
+}
+// Toplam sayfa sayısını bulma
+$totalPagesQuery = "SELECT COUNT(*) as total FROM blog";
+$totalPagesResult = $conn->query($totalPagesQuery);
+$totalPages = ceil($totalPagesResult->fetch_assoc()['total'] / $postsPerPage);
+
+// Sayfalama bağlantıları
+
+for ($i = 1; $i <= $totalPages; $i++) {
+    echo "<a href='blog.php?page=$i'>$i</a> ";
+}
+$conn->close();
+?>
+       

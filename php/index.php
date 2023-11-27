@@ -15,17 +15,30 @@
             <div class="col-logo"><img src="../img/logo.png"></div>
             <div class="col-menu">
                 <ul>
-                    <li><a href="../html/index.html">Anasayfa</a></li>
+                    <li><a href="../php/index.php">Anasayfa</a></li>
                     <li><a href="#">Hizmetlerimiz</a></li>
                     <li><a href="#">Blog</a></li>
-                    <li><a href="../html/hakkimizda.html">Hakkımızda</a></li>
+                    <li><a href="../php/hakkimizda.php">Hakkımızda</a></li>
                 </ul>
             </div>
             <div class="col-user-act">
-                <ul>
-                    <li><a href="../php/login.php">Giriş Yap</a></li>
-                    <li><a href="../php/register.php">Kayıt Ol</a></li>
-                </ul>
+            <?php
+    session_start();
+
+    if (isset($_SESSION['username'])) {
+        $username = $_SESSION['username'];
+
+        echo "<ul>";
+        echo "<li><a href='#'>Profilim ($username)</a></li>";
+        echo "<li><a href='../php/logout.php'>Çıkış Yap</a></li>";
+        echo "</ul>";
+    } else {
+        echo "<ul>";
+        echo "<li><a href='../php/login.php'>Giriş Yap</a></li>";
+        echo "<li><a href='../php/register.php'>Kayıt Ol</a></li>";
+        echo "</ul>";
+    }
+    ?>
 
                 <input type="checkbox" id="check">
                 <label for="check">
@@ -36,10 +49,10 @@
                 <div class="sidebar">
                     <header>PawPath</header>
                     
-                        <li><a href="../html/index.html">Anasayfa</a></li>
+                        <li><a href="../php/index.php">Anasayfa</a></li>
                         <li><a href="#">Hizmetlerimiz</a></li>
                         <li><a href="#">Blog</a></li>
-                        <li><a href="../html/hakkimizda.html">Hakkımızda</a></li>
+                        <li><a href="../php/hakkimizda.php">Hakkımızda</a></li>
                     
                 </div>
             </div>
@@ -119,11 +132,11 @@
             </div>
             <div class="col-serv-petshop">
                 <div class="col-serv-petshop-mid"><p>Yakındaki Petshoplar</p></div>
-                <div class="col-serv-petshop-sub"><a href="../html/maps.html">Detaylar</a></div>
+                <div class="col-serv-petshop-sub"><a href="../php/maps.php">Detaylar</a></div>
             </div>
             <div class="col-serv-vets">
                 <div class="col-serv-vet-mid"><p>Yakındaki Veterinerler</p></div>
-                <div class="col-serv-vet-sub"><a href="../html/maps.html">Detaylar</a></div>
+                <div class="col-serv-vet-sub"><a href="../php/maps.php">Detaylar</a></div>
             </div>
         </div>
 
@@ -137,10 +150,10 @@
                 <div class="col-center">
                     <h2>Servislerimiz</h2>
                     <ul>
-                        <li><a href="../html/index.html">Anasayfa</a></li>
+                        <li><a href="../php/index.php">Anasayfa</a></li>
                         <li><a href="#">Hizmetlerimiz</a></li>
                         <li><a href="#">Blog</a></li>
-                        <li><a href="../html/hakkimizda.html">Hakkımızda</a></li>
+                        <li><a href="../php/hakkimizda.php">Hakkımızda</a></li>
                     </ul>
                 </div>
                 <div class="col-right">
