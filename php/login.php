@@ -3,15 +3,16 @@ session_start();
 
 // Veritabanı bağlantısı
 $conn = new mysqli("localhost", "root", "", "pawpath");
+$conn->set_charset("utf8");
 
 if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['login'])) {
     $identifier = $_POST['identifier'];
     $password = $_POST['password'];
-    
+
     $stmt = $conn->prepare("SELECT * FROM users WHERE username = ? OR mail = ?");
     $stmt->bind_param("ss", $identifier, $identifier);
     $stmt->execute();
-    
+
     $result = $stmt->get_result();
 
     if ($result->num_rows > 0) {
@@ -19,17 +20,36 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['login'])) {
 
         // Şifre kontrolü
         if (password_verify($password, $user['password'])) {
-            $_SESSION['username'] = $user['username'];
-            $_SESSION['role'] = $user['role']; // Kullanıcının rol bilgisini sakla
+            if ($user['role'] === 'veterinarian') {
+                // Veteriner ise onay durumunu kontrol et
+                if ($user['approved'] == 1) {
+                    // Onay durumu 1 ise giriş yap
+                    $_SESSION['username'] = $user['username'];
+                    $_SESSION['role'] = $user['role'];
 
-            if ($user['role'] === 'admin') {
-                // Admin rolüne sahipse admin paneline yönlendir
-                header("Location: ../php/admin/index.php");
-                exit();
+                    if ($user['role'] === 'admin') {
+                        header("Location: ../php/admin_panel.php");
+                        exit();
+                    } else {
+                        header("Location: ../html/index.html");
+                        exit();
+                    }
+                } else {
+                    // Onay durumu 0 ise hata mesajı
+                    $logmessage = "Veteriner hesabınız henüz onaylanmamış.";
+                }
             } else {
-                // Diğer kullanıcılarsa normal sayfaya yönlendir
-                header("Location: ../php/index.php");
-                exit();
+                // Diğer kullanıcılar için onay kontrolü yapma
+                $_SESSION['username'] = $user['username'];
+                $_SESSION['role'] = $user['role'];
+
+                if ($user['role'] === 'admin') {
+                    header("Location: ../php/admin/index.php");
+                    exit();
+                } else {
+                    header("Location: ../php/index.php");
+                    exit();
+                }
             }
         } else {
             $logmessage = "Kullanıcı adı, e-posta veya şifre hatalı!";
@@ -42,6 +62,8 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['login'])) {
 }
 $conn->close();
 ?>
+
+
 <!DOCTYPE html>
 <html lang="en">
 <head>

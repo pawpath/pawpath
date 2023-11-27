@@ -10,6 +10,8 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['kaydet'])) {
     $mail = $_POST['mail'];
     $password = $_POST['password'];
 
+    $role = ($_POST['select'] == 'E') ? 'user' : 'veterinarian';
+    $approved = ($_POST['select'] == 'E') ? 1 : 0;
     //kontrol
     $stmt = $conn->prepare("SELECT * FROM users WHERE username = ? OR mail = ?");
     $stmt->bind_param("ss", $username, $mail);
@@ -22,8 +24,8 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['kaydet'])) {
     $hashedPassword = password_hash($password, PASSWORD_DEFAULT);
 
     // Veritabanına kullanıcıyı ekleme
-    $stmt = $conn->prepare("INSERT INTO users (username, mail,name,surname,password) VALUES (?, ?, ?, ?, ?)");
-    $stmt->bind_param("sssss", $username, $mail,$name,$surname,$hashedPassword);
+    $stmt = $conn->prepare("INSERT INTO users (username, mail,name,surname,password,role,approved) VALUES (?, ?, ?, ?, ?, ?, ?)");
+    $stmt->bind_param("ssssssi", $username, $mail,$name,$surname,$hashedPassword,$role,$approved);
     $stmt->execute();
 
     $regmessage ="Kayıt başarıyla tamamlandı!";
@@ -104,8 +106,8 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['kaydet'])) {
                             <td colspan="2"><input type="password" name="re-password" placeholder="Şifrenizi Doğrulayın"></td>
                         </tr>
                         <tr id="radiobg">
-                            <td ><input type="radio"  name="select" >Evcil Hayvan Sahibiyim</td>         
-                            <td><input type="radio"  name="select">Veterinerim</td>
+                            <td ><input type="radio"  name="select" value="E" >Evcil Hayvan Sahibiyim</td>         
+                            <td><input type="radio"  name="select" value= "V">Veterinerim</td>
                         </tr>
                         <tr>
                             <td colspan="2"><input type="submit" name="kaydet" value="Kayıt Ol" ></td>

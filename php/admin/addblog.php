@@ -128,6 +128,3 @@ if (isset($_POST['add_blog'])) {
     </div>
 </body>
 </html>
-
-
-
