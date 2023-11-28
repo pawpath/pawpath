@@ -626,7 +626,6 @@ h2{
   text-decoration: none;
   height: 1.3rem;
 }
-
 /* maps */ 
 .col-maps{
   padding-top: 3.5em;
@@ -784,6 +783,21 @@ h2{
     color: #194E78;
     font-family: "Dongle-Bold";
 }
+/*------- admin ---------*/
+/* users */
+.col-users{
+  flex-direction: column;
+}
+.col-userhead h2{
+  font-family: "Dongle-Bold";
+  font-size: 4rem;
+  color: #ef9826;
+}
+
+
+
+
+
 
 /* Responsive Layout */
 @media(max-width: 1680px){

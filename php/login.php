@@ -18,41 +18,46 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['login'])) {
     if ($result->num_rows > 0) {
         $user = $result->fetch_assoc();
 
-        // Şifre kontrolü
-        if (password_verify($password, $user['password'])) {
-            if ($user['role'] === 'veterinarian') {
-                // Veteriner ise onay durumunu kontrol et
-                if ($user['approved'] == 1) {
-                    // Onay durumu 1 ise giriş yap
+        // Kullanıcı banlı mı kontrolü
+        if ($user['banned'] == 1) {
+            $logmessage = "Bu hesap banlı. Giriş yapılamaz.";
+        } else {
+            // Şifre kontrolü
+            if (password_verify($password, $user['password'])) {
+                if ($user['role'] === 'veterinarian') {
+                    // Veteriner ise onay durumunu kontrol et
+                    if ($user['approved'] == 1) {
+                        // Onay durumu 1 ise giriş yap
+                        $_SESSION['username'] = $user['username'];
+                        $_SESSION['role'] = $user['role'];
+
+                        if ($user['role'] === 'admin') {
+                            header("Location: ../php/admin_panel.php");
+                            exit();
+                        } else {
+                            header("Location: ../php/index.php");
+                            exit();
+                        }
+                    } else {
+                        // Onay durumu 0 ise hata mesajı
+                        $logmessage = "Veteriner hesabınız henüz onaylanmamış.";
+                    }
+                } else {
+                    // Diğer kullanıcılar için onay kontrolü yapma
                     $_SESSION['username'] = $user['username'];
                     $_SESSION['role'] = $user['role'];
 
                     if ($user['role'] === 'admin') {
-                        header("Location: ../php/admin_panel.php");
+                        header("Location: ../php/admin/index.php");
                         exit();
                     } else {
-                        header("Location: ../html/index.html");
+                        header("Location: ../php/index.php");
                         exit();
                     }
-                } else {
-                    // Onay durumu 0 ise hata mesajı
-                    $logmessage = "Veteriner hesabınız henüz onaylanmamış.";
                 }
             } else {
-                // Diğer kullanıcılar için onay kontrolü yapma
-                $_SESSION['username'] = $user['username'];
-                $_SESSION['role'] = $user['role'];
-
-                if ($user['role'] === 'admin') {
-                    header("Location: ../php/admin/index.php");
-                    exit();
-                } else {
-                    header("Location: ../php/index.php");
-                    exit();
-                }
+                $logmessage = "Kullanıcı adı, e-posta veya şifre hatalı!";
             }
-        } else {
-            $logmessage = "Kullanıcı adı, e-posta veya şifre hatalı!";
         }
     } else {
         $logmessage = "Kullanıcı adı, e-posta veya şifre hatalı!";
@@ -62,6 +67,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['login'])) {
 }
 $conn->close();
 ?>
+
 
 
 <!DOCTYPE html>
