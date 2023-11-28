@@ -77,7 +77,6 @@ $conn->close();
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Pawpath</title>
     <link rel="stylesheet" href="../css/style.css">
-    <link rel="stylesheet" href="../css/tasima.css">
     <script src="https://kit.fontawesome.com/b1573057bf.js" crossorigin="anonymous"></script>
 </head>
 <body>
@@ -121,7 +120,7 @@ $conn->close();
             <div class="col-reg-bg">
                 <h1>Giriş Yap</h1>
                 <?php if (isset($logmessage)): ?>
-                        <p><?php echo $logmessage; ?></p>
+                         <p><?php echo $logmessage; ?></p>
                     <?php endif; ?>
                 <table border="0" align="center">
                 <form action="../php/login.php" method="POST">

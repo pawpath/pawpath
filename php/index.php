@@ -6,6 +6,8 @@
     <title>Pawpath</title>
     <link rel="stylesheet" href="../css/style.css">
     <script src="https://kit.fontawesome.com/b1573057bf.js" crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+    <script src="script.js"></script>
 </head>
 <body>
     <div class="container">
@@ -118,7 +120,7 @@
             </div>
             <div class="col-serv-disease">
                 <div class="col-serv-dis-mid"><p>Hastalık Sihirbazı</p></div>
-                <div class="col-serv-dis-sub"><a href="#">Detaylar</a></div>
+                <div class="col-serv-dis-sub"><a onclick="openPopup()">Detaylar</a></div> 
             </div>
             <div class="col-serv-faqs">
                 <div class="col-serv-faq-mid"><p>Soru & Cevap</p></div>
@@ -173,6 +175,25 @@
                 </div>
             </div>
         </div>
+        <div id="popup" class="popup-container">
+                     <div class="close-btn" onclick="closePopup()">X</div>
+                        <div class="col-popup">
+                            <h2>Hastalık Sihirbazı</h2>
+                            <div class="col-popup-item">
+                                
+                            </div>
+                        </div>
+                    </div>
+                <script src="../js/popup.js"></script>
     </div>
+    <script>
+    function openPopup() {
+        document.getElementById("popup").style.display = "flex";
+    }
+
+    function closePopup() {
+        document.getElementById("popup").style.display = "none";
+    }
+</script>
 </body>
 </html>
