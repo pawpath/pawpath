@@ -636,7 +636,7 @@ h2{
   margin-top: 5rem;
   width: 100%;
   display: flex;
-  justify-content: space-between;
+  justify-content:space-between;
 }
 .col-maps h1{
   text-align: center;
@@ -830,7 +830,7 @@ h2{
   right: 10px;
   cursor: pointer;
 }
-
+/* blog */ 
 
 
 
