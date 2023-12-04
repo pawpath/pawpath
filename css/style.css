@@ -120,7 +120,7 @@ h2{
   list-style-type: none;
   display: inline-block;
   padding: .5em 2em .5em 0;
-  margin-left: -2em;
+  margin-left: -1em;
 }
 .col-menu a:hover, .col-user-act a:hover{
   color: #EF9826;
@@ -862,7 +862,7 @@ h2{
       list-style-type: none;
       display: inline-block;
       padding: .5em 2em .5em 0;
-      margin-left: -2em;
+      margin-left: -1em;
   }
 
   /* Introduction Layout */
@@ -901,7 +901,7 @@ h2{
       list-style-type: none;
       display: inline-block;
       padding: .5em 2em .5em 0;
-      margin-left: -2em;
+      margin-left: -1.5em;
   }
 
   /* Introduction Layout */
@@ -940,7 +940,7 @@ h2{
       list-style-type: none;
       display: inline-block;
       padding: .5em 2em .5em 0;
-      margin-left: -2em;
+      margin-left: -1.8em;
   }
 
   /* Introduction Layout */
@@ -994,7 +994,7 @@ h2{
       list-style-type: none;
       display: inline-block;
       padding: .5em 1em .5em 0;
-      margin-left: -1em;
+      margin-left: -0.5em;
   }
 
   /* Typography */
