@@ -1,10 +1,9 @@
 /* Fontlar */
 @font-face {
-
   font-family: "Dongle-Regular";
   src: url("../fonts/Dongle-Regular.ttf");
-  
-
+}
+@font-face {
   font-family: "Dongle-Bold";
   src: url("../fonts/Dongle-Bold.ttf");
 }
@@ -36,12 +35,19 @@ h2{
   color: #f08080;
   font-family: "Coco-Sharp-Regular";
 }
+.col-intro-2-vet h2{
+  color: #0cdd71;
+  font-family: "Coco-Sharp-Regular";
+}
 .col-intro-2 p{
   margin-top: 0;
   font-family: "Coco-Sharp-Regular";
 }
 .accent-color{
   color: #ef9826;
+}
+.accent-color-vet{
+  color: #168aad;
 }
 
 /* Butonlar */
@@ -61,6 +67,17 @@ h2{
 }
 .btn-mid:hover{
   background: #EF9826;
+  transition: 0.5s;
+}
+.btn-mid-vet{
+  color: #fff;
+  font-size: 2rem;
+  text-align: start;
+  background: #0cdd71;
+  font-family: "Dongle-Bold";
+}
+.btn-mid-vet:hover{
+  background: #168AAD;
   transition: 0.5s;
 }
 
@@ -126,12 +143,57 @@ h2{
   color: #EF9826;
   transition: 0.5s;
 }
+.open-menu ul {
+  text-align: center;
+  display: inline;
+  list-style: none;
+}
+.open-menu ul li {
+  display: inline-block;
+  position: relative;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+.open-menu ul li ul {
+  padding: 0;
+  position: absolute;
+  top: 3em;
+  left: -.3em;
+  width: 12em;
+  box-shadow: none;
+  display: none;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.2s;
+}
+.open-menu ul li ul li { 
+  background: #fedab850; 
+  display: block; 
+  color: #fff;
+}
+.open-menu ul li ul li a{
+  font-size: 1.5rem;
+}
+.open-menu ul li:hover ul {
+  display: block;
+  opacity: 1;
+  visibility: visible;
+}
 #check, #cancel, #btn{
   display: none;
 }
 .sidebar{
   display: none;
 }
+/* Header Layout for Vet */
+.col-head-vet{
+  background: #34a0a42a;
+}
+.col-menu-vet a:hover, .col-user-act-vet a:hover{
+  color: #168AAD;
+  transition: 0.5s;
+}
+
 /* Introduction Layout */
 .col-intro{
   padding-top: 5em;
@@ -150,6 +212,11 @@ h2{
 }
 .col-intro-2{
   width: 49%;
+}
+/* Introduction Layout for Vet*/
+.col-intro-bg-vet{
+  background: url(../img/background-first-vet.png);
+  background-color: #34a0a42a;
 }
 
 /* hakkmızda */
@@ -783,15 +850,461 @@ h2{
     color: #194E78;
     font-family: "Dongle-Bold";
 }
+
+/* Evcil hayvanlarım */
+/* Evcil hayvan ekle */
+.col-add-pet{
+  padding-top: 3.5em;
+  flex-direction: column;
+  padding-bottom: 3.5em;
+}
+.col-add-pet-bg{
+  background: url(../img/evcilhayvan_arkaplan.png);
+  width: 90%;
+  margin-top: 4em;
+  padding-top: 5em;
+  text-align: center;
+  border-radius: 2em;
+  padding-bottom: 5em;
+  background-position: center;
+  background-size: cover;
+}
+.col-add-pet h1{
+  text-align: center;
+  color: white;
+}
+.col-add-pet-bg table input {
+  text-align: center;
+  font-size: 1rem;
+  width: 100%;
+  background-color: white;
+  height: 2.6rem;
+  border-radius: 1rem;
+  border:none;
+}
+.col-add-pet-bg table {
+  width: 40%;
+}
+.col-add-pet-bg td{
+  padding: .5em;
+}
+.col-add-pet-bg input[type="radio"]{
+  height: 1rem;
+  width: 10%;
+}
+#radiobg td{
+  border:none;
+  background-color: white;
+  border-radius: 1rem;
+  font-size: 1rem;
+  text-align: left;
+}
+.col-add-pet-bg input[type="submit"]{
+  width: 70%;
+  color: #34A0A4;
+  font-family: "Dongle-Bold";
+  font-size: 3rem;
+  height: 4rem;
+  cursor: pointer;
+}
+.col-add-pet-bg input[type="submit"]:hover{
+  background-color: #34A0A4;
+  color: white;
+  transition: .5s;
+}
+.col-add-pet-bg select{
+  text-align: center;
+  font-size: 1rem;
+  width: 100%;
+  background-color: white;
+  height: 2.6rem;
+  border-radius: 1rem;
+  border:none;
+}
+
+/* evcil hayvanlarım */
+.col-pet{
+  padding-top: 5em;
+  flex-direction: column;
+}
+.col-pet h1{
+  text-align: center;
+  font-size: 4rem;
+  margin-top: 1em;
+}
+.col-pet-bg{
+  background: url(../img/evcilhayvanprofil_arkaplan.png);
+  background-color: #03787c;
+  width: 90%;
+  padding-top: 5em;
+  text-align: center;
+  border-radius: 2em;
+  padding-bottom: 5em;
+  background-position: center;
+  background-size: cover;
+  margin-bottom: 2em;
+}
+.col-pet-info{
+  flex-direction: row;
+  align-items: center;
+  padding-bottom: 3.5em;
+  display: flex;
+  justify-content: space-between;
+  padding: .5em 3em;
+  margin: 0;
+}
+.col-pet-info-pp{
+  width: 40%;
+  align-items: start;
+  margin: 0;
+}
+.col-pet-info-pp img{
+  width: 15em;
+  height: 15em;
+  border-radius: 50%;
+  background-color: white;
+}
+.col-pet-info-text{
+  width: 60%;
+  text-align: left;
+}
+.col-pet-info-text h2{
+  color: white;
+  font-family: "Dongle-Bold";
+  font-size: 3rem;
+  margin: 0;
+  line-height: .5em;
+}
+.col-pet-info-text ul{
+  list-style: none;
+  background-color: white;
+  width: fit-content;
+  padding: 1em 7em 1em 1em;
+  border-radius: 1rem;
+}
+.col-pet-info-text li{
+  font-family: "Dongle-Regular";
+  font-size: 1.75rem;
+  line-height: 2rem;
+}
+.col-pet-info-text li b{
+  font-family: "Dongle-Bold";
+}
+.btn-pet{
+  color: #000000;
+  font-size: 1.75rem;
+  text-align: start;
+  background: #ffffff;
+  font-family: "Dongle-Bold";
+  padding: .1em 2em 0em 2em;
+  border: none;
+  margin-bottom: 0;
+}
+.btn-pet:hover{
+  background-color: #20b6bb;
+  color: white;
+  transition: .5s;
+}
+
+/* sağlık bilgileri */
+.col-pet-health{
+  background-color: white;
+  margin: 0 3em;
+  margin-top: 3em;
+  border-radius: 3em;
+  padding-top: 3em;
+}
+.col-pet-health h2{
+  font-family: "Dongle-Bold";
+  font-size: 3.5rem;
+  line-height: 1rem;
+}
+/*Aşı bilgileri */
+.col-pet-vac{
+  flex-direction: row;
+  align-items: center;
+  display: flex;
+  justify-content: space-between;
+  margin: 0;
+  margin: 0 2em;
+}
+.pet-vac{
+  background-color: #34A0A4;
+  width: 32%;
+  border-radius: 1em;
+  padding-top: 2em;
+  padding-bottom: 2em;
+  align-items: center;
+}
+.pet-vac img{
+  width: 20%;
+}
+.pet-vac h3{
+  font-family: "Dongle-Bold";
+  font-size: 2.5rem;
+  color: white;
+  margin: 0;
+  padding: 0;
+}
+.pet-vac h4{
+  font-family: "Coco-Sharp-Regular";
+  font-size: 1rem;
+  color: white;
+  margin: 0;
+  padding: 0;
+}
+.pet-vac span{
+  font-family: "Dongle-Regular";
+  font-size: 2rem;
+  color: white;
+  margin: 0;
+  padding: 0;
+}
+#circle{
+  width: 2em;
+  height: 2em;
+  border-radius: 50%;
+  background-color: white;
+  margin-bottom: 2em;
+}
+/* Alerji bilgileri */
+.col-pet-allergy{
+  flex-direction: row;
+  align-items: center;
+  display: flex;
+  justify-content: space-between;
+  margin: 0;
+  margin: 0 2em;
+}
+.pet-allergy{
+  background-color: #34A0A4;
+  width: 32%;
+  padding: 2em 0;
+  border-radius: 1em;
+}
+.pet-allergy h3{
+  font-family: "Dongle-Bold";
+  font-size: 2.5rem;
+  color: white;
+  margin: 0;
+  padding: 0;
+}
+/* hastalık bilgileri */
+.col-pet-dis{
+  flex-direction: row;
+  align-items: center;
+  display: flex;
+  justify-content: space-between;
+  margin: 0;
+  margin: 0 2em;
+}
+.pet-disease{
+  background-color: #34A0A4;
+  width: 32%;
+  padding: 2em 0;
+  border-radius: 1em;
+}
+.pet-disease h3{
+  font-family: "Dongle-Bold";
+  font-size: 2.5rem;
+  color: white;
+  margin: 0;
+  padding: 0 1em;
+}
+.pet-disease p{
+  font-family: "Coco-Sharp-Regular";
+  font-size: 1rem;
+  color: white;
+  margin: 0;
+  padding: 0 1em;
+}
+.btn-disease{
+  color: #ffffff;
+  font-size: 1.75rem;
+  text-align: start;
+  background: #34A0A4;
+  font-family: "Dongle-Bold";
+  padding: .5em 2em .4em 2em;
+  border: none;
+  margin: 2em 0;
+}
+.btn-disease:hover{
+  background-color: #0c7477;
+  transition: .5s;
+}
+
+/* Kullanıcı Profili */
+.col-user-profile{
+  padding-top: 3.5em;
+  flex-direction: column;
+  padding-bottom: 3.5em;
+}
+.col-user-profile-bg{
+  background-color: #F4978E;
+  margin-top: 4em;
+  padding-top: 5em;
+  text-align: center;
+  border-radius: 2em;
+  padding-bottom: 5em;
+  margin-bottom: 4em;
+}
+.profile-head img{
+  width: 90%;
+  border-radius: 2em;
+}
+.prof-info-photo{
+  flex-direction: row;
+  display: flex;
+}
+.prof-info-photo img{
+  width: 13em;
+  height: 13em;
+  border-radius: 50%;
+  background-color: white;
+  margin-bottom: 2em;
+  margin-left: 7em;
+  margin-top: -5em;
+  border: 5px #F4978E;
+  border-style: solid;
+}
+.prof-info-photo h2{
+  font-family: "Dongle-Bold";
+  font-size: 3rem;
+  color: white;
+  margin-left: .5em;
+  margin-top: .3em;
+}
+.btn-profile{
+  color: #F4978E;
+  font-size: 1.75rem;
+  background: #fff;
+  font-family: "Dongle-Bold";
+  padding: .1em 2em .1em 2em;
+  border-radius: 1rem;
+  border: none;
+  margin-left: auto;
+  margin-right: 3em;
+  margin-top: .7em;
+  height: 2em;
+}
+.btn-profile:hover{
+  background-color: #fdc7c2;
+  color: #fff;
+  transition: .5s;
+}
+.btn-go-pet{
+  color: #F08080;
+  font-size: 1.75rem;
+  text-align: start;
+  background: #fff;
+  font-family: "Dongle-Bold";
+  padding: .5em 2em .4em 2em;
+  border: none;
+  margin-top: 2em;
+  margin-bottom: 1em;
+}
+.btn-go-pet:hover{
+  background-color: #fdc7c2;
+  color: #fff;
+  transition: .5s;
+}
+
+/* Veteriner Profili */
+.col-vet-profile{
+  padding-top: 3.5em;
+  flex-direction: column;
+  padding-bottom: 3.5em;
+}
+.col-vet-profile-bg{
+  background-color: #184E77;
+  margin-top: 4em;
+  padding-top: 5em;
+  text-align: center;
+  border-radius: 2em;
+  padding-bottom: 5em;
+  margin-bottom: 4em;
+}
+.vet-profile-head img{
+  width: 90%;
+  border-radius: 2em;
+}
+.vet-prof-info-photo{
+  flex-direction: row;
+  display: flex;
+}
+.vet-prof-info-photo img{
+  width: 13em;
+  height: 13em;
+  border-radius: 50%;
+  background-color: white;
+  margin-bottom: 2em;
+  margin-left: 7em;
+  margin-top: -5em;
+  border: 5px #184E77;
+  border-style: solid;
+}
+.vet-prof-info-photo h2{
+  font-family: "Dongle-Bold";
+  font-size: 3rem;
+  color: white;
+  margin-left: .5em;
+  margin-top: .3em;
+}
+.btn-vet-profile{
+  color: #184E77;
+  font-size: 1.75rem;
+  background: #fff;
+  font-family: "Dongle-Bold";
+  padding: .1em 2em .1em 2em;
+  border-radius: 1rem;
+  border: none;
+  margin-left: auto;
+  margin-right: 3em;
+  margin-top: .7em;
+  height: 2em;
+}
+.btn-vet-profile:hover{
+  background-color: #2574b0;
+  color: #fff;
+  transition: .5s;
+}
+.btn-vet-health{
+  color: #184E77;
+  font-size: 1.75rem;
+  text-align: start;
+  background: #fff;
+  font-family: "Dongle-Bold";
+  padding: .5em 2em .4em 2em;
+  border: none;
+  margin-top: 2em;
+  margin-bottom: 1em;
+}
+.btn-vet-health:hover{
+  background-color: #2574b0;
+  color: #fff;
+  transition: .5s;
+}
+
 /*------- admin ---------*/
 /* users */
 .col-users{
   flex-direction: column;
 }
+.col-userhead{
+  width: 100%;
+  display: flex;
+}
 .col-userhead h2{
   font-family: "Dongle-Bold";
   font-size: 4rem;
   color: #ef9826;
+}
+.col-userhead h1{
+  color: rgb(255, 0, 0);
+}
+.col-user-table{
+  width: 100%;
+  display: flex;
 }
 /* popup */
 .popup-container {
@@ -831,7 +1344,9 @@ h2{
   cursor: pointer;
 }
 /* blog */ 
-
+.col-add-blog h1{
+  padding-top: 1em;
+}
 
 
 

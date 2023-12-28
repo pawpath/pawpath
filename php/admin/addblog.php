@@ -74,12 +74,12 @@ if (isset($_POST['add_blog'])) {
                 </div>
             </div>
         </div>
-        <div class="columns col-abus-contact">
+        <div class="columns col-abus-contact col-add-blog">
                 <h1 id="ilk">BLOG EKLE</h1>
                 <table border="0">
                     <form action="addblog.php" method="POST">
                         <tr>
-                            <td colspan="2"><input type="text" name="title" placeholder="başlık"></td>
+                            <td colspan="2"><input type="text" name="title" placeholder="Başlık"></td>
                         </tr>
                         <tr>
                             <td colspan="2"><input type="file" name="image" placeholder="Resim"></td>

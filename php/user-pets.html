@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Pawpath</title>
+        <link rel="stylesheet" href="../css/style.css">
+        <script src="https://kit.fontawesome.com/b1573057bf.js" crossorigin="anonymous"></script>
+        <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+        <script src="script.js"></script>
+    </head>
+<body>
+    <div class="container">
+
+        <!--Header-->
+        <div class="col-head">
+            <div class="col-logo"><img src="../img/logo.png"></div>
+            <div class="col-menu open-menu">
+                <ul>
+                    <li><a href="../php/index.php">Anasayfa</a></li>
+                    <li><a>Hizmetlerimiz</a>
+                        <ul>
+                            <li><a href="#">Evcil Hayvanlarım</a></li>
+                            <li><a href="#">Anasayfa</a></li>
+                            <li><a href="#">Soru & Cevap</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="../php/blog.php">Blog</a></li>
+                    <li><a href="../php/hakkimizda.php">Hakkımızda</a></li>
+                </ul>
+            </div>
+            <div class="col-user-act">
+
+                <input type="checkbox" id="check">
+                <label for="check">
+                    <i class="fas fa-bars" id="btn"></i>
+                    <i class="fas fa-times" id="cancel"></i>
+                </label>
+
+                <div class="sidebar">
+                    <header>PawPath</header>
+                    
+                        <li><a href="../php/index.php">Anasayfa</a></li>
+                        <li><a href="#">Hizmetlerimiz</a></li>
+                        <li><a href="../php/blog.php">Blog</a></li>
+                        <li><a href="../php/hakkimizda.php">Hakkımızda</a></li>
+                    
+                </div>
+            </div>
+        </div>
+
+        <section>
+            <div class="columns col-add-pet">
+                <div class="col-add-pet-bg">
+                    <h1>Evcil Hayvan Ekle</h1>
+                    <table border="0" align="center">
+                        <form>
+                                <tr>
+                                    <td colspan="2"><input type="text" name="petname"  placeholder="Evcil hayvanın adı"></td>
+                                </tr>
+                                <tr>
+                                    <td colspan="2">
+                                        <select name="pettype">
+                                            <option value="">Evcil hayvanın türü</option>
+                                            <option value="dog">Köpek</option>
+                                            <option value="cat">Kedi</option>
+                                        </select>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td colspan="2">
+                                        <select name="petbreed">
+                                            <option value="">Evcil hayvanın cinsi</option>
+                                            <option value="golden">golden</option>
+                                            <option value="kurt">kurt</option>
+                                        </select>
+                                    </td>
+                                </tr>
+                                <tr id="radiobg">
+                                    <td ><input type="radio"  name="petgender" value="D">Dişi</td>         
+                                    <td><input type="radio"  name="petgender" value= "E">Erkek</td>
+                                </tr>
+                                <tr id="selectbg">
+                                    <td colspan="2"><input type="text" name="petage"  placeholder="Evcil hayvanın yaşı"></td>
+                                </tr>
+                                <tr>
+                                    <td colspan="2"><input type="submit" name="addpet" value="Ekle" ></td>
+                                </tr>
+                        </form>
+                    </table>
+                </div>
+            </div>
+        </section>
+        <section>
+            <div class="columns col-pet">
+                <div>
+                    <h1>Evcil Hayvanlarım</h1>
+                </div>
+                <div class="col-pet-bg">
+                    <div class="col-pet-info">
+                        <!-- üst alan -->
+                        <div class="col-pet-info-pp">
+                            <!-- üst alan sol -->
+                            <img src="" alt="" />
+                        </div>
+
+                        <div class="col-pet-info-text">
+                            <!-- üst alan sağ -->
+                            <h2>Arwen</h2>
+                            <ul>
+                                <li><b>Irkı: </b><span>Kedi</span></li>
+                                <li><b>Cinsi: </b><span>Van Kedisi</span></li>
+                                <li><b>Cinsiyeti: </b><span>Dişi</span></li>
+                                <li><b>Yaşı: </b><span>5</span></li>
+                            </ul>
+                            <div>
+                                <button class="button btn-pet" name="edit-pet-info">Profili Düzenle</button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-pet-health">
+                        <div>
+                            <h1>Sağlık Bilgileri</h1>
+                        </div>
+                        <h2>Aşılar</h2>
+                        <div class="col-pet-vac">                           
+                                <div class="pet-vac">
+                                    <div>
+                                        <svg id="circle"></svg>
+                                    </div>
+                                    <img src="../img/vaccine_icon.png" alt="vaccine_photo" />
+                                    <h3>Aşı Adı</h3>
+                                    <div>
+                                        <h4>Son yapılan tarih</h4>
+                                        <span>00.00.0000</span>
+                                    </div>
+                                    <div>
+                                        <h4>Gelecek Aşı</h4>
+                                        <span>00.00.0000</span>
+                                    </div>
+                                </div>
+                                <div class="pet-vac">
+                                    <div>
+                                        <svg id="circle"></svg>
+                                    </div>
+                                    <img src="../img/vaccine_icon.png" alt="vaccine_photo" />
+                                    <h3>Aşı Adı</h3>
+                                    <div>
+                                        <h4>Son yapılan tarih</h4>
+                                        <span>00.00.0000</span>
+                                    </div>
+                                    <div>
+                                        <h4>Gelecek Aşı</h4>
+                                        <span>00.00.0000</span>
+                                    </div>
+                                </div>
+                                <div class="pet-vac">
+                                    <div>
+                                        <svg id="circle"></svg>
+                                    </div>
+                                    <img src="../img/vaccine_icon.png" alt="vaccine_photo" />
+                                    <h3>Aşı Adı</h3>
+                                    <div>
+                                        <h4>Son yapılan tarih</h4>
+                                        <span>00.00.0000</span>
+                                    </div>
+                                    <div>
+                                        <h4>Gelecek Aşı</h4>
+                                        <span>00.00.0000</span>
+                                    </div>
+                                </div>                            
+                        </div>  
+
+                        <h2>Alerjiler</h2>
+                        <div class="col-pet-allergy">
+                            <div class="pet-allergy"><h3>Alerji Adı</h3></div>
+                            <div class="pet-allergy"><h3>Alerji Adı</h3></div>
+                            <div class="pet-allergy"><h3>Alerji Adı</h3></div>
+                        </div>
+                        <h2>Hastalıklar</h2>
+                        <div class="col-pet-dis">
+                                <div class="pet-disease">
+                                    <h3>Hastalık Adı</h3>
+                                    <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Explicabo beatae alias distinctio aperiam numquam, iusto repellendus.</p>
+                                </div>
+                                <div class="pet-disease">
+                                    <h3>Hastalık Adı</h3>
+                                    <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Explicabo beatae alias distinctio aperiam numquam, iusto repellendus.</p>
+                                </div>
+                                <div class="pet-disease">
+                                    <h3>Hastalık Adı</h3>
+                                    <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Explicabo beatae alias distinctio aperiam numquam, iusto repellendus.</p>
+                                </div>
+                        </div>
+                        <div class="col-pet-find-dis">
+                            <button class="button btn-disease">Evcil hayvanımın neyi var?</button>
+                            <!-- bu buton pop-up butonudur aşağıdaki kodda popup kodudur -->
+                        </div>
+                        <div id="popup" class="popup-container">
+                            <div class="close-btn" onclick="closePopup()">X</div>
+                            <div class="col-popup">
+                                <h2>Hastalık Sihirbazı</h2>
+                                <div class="col-popup-item">
+                                       
+                                </div>
+                            </div>
+                        </div>
+                       <script src="../js/popup.js"></script>
+           
+                        <script>
+                            function openPopup() {
+                            document.getElementById("popup").style.display = "flex";
+                            }
+       
+                            function closePopup() {
+                            document.getElementById("popup").style.display = "none";
+                            }
+                        </script>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!--Footer-->
+        <div class="col-footer col-footer-bg">
+            <div class="col-footer1">
+                <div class="col-left">
+                    <img src="../img/logo.png"><br>
+                    <p>Siz de evcil dostlarınızın sağlığını ve mutluluğunu önemsiyorsanız, doğru adrestesiniz! Evcil hayvanlarınızın hayat kalitesini artırmak ve sağlıklarını korumak için bizimle adım atın!</p>
+                </div>
+                <div class="col-center">
+                    <h2>Servislerimiz</h2>
+                    <ul>
+                        <li><a href="../php/index.php">Anasayfa</a></li>
+                        <li><a href="#">Hizmetlerimiz</a></li>
+                        <li><a href="../php/blog.php">Blog</a></li>
+                        <li><a href="../php/hakkimizda.php">Hakkımızda</a></li>
+                    </ul>
+                </div>
+                <div class="col-right">
+                    <h6>Geri Dönüşleriniz Bizim İçin Önemli!</h6>
+                    <form>
+                        <textarea type="text" id="footertext" placeholder="Mesajınızı Buraya Bırakabilirsiniz"></textarea>
+                        <button type="submit" id="footerbtn">Gönder</button>
+                    </form>
+                </div>
+            </div>
+            <div class="col-footer-hr"><hr></div>
+            <div class="col-footer2">
+                <div class="col-copy">
+                    <h4>Gizlilik Politikası</h4>
+                    <h4>Hizmet Şartları</h4>
+                    <h4>Tasarım ve Altyapı BGY</h4>
+                </div>
+            </div>
+        </div>
+</body>
+</html>

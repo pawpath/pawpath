@@ -1,25 +1,4 @@
-@font-face {
 
-    font-family: "Coco-Sharp-Regular";
-    src: url("../fonts/Coco-Sharp-Regular-trial.ttf");
-  
-    font-family: "Dongle-Bold";
-    src: url("../fonts/Dongle-Bold.ttf");
-}
-.col-users{
-  flex-direction: column;
-}
-.col-userhead{
-  width: 100%;
-  display: flex;
-}
-.col-userhead h1{
-  color: rgb(255, 0, 0);
-}
-.col-user-table{
-  width: 100%;
-  display: flex;
-}
 
 
 

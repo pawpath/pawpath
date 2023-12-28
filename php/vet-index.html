@@ -13,41 +13,17 @@
     <div class="container">
 
         <!--Header-->
-        <div class="col-head">
-            <div class="col-logo"><img src="../img/logo.png"></div>
-            <div class="col-menu open-menu">
+        <div class="col-head col-head-vet">
+            <div class="col-logo"><img src="../img/logo-vet.png"></div>
+            <div class="col-menu col-menu-vet">
                 <ul>
                     <li><a href="../php/index.php">Anasayfa</a></li>
-                    <li><a>Hizmetlerimiz</a>
-                        <ul>
-                            <li><a href="#">Evcil Hayvanlarım</a></li>
-                            <li><a href="#">Anasayfa</a></li>
-                            <li><a href="#">Soru & Cevap</a></li>
-                        </ul>
-                    </li>
+                    <li><a href="#">Hasta Bilgi</a></li>
                     <li><a href="../php/blog.php">Blog</a></li>
                     <li><a href="../php/hakkimizda.php">Hakkımızda</a></li>
                 </ul>
             </div>
-            <div class="col-user-act">
-            <?php
-    session_start();
-
-    if (isset($_SESSION['username'])) {
-        $username = $_SESSION['username'];
-
-        echo "<ul>";
-        echo "<li><a href='#'>Profilim ($username)</a></li>";
-        echo "<li><a href='../php/logout.php'>Çıkış Yap</a></li>";
-        echo "</ul>";
-    } else {
-        echo "<ul>";
-        echo "<li><a href='../php/login.php'>Giriş Yap</a></li>";
-        echo "<li><a href='../php/register.php'>Kayıt Ol</a></li>";
-        echo "</ul>";
-    }
-    ?>
-
+            <div class="col-user-act col-user-act-vet">
                 <input type="checkbox" id="check">
                 <label for="check">
                     <i class="fas fa-bars" id="btn"></i>
@@ -58,22 +34,21 @@
                     <header>PawPath</header>
                     
                         <li><a href="../php/index.php">Anasayfa</a></li>
-                        <li><a href="#">Hizmetlerimiz</a></li>
+                        <li><a href="#">Hasta Bilgi</a></li>
                         <li><a href="../php/blog.php">Blog</a></li>
                         <li><a href="../php/hakkimizda.php">Hakkımızda</a></li>
                     
                 </div>
             </div>
         </div>
-
         <!--İlk Tanıtım-->
-        <div class="columns col-intro col-intro-bg">
+        <div class="columns col-intro col-intro-bg col-intro-bg-vet">
             <div class="col col-intro-1"><img src="../img/tanıtımimg.png"></div>
-            <div class="col col-intro-2">
+            <div class="col col-intro-2 col-intro-2-vet">
                 <h2>Evcil Dostlarınızın İyi Bakımı:</h2>
-                <h1>Onların <span class="accent-color">Sağlığı, Mutluluğu</span> ve <span class="accent-color">Sizin İçin</span> En İyi Kaynak!</h1>
+                <h1>Onların <span class="accent-color-vet">Sağlığı, Mutluluğu</span> ve <span class="accent-color-vet">Sizin İçin</span> En İyi Kaynak!</h1>
                 <p>Siz de evcil dostlarınızın sağlığını ve mutluluğunu önemsiyorsanız, doğru adrestesiniz! Aşı takip, günlük bakım, eğitim, sağlık önerileri ve daha fazlasını keşfedin. Evcil hayvanlarınızın hayat kalitesini artırmak ve sağlıklarını korumak için bizimle adım atın!</p>
-                <a href="#" class="button btn-mid">Detaylar</a>
+                <a href="#" class="button btn-mid-vet">Detaylar</a>
             </div>
         </div>
 
@@ -113,41 +88,6 @@
 
         </div>
 
-        <!--Hizmetlerimiz-->
-        <div class="columns col-services">
-            <h2>Hizmetlerimiz</h2><br>
-            <h1>Kusursuz Evcil Hayvan Hizmetleri</h1>
-        </div>
-
-        <div class="columns col-services-1">
-            <div class="col-serv-vaccine">
-                <div class="col-serv-vac-mid"><p>Aşı Takibi</p></div>
-                <div class="col-serv-vac-sub"><a href="#">Detaylar</a></div>
-            </div>
-            <div class="col-serv-disease">
-                <div class="col-serv-dis-mid"><p>Hastalık Sihirbazı</p></div>
-                <div class="col-serv-dis-sub"><a onclick="openPopup()">Detaylar</a></div> 
-            </div>
-            <div class="col-serv-faqs">
-                <div class="col-serv-faq-mid"><p>Soru & Cevap</p></div>
-                <div class="col-serv-faq-sub"><a href="#">Detaylar</a></div>
-            </div>
-        </div>
-        <div class="columns col-services-2">
-            <div class="col-serv-mypets">
-                <div class="col-serv-pet-mid"><p>Evcil Hayvanlarım</p></div>
-                <div class="col-serv-pet-sub"><a href="#">Detaylar</a></div>
-            </div>
-            <div class="col-serv-petshop">
-                <div class="col-serv-petshop-mid"><p>Yakındaki Petshoplar</p></div>
-                <div class="col-serv-petshop-sub"><a href="../php/maps.php">Detaylar</a></div>
-            </div>
-            <div class="col-serv-vets">
-                <div class="col-serv-vet-mid"><p>Yakındaki Veterinerler</p></div>
-                <div class="col-serv-vet-sub"><a href="../php/maps.php">Detaylar</a></div>
-            </div>
-        </div>
-
         <!--Footer-->
         <div class="col-footer col-footer-bg">
             <div class="col-footer1">
@@ -181,25 +121,5 @@
                 </div>
             </div>
         </div>
-        <div id="popup" class="popup-container">
-                     <div class="close-btn" onclick="closePopup()">X</div>
-                        <div class="col-popup">
-                            <h2>Hastalık Sihirbazı</h2>
-                            <div class="col-popup-item">
-                                
-                            </div>
-                        </div>
-                    </div>
-                <script src="../js/popup.js"></script>
-    </div>
-    <script>
-    function openPopup() {
-        document.getElementById("popup").style.display = "flex";
-    }
-
-    function closePopup() {
-        document.getElementById("popup").style.display = "none";
-    }
-</script>
 </body>
 </html>
