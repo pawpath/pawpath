@@ -31,22 +31,22 @@
             </div>
             <div class="col-user-act">
             <?php
-    session_start();
+                session_start();
 
-    if (isset($_SESSION['username'])) {
-        $username = $_SESSION['username'];
+                if (isset($_SESSION['username'])) {
+                    $username = $_SESSION['username'];
 
-        echo "<ul>";
-        echo "<li><a href='#'>Profilim ($username)</a></li>";
-        echo "<li><a href='../php/logout.php'>Çıkış Yap</a></li>";
-        echo "</ul>";
-    } else {
-        echo "<ul>";
-        echo "<li><a href='../php/login.php'>Giriş Yap</a></li>";
-        echo "<li><a href='../php/register.php'>Kayıt Ol</a></li>";
-        echo "</ul>";
-    }
-    ?>
+                    echo "<ul>";
+                    echo "<li><a href='#'>Profilim ($username)</a></li>";
+                    echo "<li><a href='../php/logout.php'>Çıkış Yap</a></li>";
+                    echo "</ul>";
+                } else {
+                    echo "<ul>";
+                    echo "<li><a href='../php/login.php'>Giriş Yap</a></li>";
+                    echo "<li><a href='../php/register.php'>Kayıt Ol</a></li>";
+                    echo "</ul>";
+                }
+            ?>
 
                 <input type="checkbox" id="check">
                 <label for="check">
@@ -106,11 +106,33 @@
                     </ul>
                 </nav>
             </div>
-        
+
             <div class="col-abus2">
                 <img src="../img/hakkımızda-first.png">
             </div>
+        </div>
 
+        <div class="columns col-abus-info">
+            <div class="col-abus-dis">
+                <div class="col-abus-vac-title"><h3>Aşı Takibi</h3></div>
+                <div class="col-abus-vac-info"><p>Hastalık sihirbazı özelliği ile evcil hayvanlarınızın sağlığını daha yakından takip edebilir, hastalık belirtileri hakkında bilgi alabilirsiniz.</p></div>
+            </div>
+            <div class="col-abus-vac">
+                <div class="col-abus-vac-title"><h3>Aşı Takibi</h3></div>
+                <div class="col-abus-vac-info"><p>Hastalık sihirbazı özelliği ile evcil hayvanlarınızın sağlığını daha yakından takip edebilir, hastalık belirtileri hakkında bilgi alabilirsiniz.</p></div>
+            </div>
+            <div class="col-abus-petcare">
+                <div class="col-abus-pet-title"><h3>Aşı Takibi</h3></div>
+                <div class="col-abus-pet-info"><p>Hastalık sihirbazı özelliği ile evcil hayvanlarınızın sağlığını daha yakından takip edebilir, hastalık belirtileri hakkında bilgi alabilirsiniz.</p></div>
+            </div>
+            <div class="col-abus-map">
+                <div class="col-abus-map-title"><h3>Aşı Takibi</h3></div>
+                <div class="col-abus-map-info"><p>Hastalık sihirbazı özelliği ile evcil hayvanlarınızın sağlığını daha yakından takip edebilir, hastalık belirtileri hakkında bilgi alabilirsiniz.</p></div>
+            </div>
+        </div>
+
+        <div class="col-aboutus-top">
+            <img src="../img/index-pattern.png">
         </div>
 
         <!--Hizmetlerimiz-->
