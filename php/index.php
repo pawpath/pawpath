@@ -20,7 +20,7 @@
                     <li><a href="../php/index.php">Anasayfa</a></li>
                     <li><a>Hizmetlerimiz</a>
                         <ul>
-                            <li><a href="#">Evcil Hayvanlarım</a></li>
+                            <li><a href="user-pets.php">Evcil Hayvanlarım</a></li>
                             <li><a href="#">Anasayfa</a></li>
                             <li><a href="#">Soru & Cevap</a></li>
                         </ul>
@@ -213,7 +213,7 @@
                         </div>
                     </div>
                 <script src="../js/popup.js"></script>
-    </div>
+        </div>
     <script>
     function openPopup() {
         document.getElementById("popup").style.display = "flex";

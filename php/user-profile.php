@@ -1,3 +1,33 @@
+<?php
+session_start();
+
+if (isset($_SESSION['username'])) {
+    $username = $_SESSION['username'];
+}
+
+$conn = new mysqli("localhost", "root", "", "pawpath");
+$conn->set_charset("utf8");
+
+// $_SESSION['id'] tanımlı mı kontrolü
+$kullanici_id = isset($_SESSION['id']) ? $_SESSION['id'] : null;
+
+if ($kullanici_id !== null) {
+    $stmt = $conn->prepare("SELECT name , surname FROM users WHERE id = ?");
+    $stmt->bind_param('i', $kullanici_id);
+    $stmt->execute();
+    
+    // bind_result kullanarak sütunları al
+    $stmt->bind_result($ad, $soyad);
+    
+    // fetch ile sorgudan verileri çek
+    $stmt->fetch();
+    
+    $stmt->close();
+} else {
+    // $_SESSION['id'] tanımlı değilse bir hata mesajı veya başka bir işlem yapabilirsiniz.
+    echo "Kullanıcı ID tanımlı değil.";
+}
+?>
 <!DOCTYPE html>
 <html lang="en">
     <head>
@@ -29,7 +59,24 @@
                     <li><a href="../php/hakkimizda.php">Hakkımızda</a></li>
                 </ul>
             </div>
-            <div class="col-user-act">
+            <div class="col-user-act col-user-act-vet">
+            <?php
+    
+
+                if (isset($_SESSION['username'])) {
+                    $username = $_SESSION['username'];
+
+                    echo "<ul>";
+                    echo "<li><a href='user-profile.php'>Profilim ($username)</a></li>";
+                    echo "<li><a href='logout.php'>Çıkış Yap</a></li>";
+                    echo "</ul>";
+                } else {
+                    echo "<ul>";
+                    echo "<li><a href='../php/login.php'>Giriş Yap</a></li>";
+                    echo "<li><a href='../php/register.php'>Kayıt Ol</a></li>";
+                    echo "</ul>";
+                }
+            ?>
 
                 <input type="checkbox" id="check">
                 <label for="check">
@@ -62,7 +109,7 @@
                     <div class="prof-info">
                         <div class="prof-info-photo">
                             <img src="" alt="" />
-                            <h2>İsim Soyisim</h2>
+                            <h2><?php echo $ad . ' ' . $soyad; ?></h2>
                             <button class="button btn-profile">Profili Düzenle</button>
                         </div>
                         <!-- <div>

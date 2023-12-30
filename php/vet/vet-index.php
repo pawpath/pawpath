@@ -1,10 +1,17 @@
+<?php
+ session_start();
+ if (!isset($_SESSION['role']) || $_SESSION['role'] !== 'veterinarian') {
+  header("Location: ../logout.php"); // Veteriner değilse başka bir sayfaya yönlendir
+  exit();
+}
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Pawpath</title>
-    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../../css/style.css">
     <script src="https://kit.fontawesome.com/b1573057bf.js" crossorigin="anonymous"></script>
     <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
     <script src="script.js"></script>
@@ -14,16 +21,34 @@
 
         <!--Header-->
         <div class="col-head col-head-vet">
-            <div class="col-logo"><img src="../img/logo-vet.png"></div>
+            <div class="col-logo"><img src="../../img/logo-vet.png"></div>
             <div class="col-menu col-menu-vet">
                 <ul>
-                    <li><a href="../php/index.php">Anasayfa</a></li>
+                    <li><a href="vet-index.php">Anasayfa</a></li>
                     <li><a href="#">Hasta Bilgi</a></li>
                     <li><a href="../php/blog.php">Blog</a></li>
                     <li><a href="../php/hakkimizda.php">Hakkımızda</a></li>
                 </ul>
             </div>
             <div class="col-user-act col-user-act-vet">
+            <?php
+    
+
+                if (isset($_SESSION['username'])) {
+                    $username = $_SESSION['username'];
+
+                    echo "<ul>";
+                    echo "<li><a href='vet-profile.php'>Profilim ($username)</a></li>";
+                    echo "<li><a href='../logout.php'>Çıkış Yap</a></li>";
+                    echo "</ul>";
+                } else {
+                    echo "<ul>";
+                    echo "<li><a href='../php/login.php'>Giriş Yap</a></li>";
+                    echo "<li><a href='../php/register.php'>Kayıt Ol</a></li>";
+                    echo "</ul>";
+                }
+            ?>
+
                 <input type="checkbox" id="check">
                 <label for="check">
                     <i class="fas fa-bars" id="btn"></i>
@@ -34,7 +59,7 @@
                     <header>PawPath</header>
                     
                         <li><a href="../php/index.php">Anasayfa</a></li>
-                        <li><a href="#">Hasta Bilgi</a></li>
+                        <li><a href="#">Hizmetlerimiz</a></li>
                         <li><a href="../php/blog.php">Blog</a></li>
                         <li><a href="../php/hakkimizda.php">Hakkımızda</a></li>
                     
@@ -43,7 +68,7 @@
         </div>
         <!--İlk Tanıtım-->
         <div class="columns col-intro col-intro-bg col-intro-bg-vet">
-            <div class="col col-intro-1"><img src="../img/tanıtımimg.png"></div>
+            <div class="col col-intro-1"><img src="../../img/tanıtımimg.png"></div>
             <div class="col col-intro-2 col-intro-2-vet">
                 <h2>Evcil Dostlarınızın İyi Bakımı:</h2>
                 <h1>Onların <span class="accent-color-vet">Sağlığı, Mutluluğu</span> ve <span class="accent-color-vet">Sizin İçin</span> En İyi Kaynak!</h1>
@@ -83,7 +108,7 @@
             </div>
         
             <div class="col-abus2">
-                <img src="../img/hakkımızda-first.png">
+                <img src="../../img/hakkımızda-first.png">
             </div>
 
         </div>
@@ -92,7 +117,7 @@
         <div class="col-footer col-footer-bg">
             <div class="col-footer1">
                 <div class="col-left">
-                    <img src="../img/logo.png"><br>
+                    <img src="../../img/logo.png"><br>
                     <p>Siz de evcil dostlarınızın sağlığını ve mutluluğunu önemsiyorsanız, doğru adrestesiniz! Evcil hayvanlarınızın hayat kalitesini artırmak ve sağlıklarını korumak için bizimle adım atın!</p>
                 </div>
                 <div class="col-center">

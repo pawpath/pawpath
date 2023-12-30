@@ -1,3 +1,28 @@
+<?php
+ session_start();
+ if (!isset($_SESSION['id'])) {
+    header("Location: login.php"); // Kullanıcı girişi yapılmamışsa giriş sayfasına yönlendir
+    exit();
+} 
+$conn = new mysqli("localhost", "root", "", "pawpath");
+$conn->set_charset("utf8");
+$user_id = $_SESSION['id'];
+if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['addpet'])) {
+    $pet_name = $_POST["pet_name"];
+    $pet_type = $_POST["pet_type"];
+    $pet_age = $_POST["pet_age"];
+    $pet_breed = $_POST['pet_breed'];
+    $pet_gender = $_POST['pet_gender'];
+
+
+
+$stmt = $conn->prepare("INSERT INTO pets (user_id, pet_name, pet_type, pet_breed, pet_age,pet_gender) VALUES (?, ?, ?, ?, ?, ?)");
+$stmt->bind_param('isssss', $user_id, $pet_name, $pet_type, $pet_breed, $pet_age, $pet_gender);
+$stmt->execute();
+$stmt->close();
+}
+?>
+
 <!DOCTYPE html>
 <html lang="en">
     <head>
@@ -29,7 +54,24 @@
                     <li><a href="../php/hakkimizda.php">Hakkımızda</a></li>
                 </ul>
             </div>
-            <div class="col-user-act">
+            <div class="col-user-act col-user-act-vet">
+            <?php
+    
+
+                if (isset($_SESSION['username'])) {
+                    $username = $_SESSION['username'];
+
+                    echo "<ul>";
+                    echo "<li><a href='user-profile.php'>Profilim ($username)</a></li>";
+                    echo "<li><a href='../logout.php'>Çıkış Yap</a></li>";
+                    echo "</ul>";
+                } else {
+                    echo "<ul>";
+                    echo "<li><a href='../php/login.php'>Giriş Yap</a></li>";
+                    echo "<li><a href='../php/register.php'>Kayıt Ol</a></li>";
+                    echo "</ul>";
+                }
+            ?>
 
                 <input type="checkbox" id="check">
                 <label for="check">
@@ -54,13 +96,13 @@
                 <div class="col-add-pet-bg">
                     <h1>Evcil Hayvan Ekle</h1>
                     <table border="0" align="center">
-                        <form>
+                        <form action="../php/user-pets.php" method="POST">
                                 <tr>
-                                    <td colspan="2"><input type="text" name="petname"  placeholder="Evcil hayvanın adı"></td>
+                                    <td colspan="2"><input type="text" name="pet_name"  placeholder="Evcil hayvanın adı"></td>
                                 </tr>
                                 <tr>
                                     <td colspan="2">
-                                        <select name="pettype">
+                                        <select name="pet_type">
                                             <option value="">Evcil hayvanın türü</option>
                                             <option value="dog">Köpek</option>
                                             <option value="cat">Kedi</option>
@@ -69,7 +111,7 @@
                                 </tr>
                                 <tr>
                                     <td colspan="2">
-                                        <select name="petbreed">
+                                        <select name="pet_breed">
                                             <option value="">Evcil hayvanın cinsi</option>
                                             <option value="golden">golden</option>
                                             <option value="kurt">kurt</option>
@@ -77,11 +119,11 @@
                                     </td>
                                 </tr>
                                 <tr id="radiobg">
-                                    <td ><input type="radio"  name="petgender" value="D">Dişi</td>         
-                                    <td><input type="radio"  name="petgender" value= "E">Erkek</td>
+                                    <td ><input type="radio"  name="pet_gender" value="D">Dişi</td>         
+                                    <td><input type="radio"  name="pet_gender" value= "E">Erkek</td>
                                 </tr>
                                 <tr id="selectbg">
-                                    <td colspan="2"><input type="text" name="petage"  placeholder="Evcil hayvanın yaşı"></td>
+                                    <td colspan="2"><input type="text" name="pet_age"  placeholder="Evcil hayvanın yaşı"></td>
                                 </tr>
                                 <tr>
                                     <td colspan="2"><input type="submit" name="addpet" value="Ekle" ></td>

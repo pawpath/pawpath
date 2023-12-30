@@ -28,16 +28,10 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['login'])) {
                     // Veteriner ise onay durumunu kontrol et
                     if ($user['approved'] == 1) {
                         // Onay durumu 1 ise giriş yap
+                        $_SESSION['id'] = $user['id'];
                         $_SESSION['username'] = $user['username'];
                         $_SESSION['role'] = $user['role'];
-
-                        if ($user['role'] === 'admin') {
-                            header("Location: ../php/admin_panel.php");
-                            exit();
-                        } else {
-                            header("Location: ../php/index.php");
-                            exit();
-                        }
+                        header("Location: ../php/vet/vet-index.php");
                     } else {
                         // Onay durumu 0 ise hata mesajı
                         $logmessage = "Veteriner hesabınız henüz onaylanmamış.";
@@ -46,11 +40,11 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['login'])) {
                     // Diğer kullanıcılar için onay kontrolü yapma
                     $_SESSION['username'] = $user['username'];
                     $_SESSION['role'] = $user['role'];
-
+                    $_SESSION['id'] = $user['id'];
                     if ($user['role'] === 'admin') {
                         header("Location: ../php/admin/index.php");
                         exit();
-                    } else {
+                    }else{
                         header("Location: ../php/index.php");
                         exit();
                     }
