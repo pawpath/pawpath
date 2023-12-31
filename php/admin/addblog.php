@@ -18,6 +18,7 @@ if (!isset($_SESSION['role']) || $_SESSION['role'] !== 'admin') {
 if (isset($_POST['add_blog'])) {
     $title = $_POST['title'];
     $content = $_POST['content'];
+    $target_file = $_POST['image'];
 
 
     // Veritabanına blog yazısını ekleme

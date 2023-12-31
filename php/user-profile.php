@@ -1,9 +1,9 @@
 <?php
 session_start();
-
-if (isset($_SESSION['username'])) {
-    $username = $_SESSION['username'];
-}
+if (!isset($_SESSION['id'])) {
+   header("Location: login.php"); // Kullanıcı girişi yapılmamışsa giriş sayfasına yönlendir
+   exit();
+} 
 
 $conn = new mysqli("localhost", "root", "", "pawpath");
 $conn->set_charset("utf8");
@@ -50,7 +50,7 @@ if ($kullanici_id !== null) {
                     <li><a href="../php/index.php">Anasayfa</a></li>
                     <li><a>Hizmetlerimiz</a>
                         <ul>
-                            <li><a href="#">Evcil Hayvanlarım</a></li>
+                            <li><a href="user-pets.php">Evcil Hayvanlarım</a></li>
                             <li><a href="#">Anasayfa</a></li>
                             <li><a href="#">Soru & Cevap</a></li>
                         </ul>

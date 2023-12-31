@@ -35,21 +35,48 @@ $conn->close();
         <link rel="stylesheet" href="../css/style.css">
         <script src="https://kit.fontawesome.com/b1573057bf.js" crossorigin="anonymous"></script>
         <style>
-            .col-blog{
-                background:red;
-                padding-top: 3.5em;
+            .col-blog-content{
+                background:#FFF3E2;
                 width: calc(50% - 20px);
-            margin-bottom: 20px;
-            box-sizing: border-box;
-                padding-bottom: 3.5em;
+                margin-bottom: 20px;
+                box-sizing: border-box;
+                
+                
                 
                 }
                 .col-blog1{
                 margin-top: 5rem;
                 display: flex;
-            flex-wrap: wrap;
-            justify-content: space-between;
+                flex-wrap: wrap;
+                justify-content: space-between;
                 }
+                .col-blog-content p {
+                    padding:2rem;
+                    float:right;
+                    color:#585858;
+
+                    
+                }
+                .col-blog-content img{
+                   width:100%;
+                   height:100%;
+                   border-right: 10px solid #EF9825;
+                   height: auto;
+                }
+                .col-blog-title{
+                    text-align:center;
+                    padding: 1rem;
+                    color:#585858;
+                }
+                .col-blog-timestamp
+                {
+                    margin-top:100px;   
+                }
+                .button{
+                    margin-top:10%;
+                    margin-left:20%;
+                }
+                
                 
                 
         .pagination {
@@ -79,20 +106,39 @@ $conn->close();
             <!--Header-->
             <div class="col-head">
                 <div class="col-logo"><img src="../img/logo.png"></div>
-                <div class="col-menu">
-                    <ul>
-                        <li><a href="../php/index.php">Anasayfa</a></li>
-                        <li><a href="#">Hizmetlerimiz</a></li>
-                        <li><a href="../php/blog.php">Blog</a></li>
-                        <li><a href="../php/hakkimizda.php">Hakkımızda</a></li>
-                    </ul>
-                </div>
+                <div class="col-menu open-menu">
+                <ul>
+                    <li><a href="../php/index.php">Anasayfa</a></li>
+                    <li><a>Hizmetlerimiz</a>
+                        <ul>
+                            <li><a href="user-pets.php">Evcil Hayvanlarım</a></li>
+                            <li><a href="#">Anasayfa</a></li>
+                            <li><a href="#">Soru & Cevap</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="../php/blog.php">Blog</a></li>
+                    <li><a href="../php/hakkimizda.php">Hakkımızda</a></li>
+                </ul>
+            </div>
 
                 <div class="col-user-act">
-                    <ul>
-                        <li><a href="../php/login.php">Giriş Yap</a></li>
-                        <li><a href="../php/register.php">Kayıt Ol</a></li>
-                    </ul>
+                <?php
+                session_start();
+
+                if (isset($_SESSION['username'])) {
+                    $username = $_SESSION['username'];
+
+                    echo "<ul>";
+                    echo "<li><a href='user-profile.php'>Profilim ($username)</a></li>";
+                    echo "<li><a href='../php/logout.php'>Çıkış Yap</a></li>";
+                    echo "</ul>";
+                } else {
+                    echo "<ul>";
+                    echo "<li><a href='../php/login.php'>Giriş Yap</a></li>";
+                    echo "<li><a href='../php/register.php'>Kayıt Ol</a></li>";
+                    echo "</ul>";
+                }
+            ?>
 
                     <input type="checkbox" id="check">
                     <label for="check">
@@ -119,11 +165,14 @@ $conn->close();
    
         if ($result->num_rows > 0) {
             while ($row = $result->fetch_assoc()) {
-                        echo "<div class='col-blog'>";
-                        echo "<div class='col-blog-title'<h2>" . $row["title"] . "</h2></div>";
-                        $contentPreview = substr($row["content"], 0, 50); // İlk 200 karakteri al
-                        echo "<p>" . $contentPreview . "...</p>";        
-                        echo "<p class='timestamp'>Oluşturulma Tarihi: " . $row["created_at"] . "</p>";
+                    
+                        echo "<div class='col-blog-content'>";
+                        echo "<img src='../blogimg/" . $row['image'] . "' alt='Blog Image'>";
+                        echo "<div class='col-blog-title'><h2>" . $row["title"] . "</h2></div>";
+                        $contentPreview = substr($row["content"], 0,500);
+                        echo "<p>" . $contentPreview . "...</p>";  
+                        echo "<button class='button'>Devamı</button>";      
+                        echo "<p class='col-blog-timestamp'>" . $row["created_at"] . "</p>";
                         echo "</div>";
                    
             }

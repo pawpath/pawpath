@@ -12,15 +12,20 @@
             <!--Header-->
             <div class="col-head">
                 <div class="col-logo"><img src="../img/logo.png"></div>
-                <div class="col-menu">
-                    <ul>
-                        <li><a href="../php/index.php">Anasayfa</a></li>
-                        <li><a href="#">Hizmetlerimiz</a></li>
-                        <li><a href="../php/blog.php">Blog</a></li>
-                        <li><a href="../php/hakkimizda.php">Hakkımızda</a></li>
-                    </ul>
-                </div>
-
+                <div class="col-menu open-menu">
+                <ul>
+                    <li><a href="../php/index.php">Anasayfa</a></li>
+                    <li><a>Hizmetlerimiz</a>
+                        <ul>
+                            <li><a href="user-pets.php">Evcil Hayvanlarım</a></li>
+                            <li><a href="#">Anasayfa</a></li>
+                            <li><a href="#">Soru & Cevap</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="../php/blog.php">Blog</a></li>
+                    <li><a href="../php/hakkimizda.php">Hakkımızda</a></li>
+                </ul>
+            </div>
                 <div class="col-user-act">
                 <?php
     session_start();
@@ -29,7 +34,7 @@
         $username = $_SESSION['username'];
 
         echo "<ul>";
-        echo "<li><a href='#'>Profilim ($username)</a></li>";
+        echo "<li><a href='user-profile.php'>Profilim ($username)</a></li>";
         echo "<li><a href='../php/logout.php'>Çıkış Yap</a></li>";
         echo "</ul>";
     } else {

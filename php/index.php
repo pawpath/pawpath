@@ -37,7 +37,7 @@
                     $username = $_SESSION['username'];
 
                     echo "<ul>";
-                    echo "<li><a href='#'>Profilim ($username)</a></li>";
+                    echo "<li><a href='user-profile.php'>Profilim ($username)</a></li>";
                     echo "<li><a href='../php/logout.php'>Çıkış Yap</a></li>";
                     echo "</ul>";
                 } else {
