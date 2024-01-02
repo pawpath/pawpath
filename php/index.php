@@ -18,13 +18,7 @@
             <div class="col-menu open-menu">
                 <ul>
                     <li><a href="../php/index.php">Anasayfa</a></li>
-                    <li><a>Hizmetlerimiz</a>
-                        <ul>
-                            <li><a href="user-pets.php">Evcil Hayvanlarım</a></li>
-                            <li><a href="#">Anasayfa</a></li>
-                            <li><a href="#">Soru & Cevap</a></li>
-                        </ul>
-                    </li>
+                    <li><a href="../php/user-pets.php">Evcil Hayvanlarım</a></li>
                     <li><a href="../php/blog.php">Blog</a></li>
                     <li><a href="../php/hakkimizda.php">Hakkımızda</a></li>
                 </ul>
@@ -114,20 +108,20 @@
 
         <div class="columns col-abus-info">
             <div class="col-abus-dis">
-                <div class="col-abus-vac-title"><h3>Aşı Takibi</h3></div>
-                <div class="col-abus-vac-info"><p>Hastalık sihirbazı özelliği ile evcil hayvanlarınızın sağlığını daha yakından takip edebilir, hastalık belirtileri hakkında bilgi alabilirsiniz.</p></div>
+                <div class="col-abus-dis-title"><h3>Hastalık Sihirbazı</h3></div>
+                <div class="col-abus-dis-info"><p>Hastalık sihirbazı özelliği ile evcil hayvanlarınızın sağlığını daha yakından takip edebilir, hastalık belirtileri hakkında bilgi alabilirsiniz.</p></div>
             </div>
             <div class="col-abus-vac">
-                <div class="col-abus-vac-title"><h3>Aşı Takibi</h3></div>
-                <div class="col-abus-vac-info"><p>Hastalık sihirbazı özelliği ile evcil hayvanlarınızın sağlığını daha yakından takip edebilir, hastalık belirtileri hakkında bilgi alabilirsiniz.</p></div>
+                <div class="col-abus-vac-title"><h3>Aşı Takip</h3></div>
+                <div class="col-abus-vac-info"><p>Sitemizdeki aşı takip özelliği, evcil hayvanlarınızın aşı takvimini düzenli olarak takip etmenizi ve sağlık durumlarını en iyi şekilde korumanızı sağlar.</p></div>
             </div>
             <div class="col-abus-petcare">
-                <div class="col-abus-pet-title"><h3>Aşı Takibi</h3></div>
-                <div class="col-abus-pet-info"><p>Hastalık sihirbazı özelliği ile evcil hayvanlarınızın sağlığını daha yakından takip edebilir, hastalık belirtileri hakkında bilgi alabilirsiniz.</p></div>
+                <div class="col-abus-pet-title"><h3>Hayvan Bakımı</h3></div>
+                <div class="col-abus-pet-info"><p>Hayvan bakımı konusundaki kapsamlı bloglarımız ve ipuçları ile evcil dostlarınızın sağlığını ve mutluluğunu en iyi şekilde destekleyin.</p></div>
             </div>
             <div class="col-abus-map">
-                <div class="col-abus-map-title"><h3>Aşı Takibi</h3></div>
-                <div class="col-abus-map-info"><p>Hastalık sihirbazı özelliği ile evcil hayvanlarınızın sağlığını daha yakından takip edebilir, hastalık belirtileri hakkında bilgi alabilirsiniz.</p></div>
+                <div class="col-abus-map-title"><h3>Petshop & Veteriner</h3></div>
+                <div class="col-abus-map-info"><p>Yakındaki petshop'ları ve veterinerleri görebilme özelliği sayesinde evcil dostlarınıza en yakın hizmet sağlayıcıları kolayca bulun ve onların ihtiyaçlarını hızlıca karşılayın.</p></div>
             </div>
         </div>
 

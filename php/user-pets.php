@@ -122,13 +122,7 @@ foreach ($pets as $pet) {
             <div class="col-menu open-menu">
                 <ul>
                     <li><a href="../php/index.php">Anasayfa</a></li>
-                    <li><a>Hizmetlerimiz</a>
-                        <ul>
-                            <li><a href="#">Evcil Hayvanlarım</a></li>
-                            <li><a href="#">Anasayfa</a></li>
-                            <li><a href="#">Soru & Cevap</a></li>
-                        </ul>
-                    </li>
+                    <li><a href="../php/user-pets.php">Evcil Hayvanlarım</a></li>
                     <li><a href="../php/blog.php">Blog</a></li>
                     <li><a href="../php/hakkimizda.php">Hakkımızda</a></li>
                 </ul>

@@ -103,7 +103,7 @@ $conn->close();
                     <header>PawPath</header>
                     
                         <li><a href="../php/login.php">Anasayfa</a></li>
-                        <li><a href="#">Hizmetlerimiz</a></li>
+                        <li><a href="../php/user-pets.php">Evcil Hayvanlarım</a></li>
                         <li><a href="../php/blog.php">Blog</a></li>
                         <li><a href="../php/hakkimizda.php">Hakkımızda</a></li>
                     

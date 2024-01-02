@@ -312,23 +312,23 @@ h2{
   align-items: center;
 }
 .col-abus-dis{
-  background-color: #d60000;
+  background-color: #ffffff;
   width: 30%;
   height: 15em;
-  font-family: "Dongle-Bold";
   text-align: center;
   display: flex;
   flex-direction: column;
   justify-content: center;
   position: relative;
   border-radius: 30px;
-  border-width: .25em .25em 0 0;
+  border-width: .5em 0 0 .5em;
   border-style: solid;
-  border-color: #F4978E;
+  border-color: #F08080;
   box-shadow: 0 0 20px rgba(0, 0, 0, 0.236)
 }
 .col-abus-dis-title h3 {
-  color: #F4978E;
+  font-family: "Dongle-Bold";
+  color: #000000;
   font-size: 2.5em;
   margin: 0;
   padding: 0 .5em;
@@ -341,10 +341,11 @@ h2{
   transform: translateX(-50%);
 }
 .col-abus-dis-info p {
+  font-family: "Coco-Sharp-Regular";
   text-decoration: none;
   margin: 0;
   font-size: 1.5em;
-  color: #F4978E;
+  color: #000000;
 }
 
 /* Bize ulaşın layout */
