@@ -153,7 +153,7 @@ function addPetInfo($petId, $infoType, $infoName, $infoDate) {
        <!-- container -->
 
        <section>
-    <div class="columns col-search">
+    <div class="columns col-search-user">
         <div>
             <h1>Kullanıcı Ara</h1>
         </div>

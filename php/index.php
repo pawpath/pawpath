@@ -14,10 +14,11 @@
             flex-direction: row;
             text-align: center;
             justify-content: space-between;
+            margin-bottom: 5em;
         }
-        .col-abus-dis{
+        .col-abus-disease{
             background-color: #ffffff;
-            width: 24%;
+            width: 23%;
             height: 15em;
             text-align: center;
             display: flex;
@@ -30,29 +31,28 @@
             border-color: #F08080;
             box-shadow: 0 0 20px rgba(0, 0, 0, 0.236)
         }
-        .col-abus-dis-title h3 {
+        .col-abus-disease-title h3 {
             font-family: "Dongle-Bold";
             color: #000000;
-            font-size: 2.5em;
+            font-size: 2em;
             margin: 0;
             padding: 0 .5em;
             line-height: 2.5rem;
         }
-        .col-abus-dis-info {
+        .col-abus-disease-info {
 
         }
-        .col-abus-dis-info p {
+        .col-abus-disease-info p {
             font-family: "Coco-Sharp-Regular";
             text-decoration: none;
-            width: 100%;
-            margin: 0;
+            margin: 0 .25em;
             padding: 0;
             font-size: .9rem;
             color: #000000;
         }
         .col-abus-vac{
             background-color: #ffffff;
-            width: 24%;
+            width: 23%;
             height: 15em;
             text-align: center;
             display: flex;
@@ -68,7 +68,7 @@
         .col-abus-vac-title h3 {
             font-family: "Dongle-Bold";
             color: #000000;
-            font-size: 2.5em;
+            font-size: 2em;
             margin: 0;
             padding: 0 .5em;
             line-height: 2.5rem;
@@ -79,15 +79,14 @@
         .col-abus-vac-info p {
             font-family: "Coco-Sharp-Regular";
             text-decoration: none;
-            width: 100%;
-            margin: 0;
+            margin: 0 .25em;
             padding: 0;
             font-size: .9rem;
             color: #000000;
         }
         .col-abus-petcare{
             background-color: #ffffff;
-            width: 24%;
+            width: 23%;
             height: 15em;
             text-align: center;
             display: flex;
@@ -103,7 +102,7 @@
         .col-abus-pet-title h3 {
             font-family: "Dongle-Bold";
             color: #000000;
-            font-size: 2.5em;
+            font-size: 2em;
             margin: 0;
             padding: 0 .5em;
             line-height: 2.5rem;
@@ -113,15 +112,14 @@
         .col-abus-pet-info p {
             font-family: "Coco-Sharp-Regular";
             text-decoration: none;
-            width: 100%;
-            margin: 0;
+            margin: 0 .25em;
             padding: 0;
             font-size: .9rem;
             color: #000000;
         }
         .col-abus-map{
             background-color: #ffffff;
-            width: 24%;
+            width: 23%;
             height: 15em;
             text-align: center;
             display: flex;
@@ -137,7 +135,7 @@
         .col-abus-map-title h3 {
             font-family: "Dongle-Bold";
             color: #000000;
-            font-size: 2.5em;
+            font-size: 2em;
             margin: 0;
             padding: 0 .5em;
             line-height: 2.5rem;
@@ -147,8 +145,7 @@
         .col-abus-map-info p {
             font-family: "Coco-Sharp-Regular";
             text-decoration: none;
-            width: 100%;
-            margin: 0;
+            margin: 0 .25em;
             padding: 0;
             font-size: .9rem;
             color: #000000;
@@ -253,9 +250,9 @@
         </div>
 
         <div class="columns col-abus-info">
-            <div class="col-abus-dis">
-                <div class="col-abus-dis-title"><h3>Aşı Takip</h3></div>
-                <div class="col-abus-dis-info"><p>Sitemizdeki aşı takip özelliği, evcil hayvanlarınızın aşı takvimini düzenli olarak takip etmenizi ve sağlık durumlarını en iyi şekilde korumanızı sağlar.</p></div>
+            <div class="col-abus-disease">
+                <div class="col-abus-disease-title"><h3>Hastalık Sihirbazı</h3></div>
+                <div class="col-abus-disease-info"><p>Hastalık sihirbazı özelliği ile evcil hayvanlarınızın sağlığını daha yakından takip edebilir, hastalık belirtileri hakkında bilgi alabilirsiniz.</p></div>
             </div>
         
             <div class="col-abus-vac">

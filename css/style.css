@@ -126,12 +126,13 @@ h2{
 }
 .col-user-act{
   width: auto;
-  max-width: 25%;
-  font-size: 2rem;
+  max-width: 30%;
+  
 }
 .col-user-act a{
   color: #000000;
   text-decoration: none;
+  font-size: 1.5rem;
 }
 .col-user-act ul li{
   list-style-type: none;
