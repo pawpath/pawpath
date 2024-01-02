@@ -1,3 +1,7 @@
+<?php  session_start(); 
+
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -168,14 +172,12 @@
             </div>
             <div class="col-user-act">
             <?php
-                
-
                 if (isset($_SESSION['username'])) {
                     $username = $_SESSION['username'];
 
                     echo "<ul>";
                     echo "<li><a href='user-profile.php'>Profilim ($username)</a></li>";
-                    echo "<li><a href='../php/logout.php'>Çıkış Yap</a></li>";
+                    echo "<li><a href='logout.php'>Çıkış Yap</a></li>";
                     echo "</ul>";
                 } else {
                     echo "<ul>";

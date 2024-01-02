@@ -85,7 +85,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                     <li><a href="index.php">Anasayfa</a></li>
                     <li><a href="adduser.php">Üye işlemleri</a></li>
                     <li><a href="addblog.php">Blog işlemleri</a></li>
-                    <li><a href="#">Mesajlar</a></li>
+                    <li><a href="messages.php">Mesajlar</a></li>
                 </ul>
             </div>
             <div class="col-user-act">
@@ -103,19 +103,14 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                     <header>PawPath</header>
                     
                         <li><a href="index.php">Anasayfa</a></li>
-                        <li><a href="#">Üye işlemleri</a></li>
-                        <li><a href="#">Blog İşlemleri</a></li>
-                        <li><a href="#">Mesajlar</a></li>
+                        <li><a href="adduser.php">Üye işlemleri</a></li>
+                        <li><a href="addblog.php">Blog İşlemleri</a></li>
+                        <li><a href="messages.php">Mesajlar</a></li>
                     
                 </div>
             </div>
         </div>
         <div class="columns col-users">
-        <p> onayla butonu onay durumunu 1 yapar veterineri onayladıgımız anlamına gelir</p>
-        <p> yasakla butonu banned 1 yapar banladıgımız anlamına gelir </p>
-        <p> geri al butonu onay durumu 0 yapar veteriner onayını alır </p>
-        <p> sil butonu üyeyi siler </p>
-        <p> yasaklama butonu da banned 0 yapar banı kaldırır</p>
             <div class="col-userhead">
         <h2>Üye İşlemleri</h2>
        

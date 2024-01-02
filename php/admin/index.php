@@ -26,7 +26,7 @@
                     <li><a href="index.php">Anasayfa</a></li>
                     <li><a href="adduser.php">Üye işlemleri</a></li>
                     <li><a href="addblog.php">Blog işlemleri</a></li>
-                    <li><a href="#">Mesajlar</a></li>
+                    <li><a href="messages.php">Mesajlar</a></li>
                 </ul>
             </div>
             <div class="col-user-act">

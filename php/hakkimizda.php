@@ -1,3 +1,24 @@
+<?php 
+    session_start();
+    $conn = new mysqli("localhost", "root", "", "pawpath");
+$conn->set_charset("utf8");
+$user_id = $_SESSION['id'];
+if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['gonder'])) {
+    $name = $_POST['name'];
+    $surname = $_POST['surname'];
+    $mail = $_POST['email'];
+    $message = $_POST['message'];
+
+     $stmt = $conn->prepare("INSERT INTO `messages`(`user_id`, `name`, `surname`, `mail`, `message`) VALUES (?, ?, ?, ?, ?)");
+     $stmt->bind_param('issss',$user_id,$name,$surname,$mail,$message);
+     $stmt->execute();
+    $stmt->close();
+    header("Location: {$_SERVER['PHP_SELF']}");
+    exit();
+}
+
+?>
+
 <!DOCTYPE html>
 <html lang="en">
     <head>
@@ -22,7 +43,7 @@
             </div>
                 <div class="col-user-act">
                 <?php
-    session_start();
+ 
 
     if (isset($_SESSION['username'])) {
         $username = $_SESSION['username'];
@@ -96,19 +117,19 @@
                 <h1 id="ilk">Bize Ulaşın</h1>
                 <h3 id="iki">Sorularınız mı var ? Bizimle İletişime Geçin!</h3>
                 <table border="0">
-                    <form action="#" method="POST">
+                    <form action="" method="POST">
                         <tr>
-                            <td><input type="text" name="ad" placeholder="Adınız"></td>
-                            <td><input type="text" name="soyad" placeholder="Soyadınız"></td>
+                            <td><input type="text" name="name" placeholder="Adınız"></td>
+                            <td><input type="text" name="surname" placeholder="Soyadınız"></td>
                         </tr>
                         <tr>
                             <td colspan="2"><input type="text" name="email" placeholder="E-mail adresiniz"></td>
                         </tr>
                         <tr>
-                            <td colspan="2"><textarea name="msg" id="msg"placeholder="Mesajınızı buraya bırakın!"></textarea></td>
+                            <td colspan="2"><textarea name="message" id="msg"placeholder="Mesajınızı buraya bırakın!"></textarea></td>
                         </tr>
                         <tr>
-                            <td colspan="2"><input type="submit" value="Gönder"></td>
+                            <td colspan="2"><input type="submit" name="gonder" value="Gönder"></td>
                         </tr>
                     </form>
                 </table>
@@ -134,8 +155,8 @@
                     <div class="col-right">
                         <h6>Geri Dönüşleriniz Bizim İçin Önemli!</h6>
                             <form>
-                                <textarea type="text" id="footertext" placeholder="Mesajınızı Buraya Bırakabilirsiniz"></textarea>
-                                <button type="submit" id="footerbtn">Gönder</button>
+                                <textarea type="text" id="footertext" name="message" placeholder="Mesajınızı Buraya Bırakabilirsiniz"></textarea>
+                                <button type="submit" id="footerbtn" name="gonder">Gönder</button>
                             </form>
                     </div>
                 </div>

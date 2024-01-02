@@ -4,6 +4,10 @@
   header("Location: ../../php/logout.php"); // Admin değilse başka bir sayfaya yönlendir
   exit();
 }
+$conn = new mysqli("localhost", "root", "", "pawpath");
+$conn->set_charset("utf8");
+
+
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -26,7 +30,7 @@
                     <li><a href="index.php">Anasayfa</a></li>
                     <li><a href="adduser.php">Üye işlemleri</a></li>
                     <li><a href="addblog.php">Blog işlemleri</a></li>
-                    <li><a href="#">Mesajlar</a></li>
+                    <li><a href="messages.php">Mesajlar</a></li>
                 </ul>
             </div>
             <div class="col-user-act">
@@ -44,14 +48,42 @@
                     <header>PawPath</header>
                     
                         <li><a href="index.php">Anasayfa</a></li>
-                        <li><a href="#">Üye işlemleri</a></li>
-                        <li><a href="#">Blog İşlemleri</a></li>
-                        <li><a href="#">Mesajlar</a></li>
+                        <li><a href="adduser.php">Üye işlemleri</a></li>
+                        <li><a href="addblog.php">Blog İşlemleri</a></li>
+                        <li><a href="messages.php">Mesajlar</a></li>
                     
                 </div>
             </div>
         </div>
-          
+        <div class="columns col-users">
+            <div class="col-userhead">
+        <h2>Mesajlar</h2>
+       
+</div>
+        <div class="col-user-table">
+        <table border="1">
+            <tr>
+                <th>ID</th>
+                <th>Adı</th>
+                <th>Soyadı</th>
+                <th>Mail</th>
+                <th>Mesajı</th>
+            </tr>
+            <?php
+            $result = $conn->query("SELECT * FROM messages ");
+    
+            while ($row = $result->fetch_assoc()) {
+                echo "<tr>";
+                echo "<td>{$row['user_id']}</td>";
+                echo "<td>{$row['name']}</td>";
+                echo "<td>{$row['surname']}</td>";
+                echo "<td>{$row['mail']}</td>";
+                echo "<td>{$row['message']}</td>";
+                echo "</tr>";
+            }
+            ?>
+        </table>
+        </div></div>
         <div class="col-footer col-footer-bg">
             <div class="col-footer1">
                 <div class="col-left">

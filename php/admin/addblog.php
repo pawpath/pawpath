@@ -47,9 +47,9 @@ if (isset($_POST['add_blog'])) {
             <div class="col-menu">
                 <ul>
                     <li><a href="index.php">Anasayfa</a></li>
-                    <li><a href="#">Üye işlemleri</a></li>
+                    <li><a href="adduser.php">Üye işlemleri</a></li>
                     <li><a href="addblog.php">Blog işlemleri</a></li>
-                    <li><a href="#">Mesajlar</a></li>
+                    <li><a href="messages.php">Mesajlar</a></li>
 
                 </ul>
             </div>
@@ -68,9 +68,9 @@ if (isset($_POST['add_blog'])) {
                     <header>PawPath</header>
                     
                         <li><a href="index.php">Anasayfa</a></li>
-                        <li><a href="#">Üye işlemleri</a></li>
-                        <li><a href="#">Blog işlemleri</a></li>
-                        <li><a href="#">Mesajlar</a></li>
+                        <li><a href="adduser.php">Üye işlemleri</a></li>
+                        <li><a href="addblog.php">Blog işlemleri</a></li>
+                        <li><a href="messages.php">Mesajlar</a></li>
                     
                 </div>
             </div>
