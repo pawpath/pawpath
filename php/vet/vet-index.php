@@ -25,7 +25,7 @@
             <div class="col-menu col-menu-vet">
                 <ul>
                     <li><a href="vet-index.php">Anasayfa</a></li>
-                    <li><a href="#">Hasta Bilgi</a></li>
+                    <li><a href="vet-pet-info.php">Hasta Bilgi</a></li>
                     <li><a href="../php/blog.php">Blog</a></li>
                     <li><a href="../php/hakkimizda.php">Hakkımızda</a></li>
                 </ul>
