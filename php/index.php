@@ -8,6 +8,152 @@
     <script src="https://kit.fontawesome.com/b1573057bf.js" crossorigin="anonymous"></script>
     <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
     <script src="script.js"></script>
+    <style>
+        .col-abus-info{
+            padding-top: 4em;
+            flex-direction: row;
+            text-align: center;
+            justify-content: space-between;
+        }
+        .col-abus-dis{
+            background-color: #ffffff;
+            width: 24%;
+            height: 15em;
+            text-align: center;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            position: relative;
+            border-radius: 30px;
+            border-width: .25em 0 .25em .5em;
+            border-style: solid;
+            border-color: #F08080;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.236)
+        }
+        .col-abus-dis-title h3 {
+            font-family: "Dongle-Bold";
+            color: #000000;
+            font-size: 2.5em;
+            margin: 0;
+            padding: 0 .5em;
+            line-height: 2.5rem;
+        }
+        .col-abus-dis-info {
+
+        }
+        .col-abus-dis-info p {
+            font-family: "Coco-Sharp-Regular";
+            text-decoration: none;
+            width: 100%;
+            margin: 0;
+            padding: 0;
+            font-size: .9rem;
+            color: #000000;
+        }
+        .col-abus-vac{
+            background-color: #ffffff;
+            width: 24%;
+            height: 15em;
+            text-align: center;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            position: relative;
+            border-radius: 30px;
+            border-width: .25em .25em .25em .25em;
+            border-style: solid;
+            border-color: #8EBC38;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.236)
+        }
+        .col-abus-vac-title h3 {
+            font-family: "Dongle-Bold";
+            color: #000000;
+            font-size: 2.5em;
+            margin: 0;
+            padding: 0 .5em;
+            line-height: 2.5rem;
+        }
+        .col-abus-vac-info {
+
+        }
+        .col-abus-vac-info p {
+            font-family: "Coco-Sharp-Regular";
+            text-decoration: none;
+            width: 100%;
+            margin: 0;
+            padding: 0;
+            font-size: .9rem;
+            color: #000000;
+        }
+        .col-abus-petcare{
+            background-color: #ffffff;
+            width: 24%;
+            height: 15em;
+            text-align: center;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            position: relative;
+            border-radius: 30px;
+            border-width: .25em .25em .25em .25em;
+            border-style: solid;
+            border-color: #168AAD;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.236)
+        }
+        .col-abus-pet-title h3 {
+            font-family: "Dongle-Bold";
+            color: #000000;
+            font-size: 2.5em;
+            margin: 0;
+            padding: 0 .5em;
+            line-height: 2.5rem;
+        }
+        .col-abus-pet-info {
+        }
+        .col-abus-pet-info p {
+            font-family: "Coco-Sharp-Regular";
+            text-decoration: none;
+            width: 100%;
+            margin: 0;
+            padding: 0;
+            font-size: .9rem;
+            color: #000000;
+        }
+        .col-abus-map{
+            background-color: #ffffff;
+            width: 24%;
+            height: 15em;
+            text-align: center;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            position: relative;
+            border-radius: 30px;
+            border-width: .25em .5em .25em 0;
+            border-style: solid;
+            border-color: #EF9826;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.236)
+        }
+        .col-abus-map-title h3 {
+            font-family: "Dongle-Bold";
+            color: #000000;
+            font-size: 2.5em;
+            margin: 0;
+            padding: 0 .5em;
+            line-height: 2.5rem;
+        }
+        .col-abus-map-info {
+        }
+        .col-abus-map-info p {
+            font-family: "Coco-Sharp-Regular";
+            text-decoration: none;
+            width: 100%;
+            margin: 0;
+            padding: 0;
+            font-size: .9rem;
+            color: #000000;
+        }
+    </style>
 </head>
 <body>
     <div class="container">
@@ -25,7 +171,7 @@
             </div>
             <div class="col-user-act">
             <?php
-                session_start();
+                
 
                 if (isset($_SESSION['username'])) {
                     $username = $_SESSION['username'];
@@ -108,9 +254,10 @@
 
         <div class="columns col-abus-info">
             <div class="col-abus-dis">
-                <div class="col-abus-dis-title"><h3>Hastalık Sihirbazı</h3></div>
-                <div class="col-abus-dis-info"><p>Hastalık sihirbazı özelliği ile evcil hayvanlarınızın sağlığını daha yakından takip edebilir, hastalık belirtileri hakkında bilgi alabilirsiniz.</p></div>
+                <div class="col-abus-dis-title"><h3>Aşı Takip</h3></div>
+                <div class="col-abus-dis-info"><p>Sitemizdeki aşı takip özelliği, evcil hayvanlarınızın aşı takvimini düzenli olarak takip etmenizi ve sağlık durumlarını en iyi şekilde korumanızı sağlar.</p></div>
             </div>
+        
             <div class="col-abus-vac">
                 <div class="col-abus-vac-title"><h3>Aşı Takip</h3></div>
                 <div class="col-abus-vac-info"><p>Sitemizdeki aşı takip özelliği, evcil hayvanlarınızın aşı takvimini düzenli olarak takip etmenizi ve sağlık durumlarını en iyi şekilde korumanızı sağlar.</p></div>
