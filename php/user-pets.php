@@ -105,6 +105,16 @@ foreach ($pets as $pet) {
 }
     $stmt->close();
 }
+if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['fotgonder'])) {
+    $message = $_POST['message'];
+
+     $stmt = $conn->prepare("INSERT INTO `messages`(`message`) VALUES (?)");
+     $stmt->bind_param('s',$message);
+     $stmt->execute();
+    $stmt->close();
+    header("Location: {$_SERVER['PHP_SELF']}");
+    exit();
+}
 ?>
 <!DOCTYPE html>
 <html lang="en">

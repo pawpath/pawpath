@@ -23,7 +23,6 @@ $totalPages = ceil($totalPagesResult->fetch_assoc()['total'] / $postsPerPage);
 
 
 
-
 $conn->close();
 ?>
 
@@ -202,7 +201,7 @@ $conn->close();
                         echo "<div class='col-blog-title'><h2>" . $row["title"] . "</h2></div>";
                         $contentPreview = substr($row["content"], 0,500);
                         echo "<p>" . $contentPreview . "...</p>";  
-                        echo "<button class='button'><a href='../php/blog-detail.php'>Devamı</a></button>";      
+                        echo "<button class='button'><a href='../php/blog-detail.php?blog_id=" . $row['blog_id'] . "'>Devamı</a></button>";      
                         echo "<p class='col-blog-timestamp'>" . $row["created_at"] . "</p>";
                         echo "</div>";
                    

@@ -31,6 +31,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['kaydet'])) {
     $regmessage ="Kayıt başarıyla tamamlandı!";
     }
 }
+
 ?>
 <!DOCTYPE html>
 <html lang="en">
