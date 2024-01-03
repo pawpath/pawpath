@@ -3,19 +3,20 @@
     $conn = new mysqli("localhost", "root", "", "pawpath");
 $conn->set_charset("utf8");
 if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['gonder'])) {
-    $user_id = $_SESSION['id'];
+    $user_id = isset($_SESSION['id']) ? $_SESSION['id'] : "null";
     $name = $_POST['name'];
     $surname = $_POST['surname'];
     $mail = $_POST['email'];
     $message = $_POST['message'];
 
-     $stmt = $conn->prepare("INSERT INTO `messages`(`user_id`, `name`, `surname`, `mail`, `message`) VALUES (?, ?, ?, ?, ?)");
-     $stmt->bind_param('issss',$user_id,$name,$surname,$mail,$message);
-     $stmt->execute();
+    $stmt = $conn->prepare("INSERT INTO `messages`(`user_id`, `name`, `surname`, `mail`, `message`) VALUES (?, ?, ?, ?, ?)");
+    $stmt->bind_param('issss', $user_id, $name, $surname, $mail, $message);
+    $stmt->execute();
     $stmt->close();
     header("Location: {$_SERVER['PHP_SELF']}");
     exit();
 }
+
 if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['fotgonder'])) {
     $message = $_POST['message'];
 
