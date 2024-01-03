@@ -27,6 +27,24 @@ if (isset($_POST['add_blog'])) {
     $stmt->execute();
     $stmt->close();
 }
+if (isset($_POST['delete_blog'])) {
+    $blog_id = $_POST['blog_id'];
+
+    // Veritabanından blogu silme
+    $stmt = $conn->prepare("DELETE FROM blog WHERE blog_id = ?");
+    $stmt->bind_param("i", $blog_id);
+    $stmt->execute();
+    $stmt->close();
+}
+
+// Blogları çekme
+$result = $conn->query("SELECT blog_id, title FROM blog");
+
+// Sorgu başarılı mı kontrol et
+if ($result === false) {
+    die("Blogları çekerken bir hata oluştu: " . $conn->error);
+}
+$blogs = $result->fetch_all(MYSQLI_ASSOC);
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -93,6 +111,28 @@ if (isset($_POST['add_blog'])) {
                     </form>
                 </table>
             </div>
+            <div class="columns col-abus-contact col-list-blogs">
+            <h1 id="ilk">BLOG LİSTESİ</h1>
+            <table border="1">
+                <tr>
+                    <th>ID</th>
+                    <th>Başlık</th>
+                    <th>İşlemler</th>
+                </tr>
+                <?php foreach ($blogs as $blog): ?>
+                    <tr>
+                        <td><?php echo $blog['blog_id']; ?></td>
+                        <td><?php echo $blog['title']; ?></td>
+                        <td>
+                            <form action="" method="POST">
+                                <input type="hidden" name="blog_id" value="<?php echo $blog['blog_id']; ?>">
+                                <button type="submit" name="delete_blog">Sil</button>
+                            </form>
+                        </td>
+                    </tr>
+                <?php endforeach; ?>
+            </table>
+        </div>
         <div class="col-footer col-footer-bg">
             <div class="col-footer1">
                 <div class="col-left">

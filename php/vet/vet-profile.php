@@ -172,7 +172,7 @@ if ($kullanici_id !== null) {
                                     </tr>
                                     <tr>
                                         <td>E-mail</td>
-                                        <td><input type="text" name="mail" value="<?php echo $mail; ?>"></td>
+                                        <td><input type="text" name="mail" ></td>
                                     </tr>
                              </table>
                                     <input type="submit" name="gonder" value="Kaydet">
@@ -203,7 +203,7 @@ if ($kullanici_id !== null) {
   padding:2rem;
   border: 1px solid #ccc;
   border-radius: 1rem;
-  background-color: #F0807F;
+  background-color: #184E77;
   z-index: 1000;
 }
 .col-popup-profile{
@@ -212,7 +212,7 @@ if ($kullanici_id !== null) {
   border-radius: 1rem;
 }
 .col-popup-item-profile table {
-    color:#AC5C5B;
+    color:#042E4E;
     margin-right:-40px;
     
 }
@@ -220,7 +220,7 @@ if ($kullanici_id !== null) {
 {
     cursor: pointer ;
   font-size: 1.5rem;
-  background-color: #AC5C5B;
+  background-color: #053454;
   color: white;
   font-family: "Dongle-Bold";
   border:none;
@@ -234,7 +234,7 @@ if ($kullanici_id !== null) {
     height:2rem;
     background-color:#FFFFFF;
   border-radius: 10px; 
-  border-color: #AC5C5B;
+  border-color: #053454;
   border-width: 0 0 .5em 0;
   border-style: solid;
   font-family: "Coco-Sharp-Regular";
