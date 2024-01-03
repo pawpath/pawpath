@@ -118,9 +118,9 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             <th>Kullanıcı Adı</th>
             <th>Mail</th>
             <th>Onay Durumu</th>
-            <th>Role</th>
-            <th>Banned</th>
-            <th>Onayla</th>
+            <th>Rol</th>
+            <th>Ban Durumu</th>
+            <th>İşlemler</th>
         </tr>
         <?php
         $result = $conn->query("SELECT * FROM users ");
