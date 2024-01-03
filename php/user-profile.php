@@ -133,7 +133,7 @@ if ($kullanici_id !== null) {
                     <h2>Servislerimiz</h2>
                     <ul>
                         <li><a href="../php/index.php">Anasayfa</a></li>
-                        <li><a href="../php/user-pets.php">Evcil Hayvanlarım</a></li>
+                        <li><a href="#">Hizmetlerimiz</a></li>
                         <li><a href="../php/blog.php">Blog</a></li>
                         <li><a href="../php/hakkimizda.php">Hakkımızda</a></li>
                     </ul>
@@ -173,7 +173,7 @@ if ($kullanici_id !== null) {
                                     </tr>
                                     <tr>
                                         <td>E-mail</td>
-                                        <td><input type="text" name="mail" value="<?php echo $mail; ?>"></td>
+                                        <td><input type="text" name="mail" ></td>
                                     </tr>
                              </table>
                                     <input type="submit" name="gonder" value="Kaydet">

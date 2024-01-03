@@ -28,6 +28,8 @@ $stmt = $conn->prepare("SELECT pet_id, pet_name, pet_type, pet_breed, pet_gender
 $stmt->bind_param('i', $user_id);
 $stmt->execute();
 $stmt->bind_result($pet_id, $pet_name, $pet_type, $pet_breed, $pet_gender, $pet_age);
+// hayvan profil düzenle
+
 
 $pets = [];
 while ($stmt->fetch()) {
@@ -225,9 +227,8 @@ foreach ($pets as $pet) {
                             <li><b>Cinsiyeti: </b><span><?php echo $pet_data['gender']; ?></span></li>
                             <li><b>Yaşı: </b><span><?php echo $pet_data['age']; ?></span></li>
                         </ul>
-                        <div>
-                            <button class="button btn-pet" name="edit-pet-info">Profili Düzenle</button>
-                        </div>
+                                    <button class="button btn-pet" type="submit" name="edit-pet-info" onclick="openPopup()">Profili Düzenle</button>
+                               
                     </div>
                 </div>
 
@@ -275,27 +276,9 @@ foreach ($pets as $pet) {
                     </div>
 
                     <div class="col-pet-find-dis">
-                        <button class="button btn-disease">Evcil hayvanımın neyi var?</button>
+                        <button class="button btn-disease" >Evcil hayvanımın neyi var?</button>
                         <!-- bu buton pop-up butonudur aşağıdaki kodda popup kodudur -->
                     </div>
-                    <div id="popup" class="popup-container">
-                        <div class="close-btn" onclick="closePopup()">X</div>
-                        <div class="col-popup">
-                            <h2>Hastalık Sihirbazı</h2>
-                            <div class="col-popup-item">
-                            </div>
-                        </div>
-                    </div>
-                    <script src="../js/popup.js"></script>
-                    <script>
-                        function openPopup() {
-                            document.getElementById("popup").style.display = "flex";
-                        }
-
-                        function closePopup() {
-                            document.getElementById("popup").style.display = "none";
-                        }
-                    </script>
                 </div>
             </div>
         </div>
@@ -303,6 +286,7 @@ foreach ($pets as $pet) {
 <?php else: ?>
     <p>Evcil hayvanınız bulunmamaktadır.</p>
 <?php endif; ?>
+</section>
         <!--Footer-->
         <div class="col-footer col-footer-bg">
             <div class="col-footer1">
@@ -336,5 +320,101 @@ foreach ($pets as $pet) {
                 </div>
             </div>
         </div>
+        <div id="popup" class="popup-container-profile">
+                     <div class="close-btn" onclick="closePopup()">X</div>
+                        <div class="col-popup-profile">
+                            <div class="col-popup-item-profile">
+                                <form action="" method="POST">
+                            <table border="0" align="center">
+                                    <tr>
+                                        <td>Irkı</td>
+                                        <td>Cinsi</td>
+                                    </tr>
+                                    <tr>
+                                        <td><input type="text" name="Irk" ></td>
+                                        <td><input type="text" name="Cinsi" ></td>
+                                    </tr>
+                                    <tr>
+                                        <td>Cinsiyeti</td>
+                                        <td>Yaşı</td>
+                                    </tr>
+                                    <tr>
+                                        <td><input type="text" name="Cinsiyet" ></td>
+                                        <td><input type="text" name="Yas" ></td>
+                                    </tr>
+                             </table>
+                                    <input type="submit" name="gonder" value="Kaydet">
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                <script src="../js/popup.js"></script>
+        </div>
+    <script>
+    function openPopup() {
+        document.getElementById("popup").style.display = "flex";
+    }
+
+    function closePopup() {
+        document.getElementById("popup").style.display = "none";
+    }
+</script>
+
+<style>
+    .popup-container-profile {
+  display: none;
+  position: fixed;
+  width: 50%;
+  height: auto;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  padding:2rem;
+  border: 1px solid #ccc;
+  border-radius: 1rem;
+  background-color: #F0807F;
+  z-index: 1000;
+}
+.col-popup-profile{
+  width: 75%;
+  height: 250px;
+  border-radius: 1rem;
+}
+.col-popup-item-profile table {
+    color:#AC5C5B;
+    margin-right:-40px;
+    
+}
+.col-popup-item-profile input[type='submit']
+{
+    cursor: pointer ;
+  font-size: 1.5rem;
+  background-color: #AC5C5B;
+  color: white;
+  font-family: "Dongle-Bold";
+  border:none;
+  border-radius: 5px; 
+  height:2em;
+  width: 25%;
+  float: right;
+}
+.col-popup-item-profile input[type='text']
+{
+    height:2rem;
+    background-color:#FFFFFF;
+  border-radius: 10px; 
+  border-color: #AC5C5B;
+  border-width: 0 0 .5em 0;
+  border-style: solid;
+  font-family: "Coco-Sharp-Regular";
+  text-indent: 2em;
+}
+.col-popup-item-profile input[type='submit']:hover
+{
+    background: #FFFFFF;
+    color:Black;
+  transition: 0.5s;
+}
+    </style>
 </body>
 </html>
