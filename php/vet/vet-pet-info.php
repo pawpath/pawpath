@@ -157,7 +157,7 @@ function addPetInfo($petId, $infoType, $infoName, $infoDate,$diseaseDetail,$next
 
        <section>
     <div class="columns col-search-user">
-        <div>
+        <div class="col-search-user-title">
             <h1>Kullanıcı Ara</h1>
         </div>
         <form method="POST" action="">
