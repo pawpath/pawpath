@@ -1,4 +1,5 @@
 <?php
+ session_start();
     // Veritabanı bağlantısı
     $conn = new mysqli("localhost", "root", "", "pawpath");
 
@@ -153,7 +154,7 @@ $conn->close();
 
                 <div class="col-user-act">
                 <?php
-                session_start();
+               
 
                 if (isset($_SESSION['username'])) {
                     $username = $_SESSION['username'];
