@@ -50,8 +50,14 @@ $conn->close();
                 flex-wrap: wrap;
                 justify-content: space-between;
                 }
+                .col-blog-content{
+                    border-bottom-left-radius: 25px;
+                    border-bottom-right-radius: 25px;
+                    box-shadow: 0 0 20px rgba(0, 0, 0, 0.236);
+                }
                 .col-blog-content p {
-                    padding:2rem;
+                    padding-left:2em;
+                    padding-right: 2em;
                     float:right;
                     color:#585858;
 
@@ -64,17 +70,46 @@ $conn->close();
                    height: auto;
                 }
                 .col-blog-title{
+                    font-family: "Dongle-Bold";
                     text-align:center;
+                    
                     padding: 1rem;
                     color:#585858;
                 }
+                .col-blog-title h2{
+                    font-size: 2.75rem;
+                    line-height: 2rem;
+                    margin-top: 1em;
+                    margin-bottom: 0;
+                }
                 .col-blog-timestamp
                 {
-                    margin-top:100px;   
+                    margin-top: 0;
+                    background-color: #EF9825;
+                    border-top-left-radius: 25px;
+                    border-bottom-left-radius: 25px;
+                    padding: .2em 0 .2em .5em;
                 }
                 .button{
                     margin-top:10%;
-                    margin-left:20%;
+                    margin-left: 3em;
+                    border: none;
+                    background-color: #EF9825;
+                    padding: .1em 3em .1em 3em;
+                }
+                .button a{
+                    font-family: "Dongle-Bold";
+                    font-size: 1.75rem;
+                    color: #fff;
+                    text-decoration: none;
+                }
+                .button:hover{
+                    background-color: #fff;
+                    transition: .5s;
+                }
+                .button a:hover{
+                    color: #000;
+                    transition: .5s;
                 }
                 
                 
@@ -82,7 +117,8 @@ $conn->close();
         .pagination {
             display: flex;
             justify-content: center;
-            margin-top: 20px;
+            margin-top: 1em;
+            margin-bottom: 3em;
         }
 
         .pagination a {
@@ -165,7 +201,7 @@ $conn->close();
                         echo "<div class='col-blog-title'><h2>" . $row["title"] . "</h2></div>";
                         $contentPreview = substr($row["content"], 0,500);
                         echo "<p>" . $contentPreview . "...</p>";  
-                        echo "<button class='button'>Devamı</button>";      
+                        echo "<button class='button'><a href='../php/blog-detail.php'>Devamı</a></button>";      
                         echo "<p class='col-blog-timestamp'>" . $row["created_at"] . "</p>";
                         echo "</div>";
                    

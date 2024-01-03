@@ -789,17 +789,23 @@ h2{
     text-align: left;
 }
 .col-center a{
+  font-family: "TT-Regular";
+  text-decoration: none;
     color: #6C6C6C;
+    padding-left: 0;
+    padding: 0;
 }
 .col-center ul li{
     list-style-type: none;
     margin-top: 1em;
+    padding: 0;
 }
 .col-center ul{
-    margin-left: 0;
+    padding: 0;
 }
-.col-center a{
-    text-decoration: none;
+.col-center a:hover{
+  color: #034d63;
+    transition: .5s;
 }
 
 /* Geri dönüş */
@@ -1327,6 +1333,7 @@ h2{
 .col-user-table table tr td{
   text-align: center;
   padding: .25em .5em;
+  max-width: 600px;
 }
 .col-user-table form input[type="submit"]{
   background-color: #ffffff;

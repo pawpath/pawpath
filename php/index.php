@@ -211,7 +211,7 @@
                 <h2>Evcil Dostlarınızın İyi Bakımı:</h2>
                 <h1>Onların <span class="accent-color">Sağlığı, Mutluluğu</span> ve <span class="accent-color">Sizin İçin</span> En İyi Kaynak!</h1>
                 <p>Siz de evcil dostlarınızın sağlığını ve mutluluğunu önemsiyorsanız, doğru adrestesiniz! Aşı takip, günlük bakım, eğitim, sağlık önerileri ve daha fazlasını keşfedin. Evcil hayvanlarınızın hayat kalitesini artırmak ve sağlıklarını korumak için bizimle adım atın!</p>
-                <a href="#" class="button btn-mid">Detaylar</a>
+                <a href="../php/hakkimizda.php" class="button btn-mid">Detaylar</a>
             </div>
         </div>
 
