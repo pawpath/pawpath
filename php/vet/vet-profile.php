@@ -133,10 +133,10 @@ if ($kullanici_id !== null) {
                 <div class="col-center">
                     <h2>Servislerimiz</h2>
                     <ul>
-                        <li><a href="../php/index.php">Anasayfa</a></li>
-                        <li><a href="#">Hizmetlerimiz</a></li>
-                        <li><a href="../php/blog.php">Blog</a></li>
-                        <li><a href="../php/hakkimizda.php">Hakkımızda</a></li>
+                        <li><a href="vet-index.php">Anasayfa</a></li>
+                        <li><a href="vet-pet-info.php">Hasta Bilgi</a></li>
+                        <li><a href="vet-blog.php">Blog</a></li>
+                        <li><a href="vet-hakkimizda.php">Hakkımızda</a></li>
                     </ul>
                 </div>
                 <div class="col-right">

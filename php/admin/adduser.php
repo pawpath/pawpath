@@ -109,9 +109,10 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         <div class="columns col-users">
             <div class="col-userhead">
         <h2>Üye İşlemleri</h2>
-       
 </div>
+<?php echo "$messageuser"; ?>
 <div class="col-user-table">
+
     <table border="1">
         <tr>
             <th>ID</th>
@@ -147,7 +148,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         }
         ?>
     </table>
-    <?php echo "$messageuser"; ?>
+    
     </div>
         </div>  
         <div class="col-footer col-footer-bg">
