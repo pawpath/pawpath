@@ -44,10 +44,10 @@ while ($stmt->fetch()) {
 // Evcil hayvan bilgilerini kullanarak aşı, alerji ve hastalık bilgilerini çek
 $pets_info = [];
 foreach ($pets as $pet) {
-    $stmt = $conn->prepare("SELECT info_type, info_name, info_date FROM pet_info WHERE pet_id = ?");
+    $stmt = $conn->prepare("SELECT info_type, info_name, info_date, diseaseDetail,nextInfoDate FROM pet_info WHERE pet_id = ?");
     $stmt->bind_param('i', $pet['id']);
     $stmt->execute();
-    $stmt->bind_result($info_type, $info_name, $info_date);
+    $stmt->bind_result($info_type, $info_name, $info_date,$diesaseDetail,$nextInfoDate);
 
     $pet_info = [
         'id' => $pet['id'],
@@ -59,7 +59,9 @@ foreach ($pets as $pet) {
     while ($stmt->fetch()) {
         $info = [
             'name' => $info_name,
-            'date' => $info_date
+            'date' => $info_date,
+            'nextInfoDate' => $nextInfoDate,
+            'diesaseDetail' => $diesaseDetail
         ];
 
         switch ($info_type) {
@@ -249,7 +251,7 @@ foreach ($pets as $pet) {
                                 <div>
                                     <h4>Gelecek Aşı</h4>
                                     <!-- Buraya gelecek aşı tarihi eklenebilir -->
-                                    <span>00.00.0000</span>
+                                    <span><?php echo $vaccine['nextInfoDate']; ?></span>
                                 </div>
                             </div>
                         <?php endforeach; ?>
@@ -267,7 +269,7 @@ foreach ($pets as $pet) {
                         <?php foreach ($pet_data['info']['diseases'] as $disease): ?>
                             <div class="pet-disease">
                                 <h3><?php echo $disease['name']; ?></h3>
-                                <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Explicabo beatae alias distinctio aperiam numquam, iusto repellendus.</p>
+                                <p><?php echo $disease['diesaseDetail']; ?></p>
                             </div>
                         <?php endforeach; ?>
                     </div>
