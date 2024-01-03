@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Anamakine: 127.0.0.1
--- Üretim Zamanı: 02 Oca 2024, 14:34:57
+-- Üretim Zamanı: 03 Oca 2024, 20:08:05
 -- Sunucu sürümü: 10.4.32-MariaDB
 -- PHP Sürümü: 8.0.30
 
@@ -40,14 +40,33 @@ CREATE TABLE `blog` (
 --
 
 INSERT INTO `blog` (`blog_id`, `title`, `content`, `image`, `created_at`) VALUES
-(4, 'blog sayfam', 'merhaba burası blog sayfası merhaba burası blog sayfası merhaba burası blog sayfası merhaba burası blog sayfası merhaba burası blog sayfası merhaba burası blog sayfası merhaba burası blog sayfası merhaba burası blog sayfası merhaba burası blog sayfası merhaba burası blog sayfası merhaba burası blog sayfası merhaba burası blog sayfası merhaba burası blog sayfası merhaba burası blog sayfası merhaba burası blog sayfası ', NULL, '2023-12-30 23:20:43'),
-(5, 'merhaba burası blog sayfası ', 'merhaba burası blog sayfası merhaba burası blog sayfası merhaba burası blog sayfası merhaba burası blog sayfası merhaba burası blog sayfası merhaba burası blog sayfası merhaba burası blog sayfası merhaba burası blog sayfası merhaba burası blog sayfası merhaba burası blog sayfası merhaba burası blog sayfası merhaba burası blog sayfası merhaba burası blog sayfası merhaba burası blog sayfası merhaba burası blog sayfası merhaba burası blog sayfası ', NULL, '2023-12-30 23:21:02'),
-(6, 'merhaba burası blog sayfası merhaba burası blog sayfası merhaba burası blog sayfası ', 'merhaba burası blog sayfası merhaba burası blog sayfası merhaba burası blog sayfası merhaba burası blog sayfası merhaba burası blog sayfası merhaba burası blog sayfası merhaba burası blog sayfası merhaba burası blog sayfası merhaba burası blog sayfası merhaba burası blog sayfası merhaba burası blog sayfası merhaba burası blog sayfası merhaba burası blog sayfası merhaba burası blog sayfası merhaba burası blog sayfası merhaba burası blog sayfası ', NULL, '2023-12-30 23:23:57'),
 (7, 'merhaba burası blog sayfası merhaba burası blog sayfası merhaba burası blog sayfası ', 'merhaba burası blog sayfası merhaba burası blog sayfası merhaba burası blog sayfası merhaba burası blog sayfası merhaba burası blog sayfası merhaba burası blog sayfası merhaba burası blog sayfası merhaba burası blog sayfası merhaba burası blog sayfası merhaba burası blog sayfası merhaba burası blog sayfası merhaba burası blog sayfası merhaba burası blog sayfası merhaba burası blog sayfası merhaba burası blog sayfası ', 'Adsız4.png', '2023-12-30 23:24:00'),
 (8, 'merhaba burası blog sayfası merhaba burası blog sayfası merhaba burası blog sayfası ', 'merhaba burası blog sayfası merhaba burası blog sayfası merhaba burası blog sayfası merhaba burası blog sayfası merhaba burası blog sayfası merhaba burası blog sayfası merhaba burası blog sayfası merhaba burası blog sayfası merhaba burası blog sayfası merhaba burası blog sayfası merhaba burası blog sayfası merhaba burası blog sayfası merhaba burası blog sayfası merhaba burası blog sayfası ', 'Adsız.png', '2023-12-30 23:24:05'),
 (9, 'merhaba burası blog sayfası merhaba burası blog sayfası merhaba burası blog sayfası ', 'merhaba burası blog sayfası merhaba burası blog sayfası merhaba burası blog sayfası merhaba burası blog sayfası merhaba burası blog sayfası merhaba burası blog sayfası merhaba burası blog sayfası merhaba burası blog sayfası merhaba burası blog sayfası merhaba burası blog sayfası merhaba burası blog sayfası merhaba burası blog sayfası merhaba burası blog sayfası merhaba burası blog sayfası ', 'Adsız2.png', '2023-12-30 23:33:14'),
 (10, 'blog blog blog blog blog blog blog ', 'blog blog blog blog blog blog blog blog blog blog blog blog blog blog blog blog blog blog blog blog blog blog blog blog blog blog blog blog blog blog blog blog blog blog ', 'Adsız3.png', '2023-12-30 23:33:27'),
-(11, 'blog blog blog blog blog blog blog ', 'blog blog blog blog blog blog blog blog blog blog blog blog blog blog blog blog blog blog blog blog blog blog blog blog blog blog blog blog blog blog blog blog blog blog ', 'banner.png', '2024-01-02 11:14:19');
+(11, 'blog blog blog blog blog blog blog ', 'blog blog blog blog blog blog blog blog blog blog blog blog blog blog blog blog blog blog blog blog blog blog blog blog blog blog blog blog blog blog blog blog blog blog ', 'Adsız4.png', '2024-01-02 11:14:19');
+
+-- --------------------------------------------------------
+
+--
+-- Tablo için tablo yapısı `messages`
+--
+
+CREATE TABLE `messages` (
+  `user_id` int(11) NOT NULL,
+  `name` varchar(50) NOT NULL,
+  `surname` varchar(50) NOT NULL,
+  `mail` varchar(50) NOT NULL,
+  `message` text NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Tablo döküm verisi `messages`
+--
+
+INSERT INTO `messages` (`user_id`, `name`, `surname`, `mail`, `message`) VALUES
+(3, 'yusuf', 'olgun', 'yusufolgn03@gmail.com', 'merhaba sitenizi çok beğendim bunu bildirmek istedim iyi günler dilerim. :D'),
+(3, 'yusuf', 'olgun', 'yusufolgn03@gmail.com', 'adasdasdasdasdasdasdasdas');
 
 -- --------------------------------------------------------
 
@@ -72,7 +91,8 @@ CREATE TABLE `pets` (
 INSERT INTO `pets` (`pet_id`, `user_id`, `pet_name`, `pet_type`, `pet_breed`, `pet_age`, `pet_gender`) VALUES
 (1, 3, 'betül', 'kedi', 'golden', '12', 'D'),
 (2, 3, 'yusuf', 'köpek', 'kurt', '20', 'E'),
-(3, 3, 'melo', 'kedi', 'golden', '3', 'E');
+(3, 3, 'melo', 'kedi', 'golden', '3', 'E'),
+(4, 4, 'balım', 'kedi', 'golden', '3', 'E');
 
 -- --------------------------------------------------------
 
@@ -130,7 +150,8 @@ CREATE TABLE `users` (
 INSERT INTO `users` (`id`, `username`, `mail`, `name`, `surname`, `password`, `role`, `approved`, `banned`) VALUES
 (1, 'yz3ro', 'yusufolgn03@gmail.com', 'yusuf', 'olgun', '$2y$10$z9TR5U98iWGteJgcxQPbR.lUeKzrbXwtkHseCc923tozrzfc6FlUy', 'admin', 1, 0),
 (2, 'yz3ro1', 'yz3ro123@gmail.com', 'yusuf', 'olgun', '$2y$10$hu8qw1X1nPZXgQc0fYLpauKA/cZKnNGc08yK4joIl7PErFHXrftRq', 'veterinarian', 1, 0),
-(3, 'yz3ro2', 'yz3ro1232@gmail.com', 'yusuf', 'olgun', '$2y$10$QA9VF9SpQUkLex.yL./PNebi3tm9/7fXg.yJXrV/cZyw0dbfYgvL6', 'user', 1, 0);
+(3, 'yz3ro2', 'fleaudie@gmail.com', 'betül', 'kansu', '$2y$10$QA9VF9SpQUkLex.yL./PNebi3tm9/7fXg.yJXrV/cZyw0dbfYgvL6', 'user', 1, 0),
+(4, 'yz3ro3', 'yz3ro1234@gmail.com', 'yusuf', 'olgun', '$2y$10$Y9Z9Esz7RbVgBno7NCzYzusimBrEgQDbgph9wpoJzG5P.B.TfRm6O', 'user', 1, 0);
 
 --
 -- Dökümü yapılmış tablolar için indeksler
@@ -168,13 +189,13 @@ ALTER TABLE `blog`
 -- Tablo için AUTO_INCREMENT değeri `pets`
 --
 ALTER TABLE `pets`
-  MODIFY `pet_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `pet_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
 -- Tablo için AUTO_INCREMENT değeri `users`
 --
 ALTER TABLE `users`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

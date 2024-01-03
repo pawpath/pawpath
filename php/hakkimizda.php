@@ -2,8 +2,8 @@
     session_start();
     $conn = new mysqli("localhost", "root", "", "pawpath");
 $conn->set_charset("utf8");
-$user_id = $_SESSION['id'];
 if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['gonder'])) {
+    $user_id = $_SESSION['id'];
     $name = $_POST['name'];
     $surname = $_POST['surname'];
     $mail = $_POST['email'];
@@ -11,6 +11,16 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['gonder'])) {
 
      $stmt = $conn->prepare("INSERT INTO `messages`(`user_id`, `name`, `surname`, `mail`, `message`) VALUES (?, ?, ?, ?, ?)");
      $stmt->bind_param('issss',$user_id,$name,$surname,$mail,$message);
+     $stmt->execute();
+    $stmt->close();
+    header("Location: {$_SERVER['PHP_SELF']}");
+    exit();
+}
+if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['fotgonder'])) {
+    $message = $_POST['message'];
+
+     $stmt = $conn->prepare("INSERT INTO `messages`(`message`) VALUES (?)");
+     $stmt->bind_param('s',$message);
      $stmt->execute();
     $stmt->close();
     header("Location: {$_SERVER['PHP_SELF']}");
@@ -154,9 +164,9 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['gonder'])) {
                     </div>
                     <div class="col-right">
                         <h6>Geri Dönüşleriniz Bizim İçin Önemli!</h6>
-                            <form>
-                                <textarea type="text" id="footertext" name="message" placeholder="Mesajınızı Buraya Bırakabilirsiniz"></textarea>
-                                <button type="submit" id="footerbtn" name="gonder">Gönder</button>
+                            <form action="" method="POST">
+                                <textarea type="text" id="footertext" name="messagefot" placeholder="Mesajınızı Buraya Bırakabilirsiniz"></textarea>
+                                <button type="submit" id="footerbtn" name="fotgonder">Gönder</button>
                             </form>
                     </div>
                 </div>

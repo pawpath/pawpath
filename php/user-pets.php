@@ -207,96 +207,100 @@ foreach ($pets as $pet) {
             </div>
         </section>
     <section>
+    <?php if (!empty($pets_and_info)): ?>
     <?php foreach ($pets_and_info as $pet_data): ?>
-    <div class="columns col-pet">
-        <div class="col-pet-bg">
-            <div class="col-pet-info">
-                <div class="col-pet-info-pp">
-                    <img src="" alt="" />
+        <div class="columns col-pet">
+            <div class="col-pet-bg">
+                <div class="col-pet-info">
+                    <div class="col-pet-info-pp">
+                        <img src="" alt="" />
+                    </div>
+                    <div class="col-pet-info-text">
+                        <h2><?php echo $pet_data['name']; ?></h2>
+                        <ul>
+                            <li><b>Irkı: </b><span><?php echo $pet_data['type']; ?></span></li>
+                            <li><b>Cinsi: </b><span><?php echo $pet_data['breed']; ?></span></li>
+                            <li><b>Cinsiyeti: </b><span><?php echo $pet_data['gender']; ?></span></li>
+                            <li><b>Yaşı: </b><span><?php echo $pet_data['age']; ?></span></li>
+                        </ul>
+                        <div>
+                            <button class="button btn-pet" name="edit-pet-info">Profili Düzenle</button>
+                        </div>
+                    </div>
                 </div>
-                <div class="col-pet-info-text">
-                    <h2><?php echo $pet_data['name']; ?></h2>
-                    <ul>
-                        <li><b>Irkı: </b><span><?php echo $pet_data['type']; ?></span></li>
-                        <li><b>Cinsi: </b><span><?php echo $pet_data['breed']; ?></span></li>
-                        <li><b>Cinsiyeti: </b><span><?php echo $pet_data['gender']; ?></span></li>
-                        <li><b>Yaşı: </b><span><?php echo $pet_data['age']; ?></span></li>
-                    </ul>
+
+                <div class="col-pet-health">
                     <div>
-                        <button class="button btn-pet" name="edit-pet-info">Profili Düzenle</button>
+                        <h1>Sağlık Bilgileri</h1>
                     </div>
-                </div>
-            </div>
-
-            <div class="col-pet-health">
-                <div>
-                    <h1>Sağlık Bilgileri</h1>
-                </div>
-                <h2>Aşılar</h2>
-                <div class="col-pet-vac">
-                    <?php foreach ($pet_data['info']['vaccines'] as $vaccine): ?>
-                        <div class="pet-vac">
-                            <div>
-                                <svg id="circle"></svg>
+                    <h2>Aşılar</h2>
+                    <div class="col-pet-vac">
+                        <?php foreach ($pet_data['info']['vaccines'] as $vaccine): ?>
+                            <div class="pet-vac">
+                                <div>
+                                    <svg id="circle"></svg>
+                                </div>
+                                <img src="../img/vaccine_icon.png" alt="vaccine_photo" />
+                                <h3><?php echo $vaccine['name']; ?></h3>
+                                <div>
+                                    <h4>Son yapılan tarih</h4>
+                                    <span><?php echo $vaccine['date']; ?></span>
+                                </div>
+                                <div>
+                                    <h4>Gelecek Aşı</h4>
+                                    <!-- Buraya gelecek aşı tarihi eklenebilir -->
+                                    <span>00.00.0000</span>
+                                </div>
                             </div>
-                            <img src="../img/vaccine_icon.png" alt="vaccine_photo" />
-                            <h3><?php echo $vaccine['name']; ?></h3>
-                            <div>
-                                <h4>Son yapılan tarih</h4>
-                                <span><?php echo $vaccine['date']; ?></span>
+                        <?php endforeach; ?>
+                    </div>
+
+                    <h2>Alerjiler</h2>
+                    <div class="col-pet-allergy">
+                        <?php foreach ($pet_data['info']['allergies'] as $allergy): ?>
+                            <div class="pet-allergy"><h3><?php echo $allergy['name']; ?></h3></div>
+                        <?php endforeach; ?>
+                    </div>
+
+                    <h2>Hastalıklar</h2>
+                    <div class="col-pet-dis">
+                        <?php foreach ($pet_data['info']['diseases'] as $disease): ?>
+                            <div class="pet-disease">
+                                <h3><?php echo $disease['name']; ?></h3>
+                                <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Explicabo beatae alias distinctio aperiam numquam, iusto repellendus.</p>
                             </div>
-                            <div>
-                                <h4>Gelecek Aşı</h4>
-                                <!-- Buraya gelecek aşı tarihi eklenebilir -->
-                                <span>00.00.0000</span>
+                        <?php endforeach; ?>
+                    </div>
+
+                    <div class="col-pet-find-dis">
+                        <button class="button btn-disease">Evcil hayvanımın neyi var?</button>
+                        <!-- bu buton pop-up butonudur aşağıdaki kodda popup kodudur -->
+                    </div>
+                    <div id="popup" class="popup-container">
+                        <div class="close-btn" onclick="closePopup()">X</div>
+                        <div class="col-popup">
+                            <h2>Hastalık Sihirbazı</h2>
+                            <div class="col-popup-item">
                             </div>
-                        </div>
-                    <?php endforeach; ?>
-                </div>
-
-                <h2>Alerjiler</h2>
-                <div class="col-pet-allergy">
-                    <?php foreach ($pet_data['info']['allergies'] as $allergy): ?>
-                        <div class="pet-allergy"><h3><?php echo $allergy['name']; ?></h3></div>
-                    <?php endforeach; ?>
-                </div>
-
-                <h2>Hastalıklar</h2>
-                <div class="col-pet-dis">
-                    <?php foreach ($pet_data['info']['diseases'] as $disease): ?>
-                        <div class="pet-disease">
-                            <h3><?php echo $disease['name']; ?></h3>
-                            <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Explicabo beatae alias distinctio aperiam numquam, iusto repellendus.</p>
-                        </div>
-                    <?php endforeach; ?>
-                </div>
-
-                <div class="col-pet-find-dis">
-                    <button class="button btn-disease">Evcil hayvanımın neyi var?</button>
-                    <!-- bu buton pop-up butonudur aşağıdaki kodda popup kodudur -->
-                </div>
-                <div id="popup" class="popup-container">
-                    <div class="close-btn" onclick="closePopup()">X</div>
-                    <div class="col-popup">
-                        <h2>Hastalık Sihirbazı</h2>
-                        <div class="col-popup-item">
                         </div>
                     </div>
-                </div>
-                <script src="../js/popup.js"></script>
-                <script>
-                    function openPopup() {
-                        document.getElementById("popup").style.display = "flex";
-                    }
+                    <script src="../js/popup.js"></script>
+                    <script>
+                        function openPopup() {
+                            document.getElementById("popup").style.display = "flex";
+                        }
 
-                    function closePopup() {
-                        document.getElementById("popup").style.display = "none";
-                    }
-                </script>
+                        function closePopup() {
+                            document.getElementById("popup").style.display = "none";
+                        }
+                    </script>
+                </div>
             </div>
         </div>
-    </div>
-<?php endforeach; ?>
+    <?php endforeach; ?>
+<?php else: ?>
+    <p>Evcil hayvanınız bulunmamaktadır.</p>
+<?php endif; ?>
         <!--Footer-->
         <div class="col-footer col-footer-bg">
             <div class="col-footer1">
