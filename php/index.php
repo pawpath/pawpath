@@ -46,7 +46,7 @@
 
         }
         .col-abus-disease-info p {
-            font-family: "Coco-Sharp-Regular";
+            font-family: "TT-Regular";
             text-decoration: none;
             margin: 0 .25em;
             padding: 0;
@@ -80,7 +80,7 @@
 
         }
         .col-abus-vac-info p {
-            font-family: "Coco-Sharp-Regular";
+            font-family: "TT-Regular";
             text-decoration: none;
             margin: 0 .25em;
             padding: 0;
@@ -113,7 +113,7 @@
         .col-abus-pet-info {
         }
         .col-abus-pet-info p {
-            font-family: "Coco-Sharp-Regular";
+            font-family: "TT-Regular";
             text-decoration: none;
             margin: 0 .25em;
             padding: 0;
@@ -146,7 +146,7 @@
         .col-abus-map-info {
         }
         .col-abus-map-info p {
-            font-family: "Coco-Sharp-Regular";
+            font-family: "TT-Regular";
             text-decoration: none;
             margin: 0 .25em;
             padding: 0;
@@ -290,8 +290,8 @@
                 <div class="col-serv-dis-sub"><a onclick="openPopup()">Detaylar</a></div> 
             </div>
             <div class="col-serv-faqs">
-                <div class="col-serv-faq-mid"><p>Soru & Cevap</p></div>
-                <div class="col-serv-faq-sub"><a href="#">Detaylar</a></div>
+                <div class="col-serv-faq-mid"><p>Blog</p></div>
+                <div class="col-serv-faq-sub"><a href="../php/blog.php">Detaylar</a></div>
             </div>
         </div>
         <div class="columns col-services-2">
@@ -320,7 +320,7 @@
                     <h2>Servislerimiz</h2>
                     <ul>
                         <li><a href="../php/index.php">Anasayfa</a></li>
-                        <li><a href="#">Hizmetlerimiz</a></li>
+                        <li><a href="../php/user-pets.php">Evcil Hayvanlarım</a></li>
                         <li><a href="../php/blog.php">Blog</a></li>
                         <li><a href="../php/hakkimizda.php">Hakkımızda</a></li>
                     </ul>
