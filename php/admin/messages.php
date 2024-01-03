@@ -27,7 +27,6 @@ $conn->set_charset("utf8");
             <div class="col-logo"><img src="../../img/logo.png"></div>
             <div class="col-menu">
                 <ul>
-                    <li><a href="index.php">Anasayfa</a></li>
                     <li><a href="adduser.php">Üye işlemleri</a></li>
                     <li><a href="addblog.php">Blog işlemleri</a></li>
                     <li><a href="messages.php">Mesajlar</a></li>

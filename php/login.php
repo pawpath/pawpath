@@ -42,7 +42,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['login'])) {
                     $_SESSION['role'] = $user['role'];
                     $_SESSION['id'] = $user['id'];
                     if ($user['role'] === 'admin') {
-                        header("Location: ../php/admin/index.php");
+                        header("Location: ../php/admin/adduser.php");
                         exit();
                     }else{
                         header("Location: ../php/index.php");

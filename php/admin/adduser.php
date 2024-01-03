@@ -82,7 +82,6 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             <div class="col-logo"><img src="../../img/logo.png"></div>
             <div class="col-menu">
                 <ul>
-                    <li><a href="index.php">Anasayfa</a></li>
                     <li><a href="adduser.php">Üye işlemleri</a></li>
                     <li><a href="addblog.php">Blog işlemleri</a></li>
                     <li><a href="messages.php">Mesajlar</a></li>
@@ -101,12 +100,9 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
                 <div class="sidebar">
                     <header>PawPath</header>
-                    
-                        <li><a href="index.php">Anasayfa</a></li>
                         <li><a href="adduser.php">Üye işlemleri</a></li>
                         <li><a href="addblog.php">Blog İşlemleri</a></li>
-                        <li><a href="messages.php">Mesajlar</a></li>
-                    
+                        <li><a href="messages.php">Mesajlar</a></li>                  
                 </div>
             </div>
         </div>
@@ -122,9 +118,9 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             <th>Kullanıcı Adı</th>
             <th>Mail</th>
             <th>Onay Durumu</th>
-            <th>Role</th>
-            <th>Banned</th>
-            <th>Onayla</th>
+            <th>Rol</th>
+            <th>Ban Durumu</th>
+            <th>İşlemler</th>
         </tr>
         <?php
         $result = $conn->query("SELECT * FROM users ");
