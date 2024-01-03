@@ -50,9 +50,9 @@ if ($kullanici_id !== null) {
             <div class="col-menu col-menu-vet">
                 <ul>
                     <li><a href="vet-index.php">Anasayfa</a></li>
-                    <li><a href="#">Hasta Bilgi</a></li>
-                    <li><a href="../php/blog.php">Blog</a></li>
-                    <li><a href="../php/hakkimizda.php">Hakkımızda</a></li>
+                    <li><a href="vet-pet-info.php">Hasta Bilgi</a></li>
+                    <li><a href="vet-blog.php">Blog</a></li>
+                    <li><a href="vet-hakkimizda.php">Hakkımızda</a></li>
                 </ul>
             </div>
             <div class="col-user-act col-user-act-vet">
@@ -83,10 +83,10 @@ if ($kullanici_id !== null) {
                 <div class="sidebar">
                     <header>PawPath</header>
                     
-                        <li><a href="../php/index.php">Anasayfa</a></li>
-                        <li><a href="#">Hizmetlerimiz</a></li>
-                        <li><a href="../php/blog.php">Blog</a></li>
-                        <li><a href="../php/hakkimizda.php">Hakkımızda</a></li>
+                        <li><a href="vet-index.php">Anasayfa</a></li>
+                        <li><a href="vet-pet-info.php">Hasta Bilgi</a></li>
+                        <li><a href="vet-blog.php">Blog</a></li>
+                        <li><a href="vet-hakkimizda.php">Hakkımızda</a></li>
                     
                 </div>
             </div>
@@ -133,7 +133,7 @@ if ($kullanici_id !== null) {
                             </form>
                         </div>-->
                     </div>
-                    <button class="button btn-vet-health">Sağlık Bilgileri Görüntüle</button>
+                    <button class="button btn-vet-health"><a href="vet-pet-info.php">Sağlık Bilgileri Görüntüle</a></button>
                 </div>
             </div>
         </section>

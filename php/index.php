@@ -297,7 +297,7 @@
         <div class="columns col-services-2">
             <div class="col-serv-mypets">
                 <div class="col-serv-pet-mid"><p>Evcil Hayvanlarım</p></div>
-                <div class="col-serv-pet-sub"><a href="#">Detaylar</a></div>
+                <div class="col-serv-pet-sub"><a href="../php/user-pets.php">Detaylar</a></div>
             </div>
             <div class="col-serv-petshop">
                 <div class="col-serv-petshop-mid"><p>Yakındaki Petshoplar</p></div>

@@ -26,8 +26,8 @@
                 <ul>
                     <li><a href="vet-index.php">Anasayfa</a></li>
                     <li><a href="vet-pet-info.php">Hasta Bilgi</a></li>
-                    <li><a href="../php/blog.php">Blog</a></li>
-                    <li><a href="../php/hakkimizda.php">Hakkımızda</a></li>
+                    <li><a href="vet-blog.php">Blog</a></li>
+                    <li><a href="vet-hakkimizda.php">Hakkımızda</a></li>
                 </ul>
             </div>
             <div class="col-user-act col-user-act-vet">
@@ -73,7 +73,7 @@
                 <h2>Evcil Dostlarınızın İyi Bakımı:</h2>
                 <h1>Onların <span class="accent-color-vet">Sağlığı, Mutluluğu</span> ve <span class="accent-color-vet">Sizin İçin</span> En İyi Kaynak!</h1>
                 <p>Siz de evcil dostlarınızın sağlığını ve mutluluğunu önemsiyorsanız, doğru adrestesiniz! Aşı takip, günlük bakım, eğitim, sağlık önerileri ve daha fazlasını keşfedin. Evcil hayvanlarınızın hayat kalitesini artırmak ve sağlıklarını korumak için bizimle adım atın!</p>
-                <a href="#" class="button btn-mid-vet">Detaylar</a>
+                <a href="vet-hakkimizda.php" class="button btn-mid-vet">Detaylar</a>
             </div>
         </div>
 

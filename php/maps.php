@@ -87,7 +87,7 @@
                         <h2>Servislerimiz</h2>
                         <ul>
                             <li><a href="../php/index.php">Anasayfa</a></li>
-                            <li><a href="#">Hizmetlerimiz</a></li>
+                            <li><a href="../php/user-pets.php">Evcil Hayvanlarım</a></li>
                             <li><a href="../php/blog.php">Blog</a></li>
                             <li><a href="../php/hakkimizda.php">Hakkımızda</a></li>
                         </ul>
