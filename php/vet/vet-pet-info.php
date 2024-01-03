@@ -63,18 +63,21 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['searchUser'])) {
 if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['addInfo'])) {
     $petId = $_POST['petId'];
     $infoType = $_POST['infoType'];
-    $infoName = $_POST['infoName'];
-    $infoDate = $_POST['infoDate'];
+    $infoName = isset($_POST['infoName']) ? $_POST['infoName']: null;
+    $infoDate = isset($_POST['infoDate']) ? $_POST['infoDate']: null;
+    $diseaseDetail = isset($_POST['diseaseDetail']) ? $_POST['diseaseDetail'] : null;
+    $nextInfoDate = isset($_POST['nextInfoDate']) ? $_POST['nextInfoDate'] : null;
 
-    addPetInfo($petId, $infoType, $infoName, $infoDate);
+    addPetInfo($petId, $infoType, $infoName, $infoDate,$diseaseDetail,$nextInfoDate);
 }
-function addPetInfo($petId, $infoType, $infoName, $infoDate) {
+
+function addPetInfo($petId, $infoType, $infoName, $infoDate,$diseaseDetail,$nextInfoDate) {
     global $conn;
 
     // Aşı, alerji ya da hastalık bilgisi eklemek için SQL sorgusu
-    $sql = "INSERT INTO pet_info (pet_id, info_type, info_name, info_date) VALUES (?, ?, ?, ?)";
+    $sql = "INSERT INTO pet_info (pet_id, info_type, info_name, info_date,diseaseDetail,nextInfoDate) VALUES (?, ?, ?, ?, ?, ?)";
     $stmt = $conn->prepare($sql);
-    $stmt->bind_param("isss", $petId, $infoType, $infoName, $infoDate);
+    $stmt->bind_param("isssss", $petId, $infoType, $infoName, $infoDate,$diseaseDetail,$nextInfoDate);
     
     // SQL sorgusunu çalıştır
     if ($stmt->execute()) {
@@ -185,23 +188,36 @@ function addPetInfo($petId, $infoType, $infoName, $infoDate) {
                     <td><?php echo $pet['pet_gender']; ?></td>
                     <td><?php echo $pet['pet_age']; ?></td>
                     <td>
-                        <form method="POST" action="">
-                        <input type="hidden" name="petId" value="<?php echo $pet['pet_id']; ?>">
+                    <form method="POST" action="" id="infoForm">
+    <input type="hidden" name="petId" value="<?php echo $pet['pet_id']; ?>">
 
-                            <!-- Bilgi türü seçimi -->
-                            <label for="infoType">Bilgi Türü:</label>
-                            <select name="infoType" required>
-                                <option value="vaccine">Aşı</option>
-                                <option value="allergy">Alerji</option>
-                                <option value="disease">Hastalık</option>
-                            </select>
+    <!-- Bilgi türü seçimi -->
+    <label for="infoType" id="LabelInfoType">Bilgi Türü:</label>
+    <select name="infoType" id="infoType" required>
+        <option value="vaccine">Aşı</option>
+        <option value="allergy">Alerji</option>
+        <option value="disease">Hastalık</option>
+    </select><br>
 
-                            <label for="infoName">Bilgi Adı:</label>
-                            <input type="text" name="infoName" required>
-                            <label for="infoDate">Bilgi Tarihi:</label>
-                            <input type="date" name="infoDate" required>
-                            <button type="submit" name="addInfo">Bilgi Ekle</button>
-                        </form>
+    <!-- Bilgi Adı -->
+    <label for="infoName" id="LabelInfoName">Bilgi Adı:</label>
+    <input type="text" name="infoName" id="infoName" required><br>
+
+    <!-- Son Aşı Tarihi -->
+    <label for="infoDate" id="LabelInfoDate">Son Aşı Tarihi:</label>
+    <input type="date" name="infoDate" id="infoDate" ><br>
+
+    <!-- Gelecek Aşı Tarihi -->
+    <label for="nextInfoDate" id="LabelNextInfoDate">Gelecek Aşı Tarihi:</label>
+    <input type="date" name="nextInfoDate" id="nextInfoDate"><br>
+
+    <!-- Hastalık Detayı -->
+    <label for="diseaseDetail" id="LabelDiseaseDetail">Hastalık Detayı:</label>
+    <textarea name="diseaseDetail" id="diseaseDetail" rows="4" cols="50"></textarea><br>
+
+    <button type="submit" name="addInfo">Bilgi Ekle</button>
+</form>
+
                     </td>
                 </tr>
             <?php endforeach; ?>
@@ -244,5 +260,6 @@ function addPetInfo($petId, $infoType, $infoName, $infoDate) {
                 </div>
             </div>
         </div>
+   
 </body>
 </html>
