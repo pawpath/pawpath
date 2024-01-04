@@ -1,0 +1,110 @@
+kedi
+
+Üst Solunum Yolu Enfeksiyonları (ÜSYE):
+
+Hapşırma
+Burun akıntısı
+Göz akıntısı
+İştah kaybı
+Ağız ve burun çevresinde lezyonlar
+İdrar Yolu Enfeksiyonları (İYE):
+
+Sık idrara çıkma
+İdrar yaparken zorlanma
+İdrarın renginde değişiklik
+Kanlı idrar
+İdrar yapma sıklığında artış veya azalma
+Şeker Hastalığı (Diabetes Mellitus):
+
+Aşırı susama
+Aşırı idrara çıkma
+İştah artışı veya azalma
+Zayıflama
+Kuru ve mat tüy
+Böbrek Yetmezliği:
+
+İştah kaybı
+Kusma
+İdrar yapma sıklığında artış veya azalma
+Zayıflama
+Halsizlik
+Parazit Enfeksiyonları:
+
+Kusma ve ishal
+Karın şişliği
+Tüy dökülmesi
+Zayıflama
+Kaşıntı ve cilt lezyonları
+Feline Leukemia Virus (FeLV):
+
+İştah kaybı
+Zayıflama
+Soluk dişetleri
+Anemi belirtileri (soluk burun ve ağız mukozası)
+Tekrarlayan enfeksiyonlar
+Feline Immunodeficiency Virus (FIV):
+
+İştah kaybı
+Zayıflama
+Diş eti problemleri
+Kronik enfeksiyonlar
+Halsizlik
+
+kopek
+
+Parvovirüs Enfeksiyonu:
+
+Kusma
+İshal (genellikle kanlı)
+İştah kaybı
+Ağızda kötü koku
+Halsizlik
+Kenelerin Taşıdığı Hastalıklar (Lyme Hastalığı, Babesiosis, Ehrlichiosis):
+
+Ateş
+Halsizlik
+Eklem ağrıları ve şişlik
+İştah kaybı
+Zayıflama
+İdrar Yolu Enfeksiyonları (İYE):
+
+Sık idrara çıkma
+İdrar yaparken zorlanma
+İdrarın renginde değişiklik
+İştah kaybı
+Ağrılı idrar yapma
+Solunum Yolu Enfeksiyonları (Öksürük, Şişmiş Burun):
+
+Öksürük
+Burun akıntısı
+Hapşırma
+Göz akıntısı
+İştah kaybı
+Kulak Enfeksiyonları:
+
+Kulak içinde kızarıklık ve şişlik
+Kulak akıntısı (kokulu veya renginde değişiklik)
+Kulak kaşıntısı
+Baş sallama
+İşitme kaybı
+Şeker Hastalığı (Diabetes Mellitus):
+
+Aşırı susama
+Aşırı idrara çıkma
+İştah artışı veya azalma
+Kilo kaybı
+Zayıflama
+Kalp Hastalıkları:
+
+Nefes darlığı
+Öksürük
+Halsizlik
+Şişmiş karın veya bacaklar
+İştah kaybı
+Yüksek Kolesterol:
+
+Göz çevresinde sarı renkli bir halka (ksantelazma)
+İştah kaybı
+Kusma
+Karın ağrısı
+İshal
