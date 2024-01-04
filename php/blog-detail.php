@@ -3,10 +3,10 @@
     $conn = new mysqli("localhost", "root", "", "pawpath");
 $conn->set_charset("utf8");
 $blog_id = $_GET['blog_id'];
-$stmt = $conn->prepare("SELECT image, content FROM blog WHERE blog_id = ?");
+$stmt = $conn->prepare("SELECT image, content, title FROM blog WHERE blog_id = ?");
 $stmt->bind_param('i', $blog_id);
 $stmt->execute();
-$stmt->bind_result($image, $content);
+$stmt->bind_result($image, $content, $title);
 $stmt->fetch();
 $stmt->close();
 ?>
@@ -19,6 +19,28 @@ $stmt->close();
       <title>Pawpath</title>
         <link rel="stylesheet" href="../css/style.css">
         <script src="https://kit.fontawesome.com/b1573057bf.js" crossorigin="anonymous"></script>
+        <style>
+            .col-blog{
+  flex-direction: column;
+  justify-content: center;
+  align-items: center ;
+
+}
+.col-blog-img img{
+    margin-top: 4em;
+  width: 100%;
+}
+.col-blog-content{
+    text-align: center;
+  width: 100%;
+  margin-bottom: 3em;
+}
+.col-blog-content h1{
+    text-align: center;
+    font-size: 3rem;
+}
+
+        </style>
     </head>
     <body>
         <div class="container">
@@ -69,18 +91,18 @@ $stmt->close();
             </div>
 
             <!--blog-details-->
-            <div columns col-blog>
+            <div class="columns col-blog">
             <div class="col-blog-img">
         <img src="../blogimg/<?php echo $image; ?>" alt="Blog Image">
     </div>
     <div class="col-blog-content">
-        <?php echo $content; ?>
+        <?php echo "<h1>$title</h1>" . "<br>". $content; ?>
     </div>
             </div>
 
             <!--Footer-->
             <div class="col-footer col-footer-bg">
-                <div class="col-footer1">
+                  <div class="col-footer1">
                     <div class="col-left">
                         <img src="../img/logo.png"><br>
                         <p>Siz de evcil dostlarınızın sağlığını ve mutluluğunu önemsiyorsanız, doğru adrestesiniz! Evcil hayvanlarınızın hayat kalitesini artırmak ve sağlıklarını korumak için bizimle adım atın!</p>

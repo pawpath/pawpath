@@ -1434,7 +1434,19 @@ h2{
 .col-add-blog h1{
   padding-top: 1em;
 }
-
+/* blog detail */
+.col-blog{
+  flex-direction: column;
+  justify-content: center;
+  align-items: center ;
+  width: 100%;
+}
+.col-blog-img img{
+  width: 90%;
+}
+.col-blog-content{
+  width: 100%;
+}
 
 
 /* Responsive Layout */
